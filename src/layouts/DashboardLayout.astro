@@ -25,18 +25,20 @@ const year = new Date().getFullYear();
       <!-- Contenido principal -->
       <div class="drawer-content flex flex-col">
         <!-- Botón hamburguesa flotante en móviles -->
-        <label for="drawer-indice" class="btn btn-primary drawer-button lg:hidden fixed top-4 left-4 z-50"> ☰ </label>
+        <label for="drawer-indice" class="btn btn-neutral drawer-button lg:hidden fixed top-4 left-4 z-50"> ☰ </label>
 
         <header class="sr-only">
           <h1>Guía de Rénder Gaming</h1>
         </header>
 
-        <main id="contenido" class="flex-1 flex items-center justify-center bg-base-100 p-6">
+        <main id="contenido" class="flex-1 flex items-center justify-center bg-base-100">
           <slot />
         </main>
 
         <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70">
-          © {year} Guía de Rénder Gaming
+          © {year} Guía de Rénder Gaming - Creado por:<span id="miFirma" class="ms-2" style="font-size: 22px;"
+            >Daniel Bautista Pradilla.</span
+          >
         </footer>
       </div>
 

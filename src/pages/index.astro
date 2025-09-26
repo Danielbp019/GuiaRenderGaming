@@ -6,11 +6,37 @@ import DashboardLayout from "../layouts/DashboardLayout.astro";
 <DashboardLayout>
   <Indice slot="sidebar" />
 
-  <!-- Este contenido solo aparece en la página de inicio -->
-  <div class="card w-full max-w-2xl shadow-xl rounded-lg bg-base-200">
-    <div class="card-body">
-      <h2 class="card-title">Guía de Rénder Gaming, de veritas</h2>
-      <p>Te explico todas las opciones gráficas del mundo con su función y carga para que sepas qué mover.</p>
+  <!-- Hero ocupa toda la pantalla con imagen -->
+  <!--   <section
+    class="hero h-full"
+    style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
+  >
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-neutral-content text-center">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">Guía de Rénder Gaming</h1>
+        <p class="mb-5">Explora todas las opciones gráficas y su impacto real.</p>
+      </div>
     </div>
-  </div>
+  </section> -->
+
+  <!-- Hero ocupa toda la pantalla con video -->
+  <section class="hero h-full relative overflow-hidden">
+    <!-- Video de fondo -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="/src/assets/video/libro1284x719.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Contenido -->
+    <div class="hero-content text-neutral-content text-center relative z-10">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">Guía de Rénder Gaming</h1>
+        <p class="mb-5">Explora todas las opciones gráficas y su impacto real.</p>
+        <a href="/temas" class="btn btn-primary">Explorar temas</a>
+      </div>
+    </div>
+  </section>
 </DashboardLayout>
