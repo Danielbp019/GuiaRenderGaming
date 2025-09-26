@@ -4,12 +4,19 @@ const { slots } = Astro;
 const year = new Date().getFullYear();
 ---
 
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="forest">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Guía de Rénder Gaming</title>
+    <script is:inline>
+      // Al cargar la página, aplicar el tema guardado
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    </script>
   </head>
   <body class="h-screen">
     <div class="drawer lg:drawer-open h-screen">
@@ -37,11 +44,39 @@ const year = new Date().getFullYear();
       <div class="drawer-side">
         <label for="drawer-indice" aria-label="close sidebar" class="drawer-overlay"></label>
         <aside class="bg-base-200 p-4 h-screen overflow-y-auto">
+          <br />
+          <!-- Botones fijos arriba -->
+          <div class="flex justify-center gap-2 mb-2 join join-horizontal">
+            <a href="/" class="btn btn-outline btn-primary join-item"><i class="bi bi-house-fill"></i> Home</a>
+            <a href="/temas" class="btn btn-outline btn-secondary join-item"><i class="bi bi-stars"></i> Temas</a>
+          </div>
+
+          <!-- Texto de tema activo -->
+          <div id="tema-activo" class="text-center text-sm font-semibold mb-4">
+            Tema activo: <span id="tema-nombre">forest</span>
+          </div>
+          <hr />
+          <br />
           <nav aria-label="Menú principal">
             <slot name="sidebar" />
           </nav>
         </aside>
       </div>
     </div>
+
+    <!-- Script para actualizar el texto del tema activo -->
+    <script is:inline>
+      function actualizarTemaActivo() {
+        const tema = document.documentElement.getAttribute("data-theme") || "forest";
+        document.getElementById("tema-nombre").textContent = tema;
+      }
+
+      // Inicializar al cargar
+      actualizarTemaActivo();
+
+      // Observar cambios en el atributo data-theme
+      const observer = new MutationObserver(actualizarTemaActivo);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    </script>
   </body>
 </html>

@@ -1,5 +1,8 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: all;
+}
 
 /* reducir el ancho de la barra de scroll */
 aside::-webkit-scrollbar {
