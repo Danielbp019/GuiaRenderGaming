@@ -1,0 +1,47 @@
+---
+import "../assets/app.css";
+const { slots } = Astro;
+const year = new Date().getFullYear();
+---
+
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Guía de Rénder Gaming</title>
+  </head>
+  <body class="h-screen">
+    <div class="drawer lg:drawer-open h-screen">
+      <input id="drawer-indice" type="checkbox" class="drawer-toggle" />
+
+      <!-- Contenido principal -->
+      <div class="drawer-content flex flex-col">
+        <!-- Botón hamburguesa flotante en móviles -->
+        <label for="drawer-indice" class="btn btn-primary drawer-button lg:hidden fixed top-4 left-4 z-50"> ☰ </label>
+
+        <header class="sr-only">
+          <h1>Guía de Rénder Gaming</h1>
+        </header>
+
+        <main id="contenido" class="flex-1 flex items-center justify-center bg-base-100 p-6">
+          <slot />
+        </main>
+
+        <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70">
+          © {year} Guía de Rénder Gaming
+        </footer>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="drawer-side">
+        <label for="drawer-indice" aria-label="close sidebar" class="drawer-overlay"></label>
+        <aside class="bg-base-200 p-4 h-screen overflow-y-auto">
+          <nav aria-label="Menú principal">
+            <slot name="sidebar" />
+          </nav>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

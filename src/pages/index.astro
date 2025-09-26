@@ -1,0 +1,16 @@
+---
+import Indice from "../components/Indice.astro";
+import DashboardLayout from "../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout>
+  <Indice slot="sidebar" />
+
+  <!-- Este contenido solo aparece en la página de inicio -->
+  <div class="card w-full max-w-2xl shadow-xl rounded-lg bg-base-200">
+    <div class="card-body">
+      <h2 class="card-title">Guía de Rénder Gaming, de veritas</h2>
+      <p>Te explico todas las opciones gráficas del mundo con su función y carga para que sepas qué mover.</p>
+    </div>
+  </div>
+</DashboardLayout>

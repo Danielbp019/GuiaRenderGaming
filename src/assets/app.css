@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* reducir el ancho de la barra de scroll */
+aside::-webkit-scrollbar {
+  width: 6px; /* ancho de la barra */
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--bc) / 0.4); /* color usando variables de DaisyUI */
+  border-radius: 3px; /* esquinas redondeadas */
+}
+
+aside::-webkit-scrollbar-track {
+  background: transparent; /* fondo del track */
+}
+/* Firefox usa otra propiedad */
+aside {
+  scrollbar-width: thin; /* valores: auto | thin | none */
+  scrollbar-color: hsl(var(--bc) / 0.4) transparent;
+}
