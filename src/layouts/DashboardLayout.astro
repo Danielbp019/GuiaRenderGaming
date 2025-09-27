@@ -23,7 +23,7 @@ const year = new Date().getFullYear();
       <input id="drawer-indice" type="checkbox" class="drawer-toggle" />
 
       <!-- Contenido principal -->
-      <div class="drawer-content flex flex-col">
+      <div class="drawer-content flex flex-col h-screen">
         <!-- Botón hamburguesa flotante en móviles -->
         <label for="drawer-indice" class="btn btn-neutral drawer-button lg:hidden fixed top-4 left-4 z-50"> ☰ </label>
 
@@ -31,14 +31,15 @@ const year = new Date().getFullYear();
           <h1>Guía de Rénder Gaming</h1>
         </header>
 
-        <main id="contenido" class="flex-1 flex items-center justify-center bg-base-100">
+        <!-- Contenedor central con scroll interno -->
+        <main id="contenido" class="flex-1 overflow-y-auto bg-base-100">
           <slot />
         </main>
 
+        <!-- Footer fijo -->
         <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70">
-          © {year} Guía de Rénder Gaming - Creado por:<span id="miFirma" class="ms-2" style="font-size: 22px;"
-            >Daniel Bautista Pradilla.</span
-          >
+          © {year} Guía de Rénder Gaming - Creado por:
+          <span id="miFirma" class="ms-2" style="font-size: 22px;">Daniel Bautista Pradilla.</span>
         </footer>
       </div>
 
@@ -55,7 +56,8 @@ const year = new Date().getFullYear();
 
           <!-- Texto de tema activo -->
           <div id="tema-activo" class="text-center text-sm font-semibold mb-4">
-            Tema activo: <i class="bi bi-stars text-warning"></i><span id="tema-nombre">dim</span>
+            Tema activo:
+            <i class="bi bi-stars text-warning"></i><span id="tema-nombre">dim</span>
           </div>
           <hr />
           <br />
@@ -78,7 +80,10 @@ const year = new Date().getFullYear();
 
       // Observar cambios en el atributo data-theme
       const observer = new MutationObserver(actualizarTemaActivo);
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      });
     </script>
   </body>
 </html>
