@@ -1,18 +1,21 @@
-# Astro Starter Kit: Basics
+# Guía de Rénder Gaming
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y
+analiza su impacto real en tu experiencia de juego.
 
 ## 🚀 Arbol de archivos
 
 ```text
-/
+arbol:
 ├── public/
-│   └── favicon.svg
-├── src
+│   ├── favicon.svg
+│   ├── font/
+│   │   └── AlexBrush-Regular.ttf
+│   ├── img/
+│   │   └── fondoLibro.png
+│   └── video/
+│       └── intro.mp4
+├── src/
 │   ├── assets/
 │   │   └── app.css
 │   ├── components/

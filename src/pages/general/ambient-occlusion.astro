@@ -6,5 +6,17 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 <DashboardLayout>
   <Indice slot="sidebar" />
 
-  <p>Hola</p>
+  <section class="hero h-full" style="background-image: url(/img/fondoLibro.png);">
+    <div class="hero-overlay bg-black/50"></div>
+    <div class="hero-content w-full p-6"> <!-- hace que el contenido ocupe todo el ancho disponible y tenga un padding general. -->
+      <div class="glass rounded-box w-full p-8"> <!-- card ocupa todo el ancho, tiene efecto vidrio y bordes redondeados, con padding interno para que el texto respire. -->
+        <h1 class="mb-5 text-5xl font-bold">Oclusión ambiental (Ambient Occlusion)</h1>
+        <p>
+          La Oclusión ambiental (Ambient Occlusion) es un efecto gráfico que oscurece de manera realista las zonas donde
+          la luz llega con dificultad, como esquinas, grietas, uniones entre objetos o debajo de muebles. Hace que la
+          imagen se vea menos plana y más natural.
+        </p>
+      </div>
+    </div>
+  </section>
 </DashboardLayout>

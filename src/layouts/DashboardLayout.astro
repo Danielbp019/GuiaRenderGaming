@@ -4,7 +4,7 @@ const { slots } = Astro;
 const year = new Date().getFullYear();
 ---
 
-<html lang="es" data-theme="forest">
+<html lang="es" data-theme="dim">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,7 +55,7 @@ const year = new Date().getFullYear();
 
           <!-- Texto de tema activo -->
           <div id="tema-activo" class="text-center text-sm font-semibold mb-4">
-            Tema activo: <i class="bi bi-stars text-warning"></i><span id="tema-nombre">forest</span>
+            Tema activo: <i class="bi bi-stars text-warning"></i><span id="tema-nombre">dim</span>
           </div>
           <hr />
           <br />
@@ -69,7 +69,7 @@ const year = new Date().getFullYear();
     <!-- Script para actualizar el texto del tema activo -->
     <script is:inline>
       function actualizarTemaActivo() {
-        const tema = document.documentElement.getAttribute("data-theme") || "forest";
+        const tema = document.documentElement.getAttribute("data-theme") || "dim";
         document.getElementById("tema-nombre").textContent = tema;
       }
 

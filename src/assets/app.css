@@ -1,11 +1,25 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @font-face {
   font-family: "AlexBrush";
-  src: url("./fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
+  src: url("/fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
 }
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: all;
+}
+
+/* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/
+p {
+  margin-block: 1em;
+  margin-block: 1lh;
+  font-size: large;
+}
+
+/* Mi Firma */
+#miFirma {
+  font-family: "AlexBrush", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* reducir el ancho de la barra de scroll */
@@ -25,17 +39,4 @@ aside::-webkit-scrollbar-track {
 aside {
   scrollbar-width: thin; /* valores: auto | thin | none */
   scrollbar-color: hsl(var(--bc) / 0.4) transparent;
-}
-
-/* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/
-p {
-  margin-block: 1em;
-  margin-block: 1lh;
-}
-
-/* Mi Firma */
-#miFirma {
-  font-family: "AlexBrush", cursive;
-  font-weight: 400;
-  font-style: normal;
 }
