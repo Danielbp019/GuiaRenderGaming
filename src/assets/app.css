@@ -22,6 +22,13 @@ p {
   font-style: normal;
 }
 
+.bg-ambient {
+  background-image: url("/img/fondoLibro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* reducir el ancho de la barra de scroll */
 aside::-webkit-scrollbar {
   width: 6px; /* ancho de la barra */

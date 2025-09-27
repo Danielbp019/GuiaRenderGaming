@@ -6,16 +6,90 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 <DashboardLayout>
   <Indice slot="sidebar" />
 
-  <section class="hero h-full" style="background-image: url(/img/fondoLibro.png);">
+  <section class="hero h-full bg-ambient">
     <div class="hero-overlay bg-black/50"></div>
-    <div class="hero-content w-full p-6"> <!-- hace que el contenido ocupe todo el ancho disponible y tenga un padding general. -->
-      <div class="glass rounded-box w-full p-8"> <!-- card ocupa todo el ancho, tiene efecto vidrio y bordes redondeados, con padding interno para que el texto respire. -->
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
         <h1 class="mb-5 text-5xl font-bold">Oclusión ambiental (Ambient Occlusion)</h1>
         <p>
-          La Oclusión ambiental (Ambient Occlusion) es un efecto gráfico que oscurece de manera realista las zonas donde
-          la luz llega con dificultad, como esquinas, grietas, uniones entre objetos o debajo de muebles. Hace que la
-          imagen se vea menos plana y más natural.
+          Oclusión ambiental es un efecto gráfico que añade sombras suaves en los rincones, bordes, juntas, bajo objetos
+          u otras superficies que están cerca unas de otras, para que la escena se vea más realista. No es una sombra
+          puntual, sino que oscurece zonas donde la luz ambiental tendría dificultad de llegar.
         </p>
+      </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">Variantes generales</h2>
+        <p class="mb-3">Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>SSAO (Screen-Space Ambient Occlusion):</strong> Se basa en lo que está visible en pantalla. Toma el búfer
+            de profundidad, mira píxeles cercanos y calcula cuánta geometría bloquea la luz ambiental. Opción básica y de
+            menor costo.
+          </li>
+          <li>
+            <strong>SSAO mejorado / SSAO+:</strong> Más muestras, filtros más suaves, detalles mejorados, menos ruido que
+            SSAO básico. Coste mayor.
+          </li>
+          <li>
+            <strong>HBAO (Horizon-Based Ambient Occlusion):</strong> Explora “horizontes” en el búfer de profundidad, sombreado
+            más definido, mejor calidad visual, más costoso.
+          </li>
+          <li>
+            <strong>HBAO+:</strong> Versión optimizada de NVIDIA. Mejor definición, más muestras, menos artefactos, pero
+            más exigente.
+          </li>
+          <li>
+            <strong>HDAO (High Definition Ambient Occlusion):</strong> Variante de AMD, más definición y mejores bordes,
+            mayor coste.
+          </li>
+          <li>
+            <strong>SSDO (Screen-Space Directional Occlusion):</strong> Añade dirección de luz al cálculo, sombras más realistas,
+            coste alto.
+          </li>
+          <li>
+            <strong>VXAO (Voxel Ambient Occlusion):</strong> Convierte la escena a vóxeles y calcula la oclusión en ese volumen.
+            Muy realista, pero muy costoso.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coste en rendimiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">Coste en rendimiento</h2>
+        <p class="mb-3">
+          El impacto depende de la GPU, resolución, calidad (número de muestras) y variante usada. Estos son los puntos
+          clave:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>SSAO básico:</strong> 5–10 % menos FPS.</li>
+          <li><strong>SSAO+ / SSAO mejorado:</strong> 10–20 % menos FPS dependiendo del escenario.</li>
+          <li>
+            <strong>HBAO / HDAO:</strong> 15–30 % menos FPS en ajustes altos; en GPU de rango medio puede sentirse bastante
+            pesado .
+          </li>
+          <li><strong>HBAO+:</strong> Gran calidad, pero muy exigente; puede bajar bastante FPS en 1440p/4K.</li>
+          <li>
+            <strong>VXAO / volumétricos o ray-trazadas:</strong> Los más costosos, hasta 30–50 % menos FPS dependiendo del
+            hardware.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cuándo conviene activarlo -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">Cuándo conviene activarlo</h2>
+        <p class="mb-3">La decisión depende de tu GPU y de cuánto priorices la calidad visual frente al rendimiento:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>Con GPU potente: usar SSAO+ o HBAO en calidad media/alta da buen balance.</li>
+          <li>Con GPU modesta o en 1440p/4K: mejor calidad baja o desactivar AO para mantener FPS.</li>
+          <li>En interiores con muchos detalles: HBAO+ o HDAO pueden valer la pena.</li>
+          <li>En exteriores abiertos: AO puede pasar desapercibido, incluso conviene desactivarlo.</li>
+          <li>Prueba escalonada: empieza desactivado, luego bajo, medio, hasta donde sea tolerable.</li>
+        </ul>
       </div>
     </div>
   </section>
