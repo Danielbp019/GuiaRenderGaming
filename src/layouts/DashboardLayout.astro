@@ -1,6 +1,6 @@
 ---
 import "../assets/app.css";
-const { slots } = Astro;
+const { slots, background } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
@@ -31,8 +31,8 @@ const year = new Date().getFullYear();
           <h1>Guía de Rénder Gaming</h1>
         </header>
 
-        <!-- Contenedor central con scroll interno -->
-        <main id="contenido" class="flex-1 overflow-y-auto bg-base-100">
+        <!-- Contenedor central con scroll interno, El props para mostrar un fondo en cada página y en la página se usa DashboardLayout background="bg-ambient" para mostrar el fondo asociado a una regla css -->
+        <main id="contenido" class={`flex-1 overflow-y-auto bg-base-100 ${background ?? ""}`}>
           <slot />
         </main>
 
