@@ -12,10 +12,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-
         <div class="breadcrumbs text-sm">
           <ul>
-            <li><a href="/">Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
             <li>Oclusión ambiental (Ambient Occlusion)</li>
           </ul>
@@ -66,40 +65,46 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         </ul>
       </div>
 
-      <!-- Coste en rendimiento -->
-      <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3">Coste en rendimiento</h2>
-        <p class="mb-3">
-          El impacto depende de la GPU, resolución, calidad (número de muestras) y variante usada. Estos son los puntos
-          clave:
-        </p>
-        <ul class="list-disc list-inside space-y-2 text-left">
-          <li><strong>SSAO básico:</strong> 5–10 % menos FPS.</li>
-          <li><strong>SSAO+ / SSAO mejorado:</strong> 10–20 % menos FPS dependiendo del escenario.</li>
-          <li>
-            <strong>HBAO / HDAO:</strong> 15–30 % menos FPS en ajustes altos; en GPU de rango medio puede sentirse bastante
-            pesado .
-          </li>
-          <li><strong>HBAO+:</strong> Gran calidad, pero muy exigente; puede bajar bastante FPS en 1440p/4K.</li>
-          <li>
-            <strong>VXAO / volumétricos o ray-trazadas:</strong> Los más costosos, hasta 30–50 % menos FPS dependiendo del
-            hardware.
-          </li>
-        </ul>
-      </div>
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Coste en rendimiento</h2>
+          <p class="mb-3">
+            El impacto depende de la GPU, resolución, calidad (número de muestras) y variante usada. Estos son los
+            puntos clave:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>SSAO básico:</strong> 5–10 % menos FPS.</li>
+            <li><strong>SSAO+ / SSAO mejorado:</strong> 10–20 % menos FPS dependiendo del escenario.</li>
+            <li>
+              <strong>HBAO / HDAO:</strong> 15–30 % menos FPS en ajustes altos; en GPU de rango medio puede sentirse bastante
+              pesado.
+            </li>
+            <li><strong>HBAO+:</strong> Gran calidad, pero muy exigente; puede bajar bastante FPS en 1440p/4K.</li>
+            <li>
+              <strong>VXAO / volumétricos o ray-trazadas:</strong> Los más costosos, hasta 30–50 % menos FPS dependiendo
+              del hardware.
+            </li>
+          </ul>
+        </div>
 
-      <!-- Cuándo conviene activarlo -->
-      <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3">Cuándo conviene activarlo</h2>
-        <p class="mb-3">La decisión depende de tu GPU y de cuánto priorices la calidad visual frente al rendimiento:</p>
-        <ul class="list-disc list-inside space-y-2 text-left">
-          <li>Con GPU potente: usar SSAO+ o HBAO en calidad media/alta da buen balance.</li>
-          <li>Con GPU modesta o en 1440p/4K: mejor calidad baja o desactivar AO para mantener FPS.</li>
-          <li>En interiores con muchos detalles: HBAO+ o HDAO pueden valer la pena.</li>
-          <li>En exteriores abiertos: AO puede pasar desapercibido, incluso conviene desactivarlo.</li>
-          <li>Prueba escalonada: empieza desactivado, luego bajo, medio, hasta donde sea tolerable.</li>
-        </ul>
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Cuándo conviene activarlo</h2>
+          <p class="mb-3">
+            La decisión depende de tu GPU y de cuánto priorices la calidad visual frente al rendimiento:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Con GPU potente: usar SSAO+ o HBAO en calidad media/alta da buen balance.</li>
+            <li>Con GPU modesta o en 1440p/4K: mejor calidad baja o desactivar AO para mantener FPS.</li>
+            <li>En interiores con muchos detalles: HBAO+ o HDAO pueden valer la pena.</li>
+            <li>En exteriores abiertos: AO puede pasar desapercibido, incluso conviene desactivarlo.</li>
+            <li>Prueba escalonada: empieza desactivado, luego bajo, medio, hasta donde sea tolerable.</li>
+          </ul>
+        </div>
       </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
