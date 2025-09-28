@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -12,9 +13,86 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Aberración Cromática (Chromatic Aberration)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Aberración Cromática (Chromatic Aberration)</h1>
+        <p>
+          La aberración cromática es un efecto visual que imita cómo funcionan las lentes de una cámara real. Hace que
+          los bordes de los objetos tengan un ligero “halo” de colores (rojo, azul, verde), como si la imagen estuviera
+          vista a través de un cristal imperfecto. En los juegos se usa para dar un toque “cinematográfico” o de “cámara
+          real”, pero no aporta nada a la jugabilidad.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">Variantes generales</h2>
+        <p class="mb-3">Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Aberración en bordes:</strong> Solo se aplica en los extremos de la pantalla, generando un sutil desenfoque
+            con colores separados.
+          </li>
+          <li>
+            <strong>Aberración global:</strong> Afecta a toda la imagen, más notoria y a menudo más molesta.
+          </li>
+          <li>
+            <strong>Aberración dinámica:</strong> Varía según la acción (ejemplo: más fuerte al correr, recibir daño o en
+            cinemáticas).
+          </li>
+        </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: Aberración Cromática OFF vs Aberración Cromática ON"
+          img1="/img/general/chromatic-aberration/the-witcher-3-wild-hunt-chromatic-aberration-001-off.png"
+          img2="/img/general/chromatic-aberration/the-witcher-3-wild-hunt-chromatic-aberration-001-on.png"
+          alt1="Aberración Cromática OFF"
+          alt2="Aberración Cromática ON"
+        />
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Coste en rendimiento</h2>
+          <p class="mb-3">
+            El impacto de la aberración cromática en el rendimiento es mínimo, ya que se trata de un efecto de
+            post-procesado ligero:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto en FPS:</strong> Muy bajo, casi despreciable (1–2 FPS en la mayoría de casos).</li>
+            <li><strong>Carga en hardware:</strong> Depende de la GPU, no de la CPU.</li>
+            <li><strong>Escalado:</strong> Incluso en gráficas modestas el coste es mínimo.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Cuándo conviene activarlo</h2>
+          <p class="mb-3">La decisión depende de si priorizas la claridad visual o un estilo más cinematográfico:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Cuándo activarlo:</strong> Si buscas un estilo más “cinematográfico” o quieres que el juego se sienta
+              como una película.
+            </li>
+            <li>
+              <strong>Cuándo desactivarlo:</strong> Si prefieres una imagen más nítida y clara, especialmente en shooters
+              competitivos o juegos donde la precisión visual importa.
+            </li>
+            <li>
+              <strong>Recomendación general:</strong> La mayoría de jugadores lo desactiva porque añade borrosidad sin mejorar
+              la experiencia. Solo vale la pena dejarlo en títulos narrativos o de atmósfera donde el efecto esté bien integrado.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>

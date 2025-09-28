@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -12,9 +13,105 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Calidad de Texturas</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Calidad de Texturas</h1>
+        <p>
+          La calidad de texturas en un videojuego define qué tan nítidas y detalladas se ven las superficies de los
+          objetos (paredes, ropa, suelo, armas, etc.). Básicamente, son las “imágenes” que se pegan sobre los modelos
+          3D. Al subir la calidad, esas imágenes tienen más resolución y se ven más realistas; al bajarla, se ven
+          borrosas o pixeladas.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos suelen aparecer como:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>Baja:</strong> Texturas muy comprimidas y borrosas. Se usan para ahorrar memoria de video.</li>
+          <ImageDiff
+            title="Comparar: Calidad de Texturas Baja vs Calidad de Texturas Medio"
+            img1="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-low.png"
+            img2="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-medium.png"
+            alt1="Calidad de Texturas Bajas"
+            alt2="Calidad de Texturas Medio"
+          /><br />
+
+          <li>
+            <strong>Media:</strong> Texturas aceptables, con detalle moderado. Buen equilibrio en PCs de gama media.
+          </li>
+          <ImageDiff
+            title="Comparar: Calidad de Texturas Medio vs Calidad de Texturas Alto"
+            img1="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-medium.png"
+            img2="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-high.png"
+            alt1="Calidad de Texturas Medio"
+            alt2="Calidad de Texturas Alto"
+          /><br />
+
+          <li><strong>Alta:</strong> Texturas nítidas, con buena definición en la mayoría de superficies.</li>
+          <ImageDiff
+            title="Comparar: Calidad de Texturas Alto vs Calidad de Texturas Ultra / Muy Alta"
+            img1="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-high.png"
+            img2="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-very-high.png"
+            alt1="Calidad de Texturas Alto"
+            alt2="Calidad de Texturas Ultra / Muy Alta"
+          /><br />
+
+          <li>
+            <strong>Ultra / Muy Alta:</strong> Texturas de máxima resolución, pensadas para tarjetas gráficas con mucha memoria
+            (VRAM).
+          </li>
+          <li>
+            <strong>Escalado dinámico de texturas:</strong> Ajusta automáticamente la calidad según la memoria disponible
+            para evitar tirones.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Coste en rendimiento</h2>
+          <p class="mb-3">El impacto principal depende más de la VRAM de la GPU que del procesador:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>FPS:</strong> normalmente no reduce mucho los FPS directamente, salvo que la GPU se quede sin memoria.
+            </li>
+            <li>
+              <strong>Cuando falta VRAM:</strong> el juego empieza a cargar texturas desde la RAM o el disco, causando tirones
+              y caídas bruscas.
+            </li>
+            <li><strong>De Baja a Media:</strong> impacto casi nulo en FPS.</li>
+            <li><strong>De Media a Alta:</strong> leve impacto (2–5 FPS en promedio).</li>
+            <li>
+              <strong>De Alta a Ultra:</strong> puede ser significativo si la GPU tiene poca VRAM (caídas de 10–20 FPS o
+              stuttering).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Cuándo conviene activarlo</h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>2–4 GB de VRAM:</strong> usa Medio o Alto, evita Ultra.</li>
+            <li>
+              <strong>6–8 GB de VRAM:</strong> puedes usar Alto sin problemas, incluso Ultra en la mayoría de juegos a 1080p.
+            </li>
+            <li><strong>10 GB o más de VRAM:</strong> Ultra es seguro, incluso en resoluciones 1440p o 4K.</li>
+            <li><strong>Mejor bajarlo:</strong> cuando notes tirones o cargas tardías de texturas (pop-in).</li>
+            <li><strong>Mejor en Alto/Ultra:</strong> si buscas inmersión visual y tu GPU tiene suficiente memoria.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>

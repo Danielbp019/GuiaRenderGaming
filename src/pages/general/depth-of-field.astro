@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -12,9 +13,82 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Desenfoque por Profundidad (Depth of Field, DoF)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Desenfoque por Profundidad (Profundidad de campo, Depth of Field, DoF)</h1>
+        <p>
+          El desenfoque por profundidad es un efecto visual que imita cómo funcionan las cámaras: lo que está enfocado
+          (normalmente el personaje o un objeto cercano) se ve nítido, mientras que el fondo o elementos fuera de foco
+          aparecen borrosos. Se usa para dar un aspecto más “cinematográfico” y dirigir la atención del jugador a lo
+          importante en pantalla.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos suele aparecer como:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>Desactivado:</strong> todo se ve enfocado, sin desenfoque.</li>
+          <li><strong>Básico / Estándar:</strong> aplica un desenfoque simple al fondo, sin muchos detalles.</li>
+          <li>
+            <strong>Avanzado / Alta calidad:</strong> añade efectos más realistas como transiciones suaves entre zonas enfocadas
+            y desenfocadas.
+          </li>
+          <li>
+            <strong>Bokeh:</strong> simula el efecto de lentes de cámara reales, donde las luces desenfocadas se ven como
+            círculos o formas suaves.
+          </li>
+        </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: OFF vs Muy Alto"
+          img1="/img/general/Depth-of-Field/rise-of-the-tomb-raider-depth-of-field-005-off.png"
+          img2="/img/general/Depth-of-Field/rise-of-the-tomb-raider-depth-of-field-005-very-high.png"
+          alt1="Escena con OFF"
+          alt2="Escena con Muy Alto"
+        />
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Coste en rendimiento</h2>
+          <p class="mb-3">El impacto principal depende de la GPU, ya que es un efecto de postprocesado:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>De Desactivado a Básico:</strong> impacto bajo (1–3 FPS).</li>
+            <li><strong>De Básico a Avanzado:</strong> impacto medio (5–10 FPS).</li>
+            <li><strong>Con Bokeh de alta calidad:</strong> puede ser alto (hasta 15 FPS o más en GPUs débiles).</li>
+            <li><strong>CPU:</strong> apenas influye, casi todo el trabajo lo hace la tarjeta gráfica.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">Cuándo conviene activarlo</h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Conviene desactivarlo:</strong> si buscas el máximo rendimiento o juegas competitivo (FPS, shooters
+              online), o si prefieres una imagen clara y nítida en todo momento.
+            </li>
+            <li>
+              <strong>Conviene activarlo en calidad media/alta:</strong> si juegas títulos narrativos, de un solo jugador
+              o cinematográficos donde la inmersión visual es importante, y si tu GPU es moderna y puede manejarlo sin caídas
+              notorias.
+            </li>
+            <li>
+              <strong>Bokeh avanzado:</strong> solo recomendable en PCs potentes o si valoras mucho la estética tipo “cine”.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
