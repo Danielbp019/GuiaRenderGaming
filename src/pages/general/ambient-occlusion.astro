@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -38,29 +39,95 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             de profundidad, mira píxeles cercanos y calcula cuánta geometría bloquea la luz ambiental. Opción básica y de
             menor costo.
           </li>
+          <ImageDiff
+            title="Comparar: OFF vs SSAO"
+            img1="/img/general/control-screen-space-ambient-occlusion-002-off.jpg"
+            img2="/img/general/control-screen-space-ambient-occlusion-002-on.jpg"
+            alt1="Escena OFF"
+            alt2="Escena con SSAO"
+          /><br />
+
           <li>
             <strong>SSAO mejorado / SSAO+:</strong> Más muestras, filtros más suaves, detalles mejorados, menos ruido que
             SSAO básico. Coste mayor.
           </li>
+          <ImageDiff
+            title="Comparar: OFF vs SSAO+"
+            img1="/img/general/AmbientOcclusion-Off.jpg"
+            img2="/img/general/AmbientOcclusion-SSAO+.jpg"
+            alt1="Escena OFF"
+            alt2="Escena con SSAO+"
+          /><br />
+
           <li>
             <strong>HBAO (Horizon-Based Ambient Occlusion):</strong> Explora “horizontes” en el búfer de profundidad, sombreado
             más definido, mejor calidad visual, más costoso.
           </li>
+          <ImageDiff
+            title="Comparar: SSAO vs HBAO"
+            img1="/img/general/SSAO.jpg"
+            img2="/img/general/HBAO.jpg"
+            alt1="Escena con SSAO"
+            alt2="Escena con HBAO"
+          /><br />
+
           <li>
             <strong>HBAO+:</strong> Versión optimizada de NVIDIA. Mejor definición, más muestras, menos artefactos, pero
             más exigente.
           </li>
+          <ImageDiff
+            title="Comparar: SSAO vs HBAO+"
+            img1="/img/general/the-witcher-3-wild-hunt-ambient-occlusion-002-ssao.png"
+            img2="/img/general/the-witcher-3-wild-hunt-ambient-occlusion-002-nvidia-hbao-plus.png"
+            alt1="Escena con SSAO"
+            alt2="Escena con HBAO+"
+          /><br />
+
           <li>
             <strong>HDAO (High Definition Ambient Occlusion):</strong> Variante de AMD, más definición y mejores bordes,
             mayor coste.
           </li>
+          <ImageDiff
+            title="Comparar: SSAO vs HDAO"
+            img1="/img/general/destiny-2-screen-space-ambient-occlusion-002-3d.png"
+            img2="/img/general/destiny-2-screen-space-ambient-occlusion-002-hdao.png"
+            alt1="Escena con SSAO"
+            alt2="Escena con HDAO"
+          /><br />
+
           <li>
             <strong>SSDO (Screen-Space Directional Occlusion):</strong> Añade dirección de luz al cálculo, sombras más realistas,
-            coste alto.
+            coste alto. A pesar de que SSDO genera una iluminación y un sombreado más preciso, continúa siendo propenso a
+            los mismos problemas potenciales que presenta SSAO, como por ejemplo los bordes irregulares o sombreados imprecisos
+            de un objeto a otro objeto.
           </li>
+          <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
+            <summary class="collapse-title font-semibold">Ver comparacion de SSDO</summary>
+            <div class="collapse-content text-sm">
+              <figure class="aspect-16/9" tabindex="0">
+                <img alt="SSDO" src="/img/general/SSDO_1.png" loading="lazy" class="w-full h-auto object-cover" />
+              </figure>
+            </div>
+          </details>
+          <br />
+
           <li>
             <strong>VXAO (Voxel Ambient Occlusion):</strong> Convierte la escena a vóxeles y calcula la oclusión en ese volumen.
             Muy realista, pero muy costoso.
+          </li>
+          <ImageDiff
+            title="Comparar: HBAO+ vs VXAO"
+            img1="/img/general/rise-of-the-tomb-raider-ambient-occlusion-010-hbao-plus.png"
+            img2="/img/general/rise-of-the-tomb-raider-ambient-occlusion-010-nvidia-vxao.png"
+            alt1="Escena con HBAO+"
+            alt2="Escena con VXAO"
+          /><br />
+
+          <li>
+            <strong>RTAO (Ray-Traced Ambient Occlusion):</strong> Usa trazado de rayos para calcular con precisión cómo la
+            luz ambiental es bloqueada por la geometría, generando sombras suaves y realistas en tiempo real. Ofrece la mejor
+            calidad visual, pero solo es posible en GPUs modernas con núcleos dedicados a ray tracing e inteligencia artificial.
+            Es la opción más exigente en rendimiento.
           </li>
         </ul>
       </div>
@@ -86,6 +153,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
               <strong>VXAO / volumétricos o ray-trazadas:</strong> Los más costosos, hasta 30–50 % menos FPS dependiendo
               del hardware.
             </li>
+            <li>
+              <strong>RTAO:</strong> Calidad sobresaliente gracias al trazado de rayos, pero requiere GPUs con núcleos de
+              IA y ray tracing. Puede reducir el rendimiento de forma significativa en resoluciones altas de 15 a 40 FPS
+              menos.
+            </li>
           </ul>
         </div>
 
@@ -101,6 +173,10 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li>En interiores con muchos detalles: HBAO+ o HDAO pueden valer la pena.</li>
             <li>En exteriores abiertos: AO puede pasar desapercibido, incluso conviene desactivarlo.</li>
             <li>Prueba escalonada: empieza desactivado, luego bajo, medio, hasta donde sea tolerable.</li>
+            <li>
+              Si tu GPU soporta ray tracing con núcleos de IA: RTAO ofrece la experiencia más realista, ideal para
+              quienes priorizan fidelidad visual sobre FPS.
+            </li>
           </ul>
         </div>
       </div>
