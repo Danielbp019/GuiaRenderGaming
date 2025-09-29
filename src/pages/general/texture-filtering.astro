@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -16,12 +17,128 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Filtrado de Texturas</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Filtrado de Texturas</h1>
+        <p>
+          El filtrado de texturas es la forma en que el juego suaviza y mejora la nitidez de las imágenes (texturas)
+          cuando se ven en ángulos lejanos o inclinados. Sin filtrado, las texturas se ven borrosas, pixeladas o con un
+          efecto de “escaleras” al alejarse. Con filtrado, se ven más limpias y detalladas.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Filtrado puntual (Nearest/Point):</strong> usa el píxel más cercano de la textura. Es rápido, pero genera
+            bordes duros y aspecto pixelado.
+          </li>
+          <li>
+            <strong>Bilineal:</strong> suaviza usando los 4 píxeles más cercanos. Mejora la calidad, pero puede verse borroso
+            en ángulos.
+          </li>
+          <li>
+            <strong>Trilineal:</strong> añade suavizado entre distintos niveles de detalle (mipmaps). Reduce el “parpadeo”
+            al alejarse.
+          </li>
+          <li>
+            <strong>Anisotrópico (AF):</strong> el más avanzado en menús de juegos. Mantiene las texturas nítidas incluso
+            en ángulos extremos (ej. suelos en perspectiva). Se puede configurar en niveles (2x, 4x, 8x, 16x).
+          </li>
+        </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: Trilineal vs Anisotrópico 4x"
+          img1="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-trilinear.png"
+          img2="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-4x.png"
+          alt1="Escena con Trilineal"
+          alt2="Escena con Anisotrópico 4x"
+        /><br />
+        <ImageDiff
+          title="Comparar: Anisotrópico 4x vs Anisotrópico 8x"
+          img1="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-4x.png"
+          img2="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-8x.png"
+          alt1="Escena con Anisotrópico 4x"
+          alt2="Escena con Anisotrópico 8x"
+        /><br />
+        <ImageDiff
+          title="Comparar: Anisotrópico 8x vs Anisotrópico 16x"
+          img1="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-8x.png"
+          img2="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-16x.png"
+          alt1="Escena con Anisotrópico 8x"
+          alt2="Escena con Anisotrópico 16x"
+        />
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA y AMD:</strong> implementan optimizaciones internas en sus drivers para el filtrado anisotrópico,
+            haciéndolo más eficiente que en implementaciones genéricas.
+          </li>
+          <li>
+            <strong>Intel:</strong> también soporta AF, aunque en iGPUs antiguas el rendimiento puede caer más que en NVIDIA/AMD.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Nearest / Bilineal:</strong> impacto casi nulo en FPS.</li>
+            <li><strong>Trilineal:</strong> impacto muy bajo, apenas perceptible en GPUs modernas.</li>
+            <li>
+              <strong>Anisotrópico (AF):</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>En 2x o 4x: impacto mínimo.</li>
+                <li>En 8x o 16x: puede bajar 1–3 FPS en tarjetas antiguas, pero en GPUs actuales es casi gratis.</li>
+              </ul>
+            </li>
+            <li><strong>Carga principal:</strong> depende de la GPU, no de la CPU.</li>
+            <li><strong>Resumen:</strong> hoy en día el coste es muy bajo, salvo en hardware muy antiguo.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Siempre conviene activarlo:</strong> mejora mucho la nitidez de suelos, paredes y caminos en perspectiva.
+            </li>
+            <li>
+              <strong>Calidad recomendada:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>PC moderno:</strong> Anisotrópico 16x sin miedo.</li>
+                <li><strong>Portátiles o hardware débil:</strong> 4x u 8x es un buen equilibrio.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Desactivarlo:</strong> solo tiene sentido si buscas exprimir hasta el último FPS en una GPU muy antigua
+              o integrada.
+            </li>
+            <li>
+              <strong>Recomendación general:</strong> para la mayoría de jugadores, déjalo en máximo y olvídate: es de las
+              mejoras visuales más “baratas” en coste de rendimiento.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>

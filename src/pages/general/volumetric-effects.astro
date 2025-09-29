@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -16,12 +17,122 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Efectos Volumétricos (Volumetric Effects)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Efectos Volumétricos (Volumetric Effects)</h1>
+        <p>
+          Los efectos volumétricos son técnicas gráficas que simulan cómo la luz interactúa con partículas en el aire
+          (niebla, humo, polvo, rayos de sol atravesando nubes o ventanas). En lugar de ser solo una textura plana,
+          estos efectos tienen “volumen” y reaccionan a la iluminación y al movimiento de la cámara, dando un aspecto
+          más realista y atmosférico.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos suelen aparecer como:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>Desactivado:</strong> no hay niebla ni rayos de luz volumétricos, la escena se ve más plana.</li>
+          <li><strong>Básico / Bajo:</strong> niebla o humo simple, con poca interacción con la luz.</li>
+          <li><strong>Medio:</strong> añade cierta dispersión de luz y mejor densidad en la niebla.</li>
+          <li>
+            <strong>Alto / Ultra:</strong> rayos de luz realistas (“god rays”), niebla dinámica que reacciona a la iluminación
+            y partículas más densas.
+          </li>
+          <li>
+            <strong>Volumetric Lighting:</strong> opción específica para activar o desactivar la dispersión de luz en el
+            aire.
+          </li>
+          <ImageDiff
+            title="Comparar: Ejes de luz (Light Shafts) OFF vs Ejes de luz (Light Shafts) ON"
+            img1="/img/general/volumetric-effects/the-witcher-3-wild-hunt-light-shafts-001-off.png"
+            img2="/img/general/volumetric-effects/the-witcher-3-wild-hunt-light-shafts-001-on.png"
+            alt1="Escena con Ejes de luz (Light Shafts) OFF"
+            alt2="Escena con Ejes de luz (Light Shafts) ON"
+          /><br />
+          <li>
+            <strong>Lens Flares:</strong> son destellos o reflejos de luz que aparecen en la pantalla cuando miras hacia
+            una fuente muy brillante (como el sol o una lámpara). Simulan cómo una cámara real capta la luz rebotando dentro
+            de sus lentes. En los juegos, es un efecto puramente visual: no cambia la jugabilidad, solo añade dramatismo
+            o estilo cinematográfico. (Este es un efecto óptico, no atmosférico.)
+          </li>
+          <ImageDiff
+            title="Comparar: Lens Flares OFF vs Lens Flares ON"
+            img1="/img/general/volumetric-effects/rise-of-the-tomb-raider-lens-flares-002-off.png"
+            img2="/img/general/volumetric-effects/rise-of-the-tomb-raider-lens-flares-002-on.png"
+            alt1="Escena con Lens Flares OFF"
+            alt2="Escena con Lens Flares ON"
+          />
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA:</strong> Volumetric Lighting en algunos juegos con GameWorks, optimizado para GPUs GeForce.
+          </li>
+          <li>
+            <strong>AMD / Intel:</strong> no tienen variantes propietarias específicas, suelen usar implementaciones estándar
+            de motores gráficos (Unreal Engine, Unity, CryEngine, etc.).
+          </li>
+          <li>
+            <strong>Historia:</strong> algunos motores como <em>CryEngine</em> hicieron famoso el término <em
+              >God Rays</em
+            > para describir estos efectos.
+          </li>
+          <li>
+            <strong>Otros nombres:</strong> Ejes de luz / Rayos Crepusculares (<em>Light Shafts / Crepuscular Rays</em
+            >).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p class="mb-3">El impacto principal depende de la GPU, ya que requiere cálculos de iluminación avanzados:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>De Desactivado a Bajo:</strong> impacto leve (2–5 FPS).</li>
+            <li><strong>De Medio a Alto:</strong> impacto medio (5–10 FPS).</li>
+            <li>
+              <strong>Ultra con rayos volumétricos complejos:</strong> impacto alto (10–20 FPS o más, sobre todo en escenas
+              con mucha niebla o luz solar intensa).
+            </li>
+            <li><strong>CPU:</strong> mínima influencia, casi todo lo procesa la GPU.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Conviene desactivarlo:</strong> si buscas el máximo rendimiento en juegos competitivos o si tu GPU
+              es de gama baja/media y notas caídas fuertes en escenas con niebla o rayos de sol.
+            </li>
+            <li>
+              <strong>Conviene activarlo en calidad media/alta:</strong> en juegos narrativos, de mundo abierto o de terror,
+              donde la atmósfera es clave, y si tu GPU moderna puede manejarlo sin caídas notorias.
+            </li>
+            <li>
+              <strong>Ultra:</strong> solo recomendable en PCs potentes o si priorizas la inmersión visual sobre los FPS.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
