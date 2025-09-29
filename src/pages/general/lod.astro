@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -49,6 +50,14 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             de la GPU o la velocidad del jugador.
           </li>
         </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: LOD Bajo vs LOD Alto"
+          img1="/img/general/Level-of-Detail-LOD/control-far-object-detail-001-low.jpg"
+          img2="/img/general/Level-of-Detail-LOD/control-far-object-detail-001-high.jpg"
+          alt1="Escena con LOD Bajo"
+          alt2="Escena con LOD Alto"
+        />
       </div>
 
       <!-- Dos columnas -->

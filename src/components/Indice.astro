@@ -1,261 +1,58 @@
 ---
+import type { Item, Vendor } from "../data/indiceItems.ts";
+import { indiceItems } from "../data/indiceItems.ts";
+
 const path = Astro.url.pathname;
 
-const isGeneral = path.startsWith("/general");
-const isNvidia = path.startsWith("/nvidia");
-const isAmd = path.startsWith("/amd");
-const isIntel = path.startsWith("/intel");
-const isApis = path.startsWith("/apis");
+const orderVendors: { key: Vendor; label: string }[] = [
+  { key: "general", label: "Tecnologías de uso general" },
+  { key: "nvidia", label: "NVIDIA" },
+  { key: "amd", label: "AMD" },
+  { key: "intel", label: "Intel" },
+  { key: "apis", label: "APIs gráficas" },
+];
 
-const active = (href: string) => (path === href ? "active font-semibold text-primary" : "");
+const activeClass = (href: string) => (path === href ? "active font-semibold text-primary" : "");
 const ariaCurrent = (href: string) => (path === href ? "page" : undefined);
+
+const itemsByVendor = new Map<string, Item[]>();
+for (const v of orderVendors) itemsByVendor.set(v.key, []);
+for (const it of indiceItems) {
+  itemsByVendor.get(it.vendor)!.push(it);
+}
+for (const arr of itemsByVendor.values()) {
+  arr.sort((a, b) => a.titleEs.localeCompare(b.titleEs, "es", { sensitivity: "base" }));
+}
 ---
 
 <ul class="menu bg-base-100 rounded-box w-64">
-  <!-- Tecnologías de uso general -->
-  <li class="border border-base-300 mb-2 rounded-box">
-    <details open={isGeneral}>
-      <summary class="font-semibold">
-        <i class="bi bi-gear text-primary"></i>
-        <span class="ms-2">Tecnologías de uso general</span>
-      </summary>
-      <ul>
-        <li>
-          <a
-            href="/general/chromatic-aberration"
-            class={active("/general/chromatic-aberration")}
-            aria-current={ariaCurrent("/general/chromatic-aberration")}>Aberración cromática</a
-          >
+  {
+    orderVendors.map((section) => {
+      const items = itemsByVendor.get(section.key) || [];
+      return (
+        <li class="border border-base-300 mb-2 rounded-box">
+          <details class="group" open={path.startsWith(`/${section.key}`)}>
+            <summary class="font-semibold flex items-center">
+              {section.key === "general" && <i class="bi bi-gear text-primary" />}
+              {section.key === "nvidia" && <i class="bi bi-nvidia text-success" />}
+              {section.key === "amd" && <i class="bi bi-amd text-error" />}
+              {section.key === "intel" && <img src="/intel_icon.svg" alt="Intel" class="w-4 h-4" loading="eager" />}
+              {section.key === "apis" && <i class="bi bi-braces text-warning" />}
+              <span class="ms-2">{section.label}</span>
+              <i class="ms-auto transition-transform duration-200 group-open:rotate-180" />
+            </summary>
+            <ul>
+              {items.map((item) => (
+                <li>
+                  <a href={item.href} class={activeClass(item.href)} aria-current={ariaCurrent(item.href)}>
+                    {item.titleEs}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
         </li>
-        <li>
-          <a
-            href="/general/hdr-tone-mapping"
-            class={active("/general/hdr-tone-mapping")}
-            aria-current={ariaCurrent("/general/hdr-tone-mapping")}>Alto rango dinámico (HDR) y mapeo de tonos</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/texture-quality"
-            class={active("/general/texture-quality")}
-            aria-current={ariaCurrent("/general/texture-quality")}>Calidad de texturas</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/depth-of-field"
-            class={active("/general/depth-of-field")}
-            aria-current={ariaCurrent("/general/depth-of-field")}>Desenfoque por profundidad</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/motion-blur"
-            class={active("/general/motion-blur")}
-            aria-current={ariaCurrent("/general/motion-blur")}>Desenfoque de movimiento</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/upscaling"
-            class={active("/general/upscaling")}
-            aria-current={ariaCurrent("/general/upscaling")}>Escalado de imagen</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/volumetric-effects"
-            class={active("/general/volumetric-effects")}
-            aria-current={ariaCurrent("/general/volumetric-effects")}>Efectos volumétricos</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/texture-filtering"
-            class={active("/general/texture-filtering")}
-            aria-current={ariaCurrent("/general/texture-filtering")}>Filtrado de texturas</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/global-illumination"
-            class={active("/general/global-illumination")}
-            aria-current={ariaCurrent("/general/global-illumination")}>Iluminación global</a
-          >
-        </li>
-        <li>
-          <a href="/general/lod" class={active("/general/lod")} aria-current={ariaCurrent("/general/lod")}
-            >Nivel de detalle</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/ambient-occlusion"
-            class={active("/general/ambient-occlusion")}
-            aria-current={ariaCurrent("/general/ambient-occlusion")}>Oclusión ambiental</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/denoising"
-            class={active("/general/denoising")}
-            aria-current={ariaCurrent("/general/denoising")}>Reducción de ruido</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/reflections"
-            class={active("/general/reflections")}
-            aria-current={ariaCurrent("/general/reflections")}>Reflejos</a
-          >
-        </li>
-        <li>
-          <a href="/general/bloom" class={active("/general/bloom")} aria-current={ariaCurrent("/general/bloom")}
-            >Resplandor</a
-          >
-        </li>
-        <li>
-          <a href="/general/shadows" class={active("/general/shadows")} aria-current={ariaCurrent("/general/shadows")}
-            >Sombras</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/anti-aliasing"
-            class={active("/general/anti-aliasing")}
-            aria-current={ariaCurrent("/general/anti-aliasing")}>Suavizado de bordes</a
-          >
-        </li>
-        <li>
-          <a href="/general/vsync" class={active("/general/vsync")} aria-current={ariaCurrent("/general/vsync")}
-            >Sincronización vertical y variable</a
-          >
-        </li>
-        <li>
-          <a
-            href="/general/tessellation"
-            class={active("/general/tessellation")}
-            aria-current={ariaCurrent("/general/tessellation")}>Teselación</a
-          >
-        </li>
-      </ul>
-    </details>
-  </li>
-
-  <!-- NVIDIA -->
-  <li class="border border-base-300 mb-2 rounded-box">
-    <details open={isNvidia}>
-      <summary class="font-semibold">
-        <i class="bi bi-nvidia text-success"></i>
-        <span class="ms-2">NVIDIA</span>
-      </summary>
-      <ul>
-        <li>
-          <a href="/nvidia/dlss" class={active("/nvidia/dlss")} aria-current={ariaCurrent("/nvidia/dlss")}>DLSS</a>
-        </li>
-        <li>
-          <a href="/nvidia/dlaa" class={active("/nvidia/dlaa")} aria-current={ariaCurrent("/nvidia/dlaa")}>DLAA</a>
-        </li>
-        <li>
-          <a href="/nvidia/reflex" class={active("/nvidia/reflex")} aria-current={ariaCurrent("/nvidia/reflex")}
-            >NVIDIA Reflex</a
-          >
-        </li>
-        <li><a href="/nvidia/nis" class={active("/nvidia/nis")} aria-current={ariaCurrent("/nvidia/nis")}>NIS</a></li>
-        <li><a href="/nvidia/rtx" class={active("/nvidia/rtx")} aria-current={ariaCurrent("/nvidia/rtx")}>RTX</a></li>
-        <li>
-          <a href="/nvidia/physx" class={active("/nvidia/physx")} aria-current={ariaCurrent("/nvidia/physx")}>PhysX</a>
-        </li>
-        <li>
-          <a
-            href="/nvidia/hbao-plus"
-            class={active("/nvidia/hbao-plus")}
-            aria-current={ariaCurrent("/nvidia/hbao-plus")}>HBAO+</a
-          >
-        </li>
-        <li>
-          <a
-            href="/nvidia/hairworks"
-            class={active("/nvidia/hairworks")}
-            aria-current={ariaCurrent("/nvidia/hairworks")}>HairWorks</a
-          >
-        </li>
-      </ul>
-    </details>
-  </li>
-
-  <!-- AMD -->
-  <li class="border border-base-300 mb-2 rounded-box">
-    <details open={isAmd}>
-      <summary class="font-semibold">
-        <i class="bi bi-amd text-error"></i>
-        <span class="ms-2">AMD</span>
-      </summary>
-      <ul>
-        <li><a href="/amd/fsr" class={active("/amd/fsr")} aria-current={ariaCurrent("/amd/fsr")}>FSR</a></li>
-        <li>
-          <a
-            href="/amd/fidelityfx-suite"
-            class={active("/amd/fidelityfx-suite")}
-            aria-current={ariaCurrent("/amd/fidelityfx-suite")}>Suite FidelityFX</a
-          >
-        </li>
-        <li><a href="/amd/ris" class={active("/amd/ris")} aria-current={ariaCurrent("/amd/ris")}>RIS</a></li>
-        <li>
-          <a href="/amd/anti-lag" class={active("/amd/anti-lag")} aria-current={ariaCurrent("/amd/anti-lag")}
-            >Anti-Lag / Boost</a
-          >
-        </li>
-        <li><a href="/amd/rsr" class={active("/amd/rsr")} aria-current={ariaCurrent("/amd/rsr")}>RSR</a></li>
-      </ul>
-    </details>
-  </li>
-
-  <!-- Intel -->
-  <li class="border border-base-300 mb-2 rounded-box">
-    <details open={isIntel}>
-      <summary class="font-semibold">
-        <img src="/src/assets/intel_icon.svg" alt="Intel" class="w-6 h-6" loading="lazy" />
-        <span>Intel</span>
-      </summary>
-      <ul>
-        <li><a href="/intel/xess" class={active("/intel/xess")} aria-current={ariaCurrent("/intel/xess")}>XeSS</a></li>
-        <li><a href="/intel/oidn" class={active("/intel/oidn")} aria-current={ariaCurrent("/intel/oidn")}>OIDN</a></li>
-        <li>
-          <a href="/intel/xess-fg" class={active("/intel/xess-fg")} aria-current={ariaCurrent("/intel/xess-fg")}
-            >XeSS FG / XeLL</a
-          >
-        </li>
-        <li>
-          <a
-            href="/intel/arc-control"
-            class={active("/intel/arc-control")}
-            aria-current={ariaCurrent("/intel/arc-control")}>Arc Control</a
-          >
-        </li>
-      </ul>
-    </details>
-  </li>
-
-  <!-- APIs gráficas -->
-  <li class="border border-base-300 rounded-box">
-    <details open={isApis}>
-      <summary class="font-semibold">
-        <i class="bi bi-braces text-warning"></i>
-        <span class="ms-2">APIs gráficas</span>
-      </summary>
-      <ul>
-        <li>
-          <a href="/apis/directx" class={active("/apis/directx")} aria-current={ariaCurrent("/apis/directx")}>DirectX</a
-          >
-        </li>
-        <li>
-          <a href="/apis/vulkan" class={active("/apis/vulkan")} aria-current={ariaCurrent("/apis/vulkan")}>Vulkan</a>
-        </li>
-        <li>
-          <a href="/apis/opengl" class={active("/apis/opengl")} aria-current={ariaCurrent("/apis/opengl")}>OpenGL</a>
-        </li>
-      </ul>
-    </details>
-  </li>
+      );
+    })
+  }
 </ul>
