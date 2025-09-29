@@ -16,12 +16,91 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Nivel de Detalle (LOD, Level of Detail)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Nivel de Detalle (LOD, Level of Detail)</h1>
+        <p>
+          El nivel de detalle (LOD) es una técnica que ajusta la complejidad de los modelos 3D según la distancia a la
+          cámara. Cuando un objeto está cerca, se muestra con todos sus polígonos y detalles; cuando está lejos, se
+          reemplaza por una versión más simple. Así, el jugador no nota pérdida visual, pero el hardware trabaja menos.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Desactivado:</strong> todos los objetos se muestran siempre con el máximo detalle (muy costoso en rendimiento).
+          </li>
+          <li>
+            <strong>Bajo:</strong> los objetos lejanos cambian rápidamente a versiones simplificadas, con transiciones más
+            bruscas.
+          </li>
+          <li>
+            <strong>Medio:</strong> equilibrio entre calidad y rendimiento, con cambios de detalle menos notorios.
+          </li>
+          <li>
+            <strong>Alto / Ultra:</strong> los objetos mantienen más detalle a mayor distancia, con transiciones más suaves.
+          </li>
+          <li>
+            <strong>LOD dinámico (en algunos motores):</strong> ajusta el nivel de detalle en tiempo real según la carga
+            de la GPU o la velocidad del jugador.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p class="mb-3">
+            El impacto principal depende de la GPU, ya que reduce la cantidad de polígonos y sombreado a procesar:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>LOD activado en Bajo/Medio:</strong> mejor rendimiento, porque los objetos lejanos se simplifican rápido.
+            </li>
+            <li>
+              <strong>LOD en Alto/Ultra:</strong> más carga gráfica, porque los objetos mantienen detalle a mayor distancia.
+            </li>
+            <li>
+              <strong>LOD desactivado:</strong> el peor caso para el rendimiento, porque no hay simplificación: todo se dibuja
+              con máxima complejidad.
+            </li>
+            <li>
+              <strong>CPU:</strong> puede intervenir en la gestión de cambios de modelo, pero el peso principal está en la
+              GPU.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Conviene activarlo en Bajo o Medio:</strong> si buscas rendimiento en PCs de gama baja/media o en juegos
+              competitivos donde la calidad visual de objetos lejanos no es relevante.
+            </li>
+            <li>
+              <strong>Conviene activarlo en Alto/Ultra:</strong> en juegos narrativos o de exploración donde la inmersión
+              visual es importante, y si tu GPU es potente y puede mantener FPS estables.
+            </li>
+            <li>
+              <strong>Conviene desactivarlo:</strong> solo si quieres máxima fidelidad visual y no te importa perder rendimiento
+              (no recomendable en la mayoría de casos).
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
