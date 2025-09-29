@@ -1,12 +1,13 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
   <Indice slot="sidebar" />
 
-  <section class="hero h-full bg-ambient">
+  <section class="hero h-full">
     <div class="hero-overlay bg-black/50"></div>
 
     <div class="hero-content w-full p-6 flex flex-col gap-6">
@@ -16,12 +17,84 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Desenfoque de Movimiento (Blur & Motion Blur)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Desenfoque de Movimiento (Blur & Motion Blur)</h1>
+        <p>
+          El desenfoque de movimiento es un efecto visual que simula cómo las cámaras o los ojos perciben los objetos en
+          movimiento rápido: cuando giras la cámara o un objeto se mueve velozmente, se genera un rastro borroso. Se usa
+          para dar sensación de velocidad o suavizar movimientos bruscos.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos suele aparecer como:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>Desactivado:</strong> no hay desenfoque, todo se ve nítido incluso en giros rápidos.</li>
+          <li>
+            <strong>Básico / Estándar:</strong> aplica un desenfoque simple en movimientos de cámara o de objetos.
+          </li>
+          <li>
+            <strong>Avanzado / Alta calidad:</strong> desenfoque más realista, con mayor suavidad y detalle en los bordes.
+          </li>
+          <li>
+            <strong>Per-object motion blur:</strong> desenfoque aplicado solo a objetos individuales en movimiento, no a
+            toda la escena.
+          </li>
+        </ul>
+        <br />
+        <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
+          <summary class="collapse-title font-semibold">Ver Blur & Motion Blur</summary>
+          <div class="collapse-content text-sm">
+            <figure class="aspect-16/9" tabindex="0">
+              <img
+                alt="Blur & Motion Blur"
+                src="/img/general/motion-blur/the-witcher-3-wild-hunt-blur-001-on.png"
+                loading="lazy"
+                class="w-full h-auto object-cover"
+              />
+            </figure>
+          </div>
+        </details>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-speedometer text-warning"></i> Coste en rendimiento</h2>
+          <p class="mb-3">El impacto principal depende de la GPU, ya que es un efecto de postprocesado:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>De Desactivado a Básico:</strong> impacto bajo (1–3 FPS).</li>
+            <li><strong>De Básico a Avanzado:</strong> impacto medio (5–8 FPS).</li>
+            <li><strong>Con Per-object avanzado:</strong> puede ser más costoso (hasta 10–15 FPS en GPUs débiles).</li>
+            <li><strong>CPU:</strong> casi no influye, el trabajo lo hace la tarjeta gráfica.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo</h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Conviene desactivarlo:</strong> en juegos competitivos (FPS, shooters online, MOBAs) donde la nitidez
+              y la reacción rápida son más importantes que la estética, o si te molesta la sensación de borrosidad o mareo.
+            </li>
+            <li>
+              <strong>Conviene activarlo en calidad media/alta:</strong> en juegos narrativos, de carreras o de acción cinematográfica,
+              donde el efecto aporta inmersión y sensación de velocidad, siempre que tu GPU sea moderna y no notes caídas
+              de rendimiento.
+            </li>
+            <li>
+              <strong>Per-object motion blur:</strong> recomendable solo si buscas un efecto más realista y tu PC puede soportarlo.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>

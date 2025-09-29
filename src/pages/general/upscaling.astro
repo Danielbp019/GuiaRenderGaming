@@ -6,7 +6,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 <DashboardLayout background="bg-ambient">
   <Indice slot="sidebar" />
 
-  <section class="hero h-full bg-ambient">
+  <section class="hero h-full">
     <div class="hero-overlay bg-black/50"></div>
 
     <div class="hero-content w-full p-6 flex flex-col gap-6">
@@ -16,12 +16,122 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Escalado de Imagen (Image Upscaling)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Escalado de Imagen (Image Upscaling)</h1>
+        <p>
+          El escalado de imagen es una técnica que permite renderizar el juego a una resolución más baja (menos costosa
+          para la GPU) y luego “subirla” a la resolución de tu pantalla aplicando algoritmos que mejoran la nitidez. En
+          otras palabras: el juego trabaja menos, pero tú ves una imagen que parece de mayor resolución.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos puedes encontrar:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Escalado espacial (Spatial Upscaling):</strong> toma la imagen completa y la estira con filtros de nitidez.
+            Es rápido, pero menos preciso.
+          </li>
+          <li>
+            <strong>Escalado temporal (Temporal Upscaling, TAAU):</strong> usa información de varios fotogramas para reconstruir
+            detalles, logrando más calidad que el espacial.
+          </li>
+          <li>
+            <strong>Escalado por IA (AI Upscaling):</strong> emplea redes neuronales entrenadas para reconstruir la imagen
+            con gran fidelidad, acercándose mucho a la resolución nativa.
+          </li>
+          <li>
+            <strong>Resolución dinámica (Dynamic Resolution Scaling):</strong> ajusta automáticamente la resolución interna
+            según la carga de la GPU para mantener estables los FPS.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA:</strong>
+            <ul class="list-disc list-inside ml-6 space-y-1">
+              <li>
+                <strong>DLSS (Deep Learning Super Sampling):</strong> escalado por IA usando Tensor Cores, muy eficiente
+                y de alta calidad.
+              </li>
+              <li>
+                <strong>NIS (NVIDIA Image Scaling):</strong> escalado espacial con nitidez, funciona en cualquier GPU NVIDIA,
+                incluso GTX.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>AMD:</strong>
+            <ul class="list-disc list-inside ml-6 space-y-1">
+              <li>
+                <strong>FSR (FidelityFX Super Resolution):</strong> disponible en varias versiones (1.0 espacial, 2.0 temporal,
+                3.0 con interpolación de frames). Funciona en GPUs AMD y también en NVIDIA.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Intel:</strong>
+            <ul class="list-disc list-inside ml-6 space-y-1">
+              <li>
+                <strong>XeSS (Xe Super Sampling):</strong> escalado por IA, optimizado para GPUs Intel Arc, pero también
+                compatible con otras marcas.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-speedometer text-warning"></i> Coste en rendimiento</h2>
+          <p class="mb-3">
+            El impacto principal depende de la GPU, pero en general mejora los FPS porque reduce la resolución real de
+            renderizado:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Escalado espacial:</strong> impacto mínimo, gran ganancia de rendimiento.</li>
+            <li><strong>Escalado temporal:</strong> algo más costoso, pero mejor calidad visual.</li>
+            <li>
+              <strong>Escalado por IA:</strong> requiere más recursos, pero ofrece la mejor relación calidad/rendimiento.
+            </li>
+            <li><strong>CPU:</strong> apenas influye, casi todo el trabajo lo hace la GPU.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo</h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Conviene activarlo:</strong> si quieres más FPS sin perder demasiada calidad visual, especialmente
+              en resoluciones altas (1440p o 4K), donde el escalado es más difícil de notar.
+            </li>
+            <li>
+              <strong>Conviene desactivarlo:</strong> si tu GPU ya rinde bien a resolución nativa o si notas artefactos visuales
+              (bordes borrosos, ghosting, parpadeos).
+            </li>
+            <li>
+              <strong>Recomendación general:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>DLSS / FSR 2.0+ / XeSS:</strong> mejor opción si tu juego lo soporta.</li>
+                <li><strong>NIS / FSR 1.0:</strong> alternativa ligera si no hay soporte de IA.</li>
+                <li><strong>Resolución dinámica:</strong> útil para mantener FPS estables en juegos exigentes.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
