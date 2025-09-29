@@ -14,8 +14,6 @@ export const indiceItems: Item[] = [
   { href: "/general/bloom", titleEs: "Resplandor", vendor: "general" },
   { href: "/general/chromatic-aberration", titleEs: "Aberración cromática", vendor: "general" },
   { href: "/general/depth-of-field", titleEs: "Profundidad de campo", vendor: "general" },
-  { href: "/general/denoising", titleEs: "Reducción de ruido", vendor: "general" },
-  { href: "/general/global-illumination", titleEs: "Iluminación global", vendor: "general" },
   { href: "/general/hdr-tone-mapping", titleEs: "Alto rango dinámico (HDR) y mapeo de tonos", vendor: "general" },
   { href: "/general/lod", titleEs: "Nivel de detalle (LOD)", vendor: "general" },
   { href: "/general/motion-blur", titleEs: "Desenfoque de movimiento", vendor: "general" },
