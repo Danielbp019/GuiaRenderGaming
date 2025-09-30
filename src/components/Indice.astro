@@ -33,18 +33,24 @@ for (const arr of itemsByVendor.values()) {
         <li class="border border-base-300 mb-2 rounded-box">
           <details class="group" open={path.startsWith(`/${section.key}`)}>
             <summary class="font-semibold flex items-center">
-              {section.key === "general" && <i class="bi bi-gear text-primary" />}
-              {section.key === "nvidia" && <i class="bi bi-nvidia text-success" />}
-              {section.key === "amd" && <i class="bi bi-amd text-error" />}
+              {section.key === "general" && <i class="bi bi-gear text-primary" aria-hidden="true" />}
+              {section.key === "nvidia" && <i class="bi bi-nvidia text-success" aria-hidden="true" />}
+              {section.key === "amd" && <i class="bi bi-amd text-error" aria-hidden="true" />}
               {section.key === "intel" && <img src="/intel_icon.svg" alt="Intel" class="w-4 h-4" loading="eager" />}
-              {section.key === "apis" && <i class="bi bi-braces text-warning" />}
+              {section.key === "apis" && <i class="bi bi-braces text-warning" aria-hidden="true" />}
+
               <span class="ms-2">{section.label}</span>
-              <i class="ms-auto transition-transform duration-200 group-open:rotate-180" />
+              <i class="ms-auto transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
             </summary>
             <ul>
               {items.map((item) => (
                 <li>
-                  <a href={item.href} class={activeClass(item.href)} aria-current={ariaCurrent(item.href)}>
+                  <a
+                    href={item.href}
+                    class={activeClass(item.href)}
+                    aria-current={ariaCurrent(item.href)}
+                    aria-label={item.titleEs}
+                  >
                     {item.titleEs}
                   </a>
                 </li>

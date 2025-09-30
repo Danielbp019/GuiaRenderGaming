@@ -25,7 +25,13 @@ const year = new Date().getFullYear();
       <!-- Contenido principal -->
       <div class="drawer-content flex flex-col h-screen">
         <!-- Botón hamburguesa flotante en móviles -->
-        <label for="drawer-indice" class="btn btn-neutral drawer-button lg:hidden fixed top-4 left-4 z-50"> ☰ </label>
+        <label
+          for="drawer-indice"
+          class="btn btn-neutral drawer-button lg:hidden fixed top-4 left-4 z-50"
+          aria-label="Abrir menú de navegación"
+        >
+          ☰
+        </label>
 
         <header class="sr-only">
           <h1>Guía de Rénder Gaming</h1>
@@ -37,7 +43,7 @@ const year = new Date().getFullYear();
         </main>
 
         <!-- Footer fijo -->
-        <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70">
+        <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70" aria-label="Información del sitio">
           © {year} Guía de Rénder Gaming - Creado por:
           <span id="miFirma" class="ms-2" style="font-size: 22px;">Daniel Bautista Pradilla.</span>
         </footer>
@@ -45,19 +51,23 @@ const year = new Date().getFullYear();
 
       <!-- Sidebar -->
       <div class="drawer-side">
-        <label for="drawer-indice" aria-label="close sidebar" class="drawer-overlay"></label>
+        <label for="drawer-indice" class="drawer-overlay">
+          <span class="sr-only">Cerrar menú lateral</span>
+        </label>
+
         <aside class="bg-base-200 p-4 h-screen overflow-y-auto">
           <br />
           <!-- Botones fijos arriba -->
           <div class="flex justify-center gap-2 mb-2 join join-horizontal">
-            <a href="/" class="btn btn-primary join-item"><i class="bi bi-house-fill"></i> Inicio</a>
-            <a href="/temas" class="btn btn-secondary join-item"><i class="bi bi-stars"></i> Temas</a>
+            <a href="/" class="btn btn-primary join-item"><i class="bi bi-house-fill" aria-hidden="true"></i> Inicio</a>
+            <a href="/temas" class="btn btn-secondary join-item"><i class="bi bi-stars" aria-hidden="true"></i> Temas</a
+            >
           </div>
 
           <!-- Texto de tema activo -->
           <div id="tema-activo" class="text-center text-sm font-semibold mb-4">
             Tema activo:
-            <i class="bi bi-stars text-warning"></i><span id="tema-nombre">dim</span>
+            <i class="bi bi-stars text-warning" aria-hidden="true"></i><span id="tema-nombre">dim</span>
           </div>
           <hr />
           <br />
