@@ -1,0 +1,141 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Partículas (Particles)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Partículas (Particles)</h1>
+        <p>
+          Las partículas son pequeños elementos gráficos que se usan para simular efectos visuales dinámicos como humo,
+          fuego, chispas, lluvia, nieve, polvo, hojas cayendo o magia. En lugar de modelar cada detalle, el motor del
+          juego genera miles de “puntos” o sprites que juntos crean la ilusión de fenómenos naturales o fantásticos.
+        </p>
+      </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos puedes ver opciones como:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Calidad de partículas (Particle Quality):</strong> controla cuántas partículas se generan y cuánto duran
+            en pantalla.
+          </li>
+          <li>
+            <strong>Resolución de partículas:</strong> define la nitidez de cada partícula (ejemplo: humo más definido vs.
+            humo borroso).
+          </li>
+          <li>
+            <strong>Efectos volumétricos:</strong> partículas que interactúan con la luz y el entorno (ejemplo: rayos de
+            sol atravesando polvo).
+          </li>
+          <li>
+            <strong>Simulación física de partículas:</strong> algunas partículas reaccionan al viento, gravedad o colisiones
+            (ejemplo: chispas que rebotan en el suelo).
+          </li>
+          <li>
+            <strong>Partículas dinámicas vs. simples:</strong>
+            <ul class="list-disc list-inside ml-6 space-y-1">
+              <li><strong>Simples:</strong> animaciones predefinidas, más baratas.</li>
+              <li><strong>Dinámicas:</strong> calculadas en tiempo real, más realistas pero costosas.</li>
+            </ul>
+          </li>
+
+          <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
+            <summary class="collapse-title font-semibold">Ver Partículas (Particles)</summary>
+            <div class="collapse-content text-sm">
+              <figure class="aspect-16/9" tabindex="0">
+                <img alt="Partículas (Particles)" src="/img/general/particles/ue4_particles.webp" loading="lazy" class="w-full h-auto object-cover" />
+              </figure>
+            </div>
+          </details>
+
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA PhysX:</strong> motor que permite partículas con simulación física realista (humo que se dispersa,
+            telas que reaccionan al movimiento).
+          </li>
+          <li>
+            <strong>AMD GPUOpen (FidelityFX):</strong> incluye optimizaciones para efectos volumétricos y partículas en juegos
+            compatibles.
+          </li>
+          <li>
+            <strong>Intel XeSS + efectos VFX:</strong> puede ayudar a compensar la pérdida de FPS al renderizar partículas
+            pesadas.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p class="mb-3">El impacto depende de la complejidad y cantidad de partículas en pantalla:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Bajo (2–5% de FPS):</strong> partículas simples o en baja calidad.</li>
+            <li><strong>Medio (10–20% de FPS):</strong> partículas dinámicas con iluminación.</li>
+            <li><strong>Alto (25%+ de FPS):</strong> efectos volumétricos avanzados o físicas complejas en masa.</li>
+            <li>
+              <strong>General:</strong> dependen principalmente de la GPU, aunque la física de partículas complejas puede
+              usar CPU.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>PC de gama baja:</strong> pon partículas en bajo; mantendrás efectos básicos sin sobrecargar la GPU.
+            </li>
+            <li>
+              <strong>PC de gama media:</strong> medio es un buen balance; verás humo, fuego y lluvia más creíbles sin gran
+              pérdida de FPS.
+            </li>
+            <li>
+              <strong>PC de gama alta:</strong> puedes usar alto o ultra, disfrutando partículas volumétricas y físicas realistas.
+            </li>
+            <li>
+              <strong>Competitivo / eSports:</strong> mejor en bajo o medio, ya que partículas densas pueden dificultar la
+              visibilidad de enemigos.
+            </li>
+            <li>
+              <strong>Experiencia inmersiva / campañas:</strong> súbelas a alto, ya que aportan atmósfera (explosiones, tormentas,
+              magia).
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

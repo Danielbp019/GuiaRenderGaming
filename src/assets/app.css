@@ -1,11 +1,43 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
-@font-face {
-  font-family: "AlexBrush";
-  src: url("/fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
-}
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: all;
+}
+
+/* AlexBrush (solo Regular) */
+@font-face {
+  font-family: "AlexBrush";
+  src: url("/fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto Variable - Normal */
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; /* rango completo de pesos */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto Variable - Italic */
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Mi Firma */
+#miFirma {
+  font-family: "AlexBrush", cursive;
 }
 
 /* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/
@@ -13,13 +45,6 @@ p {
   margin-block: 1em;
   margin-block: 1lh;
   font-size: large;
-}
-
-/* Mi Firma */
-#miFirma {
-  font-family: "AlexBrush", cursive;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .bg-ambient {
