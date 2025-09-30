@@ -54,4 +54,5 @@ export const indiceItems: Item[] = [
   { href: "/apis/directx", titleEs: "DirectX", vendor: "apis" },
   { href: "/apis/vulkan", titleEs: "Vulkan", vendor: "apis" },
   { href: "/apis/opengl", titleEs: "OpenGL", vendor: "apis" },
+  { href: "/apis/metal", titleEs: "Metal", vendor: "apis" },
 ];

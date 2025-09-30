@@ -16,11 +16,113 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Vulkan</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Vulkan</h1>
+        <p>
+          Vulkan es una API gráfica de bajo nivel que actúa como puente directo entre el juego y la tarjeta gráfica.
+          Permite que los desarrolladores tengan un control más preciso sobre la GPU y la CPU, logrando gráficos más
+          detallados y un mejor rendimiento en equipos modernos.
+        </p>
+      </div>
+
+      <!-- Evolución y capacidades -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-layers-fill text-info"></i> Evolución y capacidades</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Basado en OpenGL y Mantle (AMD):</strong> Vulkan nació como sucesor de OpenGL, combinando mejoras de
+            la API Mantle de AMD.
+          </li>
+          <li>
+            <strong>Acceso de bajo nivel:</strong> Permite aprovechar mejor los procesadores multinúcleo, distribuyendo las
+            tareas de renderizado de forma más eficiente.
+          </li>
+          <li>
+            <strong>Multiplataforma:</strong> Funciona en Windows, Linux y Android, atractivo para estudios multiplataforma.
+          </li>
+          <li>
+            <strong>Escalabilidad:</strong> Desde móviles hasta PCs de gama alta, Vulkan se adapta al hardware disponible.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>AMD:</strong> Vulkan hereda parte de Mantle, optimizado en GPUs Radeon.</li>
+          <li><strong>NVIDIA:</strong> Soporte sólido con drivers maduros en tarjetas GeForce.</li>
+          <li>
+            <strong>Intel:</strong> Sus gráficas integradas modernas soportan Vulkan, aunque con menor rendimiento que GPUs
+            dedicadas.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas: Impacto + Rango -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Impacto en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer2 text-warning"></i> Impacto en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>CPU:</strong> Reduce la sobrecarga, liberando recursos para físicas, IA o lógica de juego.</li>
+            <li><strong>GPU:</strong> Uso más directo y eficiente, con mejoras en FPS en hardware moderno.</li>
+          </ul>
+        </div>
+
+        <!-- Rango de impacto -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-graph-up-arrow text-primary"></i> Rango de impacto
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>PCs con CPU multinúcleo:</strong> Puede mejorar entre un 10–30% frente a OpenGL o DX11.</li>
+            <li>
+              <strong>Hardware antiguo:</strong> Mejora mínima o incluso negativa si los drivers no están optimizados.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dos columnas: Compatibilidad + Resumen -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Compatibilidad y plataformas -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-pc-display text-accent"></i> Compatibilidad y plataformas
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Windows y Linux:</strong> Muchos juegos modernos ofrecen Vulkan junto a DirectX.</li>
+            <li><strong>Android:</strong> API gráfica de referencia en móviles de gama alta.</li>
+            <li>
+              <strong>Consolas:</strong> No se usa directamente, pero tecnologías derivadas influyen en motores multiplataforma.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Resumen práctico -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Resumen práctico para el jugador
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Si tu juego ofrece Vulkan y DirectX 11/12:</strong> Prueba Vulkan, suele dar más FPS y menos stuttering
+              en CPUs multinúcleo.
+            </li>
+            <li><strong>Linux y Steam Deck:</strong> Vulkan es la opción principal y más estable.</li>
+            <li><strong>PCs antiguos o drivers poco optimizados:</strong> Puede ser mejor quedarse en DirectX 11.</li>
+            <li>
+              <strong>Móviles Android:</strong> Vulkan ofrece gráficos más avanzados y mejor eficiencia energética.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

@@ -16,11 +16,116 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>OpenGL</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">OpenGL</h1>
+        <p>
+          OpenGL (Open Graphics Library) es una API gráfica multiplataforma que sirve como puente entre el juego y la
+          tarjeta gráfica. Durante décadas fue el estándar para mostrar gráficos en 2D y 3D en PC, consolas antiguas y
+          móviles. Su ventaja principal es que funciona en casi cualquier sistema operativo (Windows, Linux, macOS,
+          Android) y permite que el mismo juego corra en distintos equipos sin reescribir el código.
+        </p>
+      </div>
+
+      <!-- Evolución y capacidades -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-layers-fill text-info"></i> Evolución y capacidades</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>Años 90 – OpenGL inicial:</strong> Base para los primeros juegos 3D en PC.</li>
+          <li>
+            <strong>OpenGL 2.0 (2004):</strong> Introducción de shaders programables, con efectos de luz y materiales más
+            realistas.
+          </li>
+          <li>
+            <strong>OpenGL 3.x/4.x:</strong> Soporte para teselación, sombreadores avanzados y técnicas modernas de renderizado.
+          </li>
+          <li><strong>OpenGL ES:</strong> Versión ligera para móviles y consolas portátiles.</li>
+          <li>
+            Aunque sigue vigente, hoy ha sido reemplazado en gran parte por <strong>Vulkan</strong> (sucesor de bajo nivel).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA y AMD:</strong> Ambos ofrecen soporte sólido, aunque NVIDIA suele rendir mejor en Windows.
+          </li>
+          <li>
+            <strong>Intel:</strong> Sus gráficas integradas soportan OpenGL, con limitaciones en versiones avanzadas.
+          </li>
+          <li>
+            <strong>Apple:</strong> Ha dejado de actualizar OpenGL en macOS, empujando a los desarrolladores hacia Metal.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas: Impacto + Rango -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Impacto en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer2 text-warning"></i> Impacto en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>CPU:</strong> Tiene más sobrecarga que Vulkan o DX12, menos eficiente en multinúcleo.</li>
+            <li><strong>GPU:</strong> Aprovecha bien la tarjeta, pero no tan optimizado como APIs modernas.</li>
+          </ul>
+        </div>
+
+        <!-- Rango de impacto -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-graph-up-arrow text-primary"></i> Rango de impacto
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Hardware antiguo:</strong> Estable y suficiente.</li>
+            <li>
+              <strong>Hardware moderno:</strong> Puede perder entre un 10–30% de FPS frente a Vulkan o DX12 en juegos exigentes.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dos columnas: Compatibilidad + Resumen -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Compatibilidad y plataformas -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-pc-display text-accent"></i> Compatibilidad y plataformas
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Windows, Linux, macOS y Android:</strong> Disponible en casi todos los sistemas (OpenGL ES en móviles).
+            </li>
+            <li>
+              <strong>Motores gráficos clásicos:</strong> Fue la API principal en id Tech, Unity inicial, entre otros.
+            </li>
+            <li><strong>Uso actual:</strong> Popular en juegos indie, emuladores y software multiplataforma.</li>
+          </ul>
+        </div>
+
+        <!-- Resumen práctico -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Resumen práctico para el jugador
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Si un juego ofrece OpenGL y Vulkan/DX12:</strong> Vulkan o DX12 suelen rendir mejor en PCs modernos.
+            </li>
+            <li><strong>PCs antiguos / Linux con juegos viejos:</strong> OpenGL es estable y suficiente.</li>
+            <li><strong>Móviles:</strong> OpenGL ES sigue siendo común, aunque cada vez más reemplazado por Vulkan.</li>
+            <li>
+              <strong>Compatibilidad:</strong> Si Vulkan/DX12 da problemas, OpenGL puede ser la opción más estable.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

@@ -16,14 +16,14 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>DirectX</li>
+            <li>Metal</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">DirectX</h1>
+        <h1 class="mb-5 text-5xl font-bold">Metal</h1>
         <p>
-          DirectX es como un traductor entre el videojuego y tu tarjeta gráfica/CPU. Permite que los juegos usen más
-          polígonos, mejores efectos de luz y sonido, sin que los desarrolladores tengan que programar para cada
-          hardware específico.
+          Metal es la API gráfica de Apple, diseñada para que los juegos y aplicaciones aprovechen al máximo el hardware
+          de sus dispositivos (Mac, iPhone, iPad, Apple TV). Funciona como un traductor optimizado entre el juego y los
+          chips gráficos de Apple, permitiendo más polígonos, mejores efectos y mayor eficiencia energética.
         </p>
       </div>
 
@@ -31,15 +31,18 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
       <div class="glass rounded-box w-full p-6">
         <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-layers-fill text-info"></i> Evolución y capacidades</h2>
         <ul class="list-disc list-inside space-y-2 text-left">
-          <li><strong>DirectX 9 (2002):</strong> Estándar durante años, introdujo sombreadores programables.</li>
-          <li><strong>DirectX 10/11:</strong> Mejoras en iluminación, teselación y soporte para efectos avanzados.</li>
           <li>
-            <strong>DirectX 12:</strong> Uso más eficiente de múltiples núcleos de CPU, mejor aprovechamiento de la GPU y
-            reducción de la sobrecarga.
+            <strong>Metal (2014):</strong> Sustituyó a OpenGL en dispositivos Apple, ofreciendo acceso de bajo nivel a la
+            GPU.
           </li>
           <li>
-            <strong>DirectX 12 Ultimate:</strong> Añade soporte nativo para ray tracing, Variable Rate Shading (VRS), Mesh
-            Shaders y Sampler Feedback.
+            <strong>Metal 2 (2017):</strong> Añadió soporte para realidad virtual, machine learning y mejoras en renderizado
+            avanzado.
+          </li>
+          <li><strong>Metal 3 (2022):</strong> Introdujo Mesh Shaders, Variable Rate Shading y MetalFX Upscaling.</li>
+          <li>
+            <strong>Apple Silicon:</strong> Diseñado específicamente para chips M1, M2 y M3, logrando un rendimiento muy
+            optimizado.
           </li>
         </ul>
       </div>
@@ -50,11 +53,14 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
         </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>MetalFX Upscaling:</strong> Escalado por IA, similar a NVIDIA DLSS o AMD FSR.</li>
           <li>
-            <strong>NVIDIA RTX:</strong> Implementa ray tracing y DLSS (no parte de DirectX, pero se apoya en DX12 Ultimate).
+            <strong>Optimización Apple Silicon:</strong> Rendimiento superior al de APIs genéricas en chips M1/M2/M3.
           </li>
-          <li><strong>AMD FidelityFX:</strong> Optimiza efectos visuales y rendimiento, compatible con DX12.</li>
-          <li><strong>Intel XeSS:</strong> Escalado por IA, también funciona sobre DX12.</li>
+          <li>
+            <strong>Compatibilidad con motores:</strong> Apple colabora con estudios para portar juegos AAA (ej. Resident
+            Evil Village, Death Stranding).
+          </li>
         </ul>
       </div>
 
@@ -66,12 +72,10 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <i class="bi bi-speedometer2 text-warning"></i> Impacto en rendimiento
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>CPU:</strong> Reduce la sobrecarga, liberando recursos para IA, físicas y lógica del juego.</li>
             <li>
-              <strong>DX11 vs DX12:</strong> DX12 puede dar más FPS en PCs modernos porque reparte mejor la carga entre CPU
-              y GPU.
+              <strong>GPU:</strong> Aprovecha al máximo los núcleos gráficos de Apple, con mejoras notables frente a OpenGL.
             </li>
-            <li><strong>Ray tracing (DX12 Ultimate):</strong> Gran impacto en FPS, depende mucho de la GPU.</li>
-            <li><strong>Teselación y shaders avanzados:</strong> Aumentan el detalle, pero consumen GPU.</li>
           </ul>
         </div>
 
@@ -81,12 +85,8 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <i class="bi bi-graph-up-arrow text-primary"></i> Rango de impacto
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
-            <li><strong>DX9/10:</strong> Bajo (hardware antiguo).</li>
-            <li><strong>DX11:</strong> Medio, estable en la mayoría de PCs.</li>
-            <li>
-              <strong>DX12:</strong> Puede mejorar hasta un 20–30% en equipos modernos, pero en PCs viejos a veces rinde
-              igual o peor.
-            </li>
+            <li><strong>Frente a OpenGL en macOS:</strong> Hasta un 20–40% más de rendimiento.</li>
+            <li><strong>En iPhone/iPad:</strong> Mejor eficiencia energética: más FPS con menor consumo de batería.</li>
           </ul>
         </div>
       </div>
@@ -99,9 +99,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <i class="bi bi-pc-display text-accent"></i> Compatibilidad y plataformas
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
-            <li><strong>Exclusivo:</strong> Windows y Xbox (Microsoft).</li>
-            <li>En PC, los juegos suelen dejarte elegir entre DX11 y DX12 en el menú de inicio o configuración.</li>
-            <li>En consolas Xbox, DirectX es la base de todos los juegos.</li>
+            <li><strong>Exclusivo de Apple:</strong> macOS, iOS, iPadOS y tvOS.</li>
+            <li><strong>No disponible:</strong> Windows ni Linux.</li>
+            <li>
+              <strong>Motores gráficos:</strong> Unreal Engine y Unity soportan Metal para exportar juegos a Apple.
+            </li>
           </ul>
         </div>
 
@@ -112,11 +114,14 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>
-              <strong>PC moderno (RTX / RX nueva):</strong> Usa DirectX 12 o 12 Ultimate para aprovechar ray tracing y optimizaciones.
+              <strong>Mac o iPhone/iPad:</strong> Metal es la mejor opción: más FPS, gráficos modernos y mejor batería.
             </li>
-            <li><strong>PC gama media/antigua:</strong> DX11 suele ser más estable y con menos caídas de FPS.</li>
-            <li><strong>Problemas en DX12:</strong> Si notas stuttering o crashes, cámbialo a DX11.</li>
-            <li><strong>Consolas Xbox:</strong> No hay elección, todo corre sobre DirectX optimizado.</li>
+            <li><strong>Mac con Apple Silicon:</strong> Imprescindible para juegos AAA recientes.</li>
+            <li>
+              <strong>Si un juego solo ofrece OpenGL en Mac:</strong> El rendimiento será menor; conviene elegir Metal si
+              está disponible.
+            </li>
+            <li><strong>Windows/Linux:</strong> Metal no existe, no influye en la elección.</li>
           </ul>
         </div>
       </div>
