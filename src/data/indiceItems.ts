@@ -10,7 +10,7 @@ export type Item = {
 export const indiceItems: Item[] = [
   // Tecnologías de uso general
   { href: "/general/ambient-occlusion", titleEs: "Oclusión ambiental", vendor: "general" },
-  { href: "/general/anti-aliasing", titleEs: "Suavizado de bordes", vendor: "general" },
+  { href: "/general/anti-aliasing", titleEs: "Suavizado de bordes (anti-aliasing)", vendor: "general" },
   { href: "/general/bloom", titleEs: "Resplandor (Bloom)", vendor: "general" },
   { href: "/general/chromatic-aberration", titleEs: "Aberración cromática", vendor: "general" },
   { href: "/general/depth-of-field", titleEs: "Profundidad de campo (DoF)", vendor: "general" },
@@ -24,7 +24,7 @@ export const indiceItems: Item[] = [
   { href: "/general/tessellation", titleEs: "Teselación", vendor: "general" },
   { href: "/general/upscaling", titleEs: "Escalado de imagen", vendor: "general" },
   { href: "/general/volumetric-effects", titleEs: "Efectos volumétricos", vendor: "general" },
-  { href: "/general/vsync", titleEs: "Sincronización vertical", vendor: "general" },
+  { href: "/general/vsync", titleEs: "Sincronización vertical (VSync)", vendor: "general" },
 
   // NVIDIA
   { href: "/nvidia/dlss", titleEs: "DLSS", vendor: "nvidia" },

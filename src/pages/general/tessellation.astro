@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -16,12 +17,120 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Teselación (Tessellation)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Teselación (Tessellation)</h1>
+        <p>
+          La teselación es una técnica que divide los polígonos grandes de un modelo 3D en polígonos más pequeños. Esto
+          permite que superficies que antes eran planas (como un muro de piedra o el caparazón de una tortuga) se vean
+          con más relieve y detalle, sin necesidad de que el artista haya modelado cada bulto o grieta a mano.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Teselación básica:</strong> añade subdivisiones a los polígonos para suavizar curvas y dar más detalle
+            a modelos.
+          </li>
+          <li>
+            <strong>Teselación con displacement mapping:</strong> usa una textura especial (mapa de desplazamiento) para
+            empujar o hundir la superficie subdividida, creando volumen real (ejemplo: ladrillos sobresaliendo de una pared).
+          </li>
+          <li>
+            <strong>Teselación adaptativa/dinámica:</strong> ajusta el nivel de subdivisión según la distancia a la cámara:
+            más detalle cerca, menos lejos. Optimiza rendimiento.
+          </li>
+          <li>
+            <strong>Teselación en personajes:</strong> se usa para suavizar rasgos faciales, músculos o ropa, evitando bordes
+            angulosos.
+          </li>
+          <br />
+          <ImageDiff
+            title="Comparar: Teselación OFF vs Teselación ON"
+            img1="/img/general/tessellation/rise-of-the-tomb-raider-tessellation-002-off.png"
+            img2="/img/general/tessellation/rise-of-the-tomb-raider-tessellation-002-on.png"
+            alt1="Escena con Teselación OFF"
+            alt2="Escena con Teselación ON"
+          />
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA:</strong> impulsó la teselación en DirectX 11 y la combina con técnicas como <em
+              >Turf Effects</em
+            > (césped) o <em>HairWorks</em> (pelo realista).
+          </li>
+          <li>
+            <strong>AMD:</strong> también soporta teselación DX11, aunque en el pasado hubo polémicas por juegos que la usaban
+            de forma excesiva en hardware AMD.
+          </li>
+          <li>
+            <strong>Intel:</strong> soporta teselación en sus GPUs modernas, pero sin extensiones propietarias destacadas.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto:</strong> bajo a medio en la mayoría de juegos modernos.</li>
+            <li>
+              <strong>Dependencia:</strong> generalmente depende de la GPU, ya que es la que subdivide y renderiza los polígonos.
+            </li>
+            <li><strong>Bajo (2–5% de FPS):</strong> en teselación ligera o adaptativa.</li>
+            <li>
+              <strong>Medio (10–20% de FPS):</strong> en escenas con mucho displacement mapping o superficies complejas.
+            </li>
+            <li>
+              <strong>Hardware antiguo:</strong> puede sentirse más pesado, pero en GPUs modernas suele ser bastante manejable.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>PC de gama baja:</strong> puedes dejarla en bajo o medio; la diferencia visual no siempre compensa
+              la pérdida de FPS.
+            </li>
+            <li>
+              <strong>PC de gama media:</strong> medio/alto es un buen balance, sobre todo en juegos con terrenos o muros
+              detallados.
+            </li>
+            <li>
+              <strong>PC de gama alta:</strong> puedes usar alto o ultra, especialmente si buscas realismo en entornos naturales.
+            </li>
+            <li>
+              <strong>Competitivo / eSports:</strong> desactívala o ponla en bajo; apenas aporta ventaja visual y consume
+              recursos.
+            </li>
+            <li>
+              <strong>Experiencia inmersiva / campañas:</strong> actívala en alto, ya que mejora mucho la sensación de relieve
+              en escenarios y personajes.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
