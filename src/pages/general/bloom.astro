@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -16,12 +17,102 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Resplandor (Bloom)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Resplandor (Bloom)</h1>
+        <p>
+          El Bloom es un efecto gráfico que hace que las luces brillantes “se derramen” o se vean más intensas, creando
+          un halo o resplandor alrededor de ellas. Imita cómo las cámaras o los ojos humanos perciben luces muy fuertes,
+          como faroles, explosiones o el sol.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Bloom básico (Glow):</strong> un halo suave alrededor de las fuentes de luz. Es el más común y ligero.
+          </li>
+          <ImageDiff
+            title="Comparar: Bloom OFF vs Bloom ON"
+            img1="/img/general/bloom/the-witcher-3-wild-hunt-bloom-001-off.png"
+            img2="/img/general/bloom/the-witcher-3-wild-hunt-bloom-001-on.png"
+            alt1="Escena con Bloom OFF"
+            alt2="Escena con Bloom ON"
+          /><br />
+          <li>
+            <strong>Bloom con HDR (High Dynamic Range Bloom):</strong> usa rangos de brillo más amplios para que las luces
+            intensas se vean más realistas y no simplemente blancas.
+          </li>
+          <ImageDiff
+            title="Comparar: Bloom OFF vs Bloom + HDR ON"
+            img1="/img/general/bloom/rise-of-the-tomb-raider-bloom-001-off-hdr.png"
+            img2="/img/general/bloom/rise-of-the-tomb-raider-bloom-001-on-hdr.png"
+            alt1="Escena con Bloom OFF"
+            alt2="Escena con Bloom + HDR ON"
+          /><br />
+          <li>
+            <strong>Bloom gaussiano:</strong> aplica un desenfoque progresivo para que el resplandor se vea más natural y
+            difuso.
+          </li>
+          <li>
+            <strong>Bloom adaptativo:</strong> ajusta la intensidad según la exposición de la escena (ejemplo: al salir de
+            un túnel oscuro hacia un exterior soleado).
+          </li><br />
+          <ImageDiff
+            title="Comparar: Bloom OFF vs Bloom + HDR + SSR ON"
+            img1="/img/general/bloom/rise-of-the-tomb-raider-bloom-002-off-alt.png"
+            img2="/img/general/bloom/rise-of-the-tomb-raider-bloom-002-on-SSR-HDR.png"
+            alt1="Escena Bloom OFF"
+            alt2="Escena con Bloom + HDR + SSR ON"
+          />
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto:</strong> bajo a medio.</li>
+            <li><strong>Consumo:</strong> generalmente usa GPU, no CPU.</li>
+            <li><strong>Coste típico:</strong> entre 2–8% de FPS, dependiendo de la calidad y la resolución.</li>
+            <li>
+              <strong>Nota:</strong> en juegos modernos, el Bloom rara vez es un gran limitante, pero puede acumularse si
+              se combina con otros efectos pesados (como Motion Blur o Ray Tracing).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>PC de gama baja:</strong> puedes dejarlo en bajo o desactivado para ganar nitidez y evitar que la imagen
+              se vea demasiado brillante.
+            </li>
+            <li>
+              <strong>PC de gama media/alta:</strong> mantenerlo en medio o alto mejora la atmósfera, sobre todo en juegos
+              con entornos nocturnos o de fantasía.
+            </li>
+            <li>
+              <strong>Competitivo / eSports:</strong> mejor desactivarlo, ya que puede dificultar ver enemigos en zonas iluminadas.
+            </li>
+            <li>
+              <strong>Experiencia inmersiva / campañas:</strong> activarlo en medio/alto aporta realismo y dramatismo visual.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
