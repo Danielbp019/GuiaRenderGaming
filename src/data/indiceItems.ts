@@ -24,7 +24,7 @@ export const indiceItems: Item[] = [
   { href: "/general/tessellation", titleEs: "Teselación", vendor: "general" },
   { href: "/general/upscaling", titleEs: "Escalado de imagen", vendor: "general" },
   { href: "/general/volumetric-effects", titleEs: "Efectos volumétricos", vendor: "general" },
-  { href: "/general/vsync", titleEs: "Sincronización vertical y variable", vendor: "general" },
+  { href: "/general/vsync", titleEs: "Sincronización vertical", vendor: "general" },
 
   // NVIDIA
   { href: "/nvidia/dlss", titleEs: "DLSS", vendor: "nvidia" },

@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -16,12 +17,169 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li>Sombras (Shadows)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">titulo</h1>
-        <p>descripción</p>
+        <h1 class="mb-5 text-5xl font-bold">Sombras (Shadows)</h1>
+        <p>
+          Las sombras son las zonas oscuras que aparecen cuando un objeto bloquea la luz. En los videojuegos, ayudan a
+          dar realismo y profundidad, pero también son uno de los efectos más costosos de renderizar.
+        </p>
       </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <p class="mb-3">En los menús gráficos puedes encontrar varias opciones relacionadas con sombras:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Sombras (Shadow Quality):</strong> ajusta la precisión general. En bajo, las sombras se ven borrosas
+            o pixeladas; en alto, son más nítidas y detalladas.
+          </li>
+          <ImageDiff
+            title="Comparar: Sombras OFF vs Sombras Mediano"
+            img1="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-off.png"
+            img2="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-medium.png"
+            alt1="Escena con Sombras OFF"
+            alt2="Escena con Sombras Mediano"
+          /><br />
+          <ImageDiff
+            title="Comparar: Sombras Mediano vs Sombras Alto"
+            img1="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-medium.png"
+            img2="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-high.png"
+            alt1="Escena con Sombras Mediano"
+            alt2="Escena con Sombras Alto"
+          /><br />
+          <ImageDiff
+            title="Comparar: Sombras Alto vs Sombras Muy alto"
+            img1="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-high.png"
+            img2="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-very-high.png"
+            alt1="Escena con Sombras Alto"
+            alt2="Escena con Sombras Muy alto"
+          /><br />
+          <li>
+            <strong>Resolución de sombras (Shadow Resolution):</strong> define cuántos píxeles se usan para dibujar la sombra.
+            A mayor resolución, más definición, pero más consumo de GPU.
+          </li>
+          <ImageDiff
+            title="Comparar: Resolución de sombras Bajo vs Resolución de sombras Alto"
+            img1="/img/general/shadows/control-shadow-resolution-001-low.jpg"
+            img2="/img/general/shadows/control-shadow-resolution-001-high.jpg"
+            alt1="Escena con Resolución de sombras Bajo"
+            alt2="Escena con Resolución de sombras Alto"
+          /><br />
+          <li>
+            <strong>Texturas de sombras (Shadow Maps):</strong> son “imágenes” que la GPU genera para proyectar sombras.
+            Ajustar su calidad afecta la nitidez y el parpadeo (aliasing).
+          </li>
+          <li>
+            <strong>Filtrado de sombras (Shadow Filtering):</strong> suaviza los bordes de las sombras. Puede ser básico
+            (PCF – Percentage Closer Filtering) o avanzado (cascaded/variance shadow maps).
+          </li>
+          <ImageDiff
+            title="Comparar: Filtrado de sombras Bajo vs Filtrado de sombras Mediano"
+            img1="/img/general/shadows/control-shadow-filtering-001-low.jpg"
+            img2="/img/general/shadows/control-shadow-filtering-001-medium.jpg"
+            alt1="Escena con Filtrado de sombras Bajo"
+            alt2="Escena con Filtrado de sombras Mediano"
+          /><br />
+          <li>
+            <strong>Sombras dinámicas vs. estáticas:</strong>
+            <ul class="list-disc list-inside ml-6 space-y-1">
+              <li><strong>Estáticas:</strong> precalculadas, no cambian. Baratas en rendimiento.</li>
+              <li><strong>Dinámicas:</strong> reaccionan a luces y movimiento en tiempo real. Mucho más costosas.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Sombras por trazado de rayos (Ray-Traced Shadows):</strong> simulan con precisión cómo la luz proyecta
+            sombras, con bordes suaves y realistas. Son las más exigentes.
+          </li>
+          <ImageDiff
+            title="Comparar: Sombras por trazado de rayos OFF vs Sombras por trazado de rayos ON"
+            img1="/img/general/shadows/cp2077-porschedof-rtx-off-badged.jpg"
+            img2="/img/general/shadows/cp2077-porschedof-rtx-on-badged.jpg"
+            alt1="Escena con Sombras por trazado de rayos OFF"
+            alt2="Escena con Sombras por trazado de rayos ON"
+          />
+        </ul>
+      </div>
+
+      <!-- Notas de tecnologías propietarias -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>NVIDIA PCSS (Percentage Closer Soft Shadows):</strong> suaviza bordes de sombras dinámicamente según
+            la distancia.
+          </li>
+          <li><strong>NVIDIA RTX Shadows:</strong> versión con trazado de rayos acelerado por hardware.</li>
+          <li><strong>AMD Radeon Raytraced Shadows:</strong> implementaciones RT optimizadas para sus GPUs.</li>
+          <li>
+            <strong>Intel XeSS + RT:</strong> puede usarse para compensar la pérdida de FPS al activar sombras con ray tracing.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Sombras clásicas (mapas de sombras, resolución, filtrado):</strong> impacto medio-alto, normalmente
+              entre 10–30% de FPS según la calidad.
+            </li>
+            <li>
+              <strong>Sombras dinámicas complejas (ej. follaje, luces múltiples):</strong> impacto alto, especialmente en
+              escenas abiertas.
+            </li>
+            <li><strong>Ray-Traced Shadows:</strong> impacto muy alto, pueden reducir 20–50% de FPS.</li>
+            <li>
+              <strong>General:</strong> siempre dependen principalmente de la GPU, aunque el cálculo de luces dinámicas puede
+              añadir algo de carga a la CPU.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>PC de gama baja:</strong> pon sombras en bajo o desactiva sombras dinámicas. Mantén alguna sombra básica
+              para no perder referencias visuales.
+            </li>
+            <li>
+              <strong>PC de gama media:</strong> usa calidad media con resolución moderada y filtrado simple. Buen balance
+              entre rendimiento y estética.
+            </li>
+            <li>
+              <strong>PC de gama alta sin RT:</strong> activa sombras en alto con buen filtrado, pero evita resoluciones
+              ultra si no es necesario.
+            </li>
+            <li>
+              <strong>PC con GPU moderna (RTX / serie 7000 / Arc):</strong> prueba Ray-Traced Shadows, pero acompáñalo con
+              escalado (DLSS / FSR / XeSS).
+            </li>
+            <li>
+              <strong>Competitivo / eSports:</strong> baja las sombras al mínimo o desactiva las más complejas; así reduces
+              distracciones y maximizas FPS.
+            </li>
+            <li>
+              <strong>Experiencia inmersiva / campañas:</strong> activa sombras en alto o ultra, ya que aportan mucho realismo
+              y atmósfera.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
     </div>
   </section>
 </DashboardLayout>
