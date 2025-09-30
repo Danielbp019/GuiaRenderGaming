@@ -2,6 +2,8 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import Image from "astro/components/Image.astro";
+import aaImg from "../../assets/AA.png";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -26,14 +28,10 @@ import ImageDiff from "../../components/ImageDiff.astro";
           diagonales o curvas en los juegos. Hace que las imágenes se vean más limpias y menos pixeladas, mejorando la
           calidad visual.
         </p>
-        <div class="w-[400px] mx-auto">
-          <img
-            alt="Anti-Aliasing, AA"
-            src="/img/general/anti-aliasing/AA.png"
-            loading="lazy"
-            class="w-full h-full object-contain"
-          />
-        </div>
+
+        <figure class="aspect-16/9 w-[400px] mx-auto">
+          <Image src={aaImg} alt="Anti-Aliasing, AA" class="w-full h-full object-contain" loading="eager"/>
+        </figure>
       </div>
 
       <!-- Variantes generales -->
