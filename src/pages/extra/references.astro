@@ -1,0 +1,137 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card principal -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Extra</li>
+            <li>Referencias</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Referencias</h1>
+        <p>
+          Aquí encontrarás una recopilación de fuentes y guías utilizadas para la elaboración de las secciones de
+          tecnologías gráficas y configuraciones de videojuegos.
+        </p>
+      </div>
+
+      <!-- Lista de referencias -->
+      <div class="glass rounded-box w-full p-6">
+        <ul class="list-disc list-inside text-left space-y-3 text-sm">
+          <li>
+            Hardwarepulse, Anti-Aliasing. (12 de Marzo de 2018).
+            <a
+              href="https://www.hardwarepulse.com/2018/03/12/para-que-sirve-el-anti-aliasing/"
+              target="_blank"
+              class="link link-primary">https://www.hardwarepulse.com/2018/03/12/para-que-sirve-el-anti-aliasing/</a
+            >
+          </li>
+          <li>
+            Madboxpc, ¿Qué significa cada opción? (1 de junio de 2013).
+            <a
+              href="https://www.madboxpc.com/guia-graficos-en-videojuegos-que-significa-cada-opcion/"
+              target="_blank"
+              class="link link-primary"
+              >https://www.madboxpc.com/guia-graficos-en-videojuegos-que-significa-cada-opcion/</a
+            >
+          </li>
+          <li>
+            Nvidia, The Witcher 3: Wild Hunt. Andrew Burnes (18 de Mayo de 2015).
+            <a
+              href="https://www.geforce.com/whats-new/guides/the-witcher-3-wild-hunt-graphics-performance-and-tweaking-guide#the-witcher-3-wild-hunt-pc-exclusive-graphics-enhancements"
+              target="_blank"
+              class="link link-primary">Guía de The Witcher 3</a
+            >
+          </li>
+          <li>
+            Wikipedia, Nvidia GameWorks. (31 de Octubre de 2017).
+            <a href="https://es.wikipedia.org/wiki/Nvidia_GameWorks" target="_blank" class="link link-primary"
+              >https://es.wikipedia.org/wiki/Nvidia_GameWorks</a
+            >
+          </li>
+          <li>
+            Wikipedia, PhysX. (21 de Febrero de 2019).
+            <a href="https://es.wikipedia.org/wiki/PhysX" target="_blank" class="link link-primary"
+              >https://es.wikipedia.org/wiki/PhysX</a
+            >
+          </li>
+          <li>
+            Nvidia, Rise of the Tomb Raider Guide. Andrew Burnes (28 de Enero de 2016).
+            <a
+              href="https://www.nvidia.com/en-us/geforce/guides/rise-of-the-tomb-raider-graphics-and-performance-guide/"
+              target="_blank"
+              class="link link-primary">Guía de Rise of the Tomb Raider</a
+            >
+          </li>
+          <li>
+            Nvidia, Control Guide. Andrew Burnes (27 de Agosto de 2019).
+            <a
+              href="https://www.nvidia.com/en-us/geforce/guides/control-graphics-and-performance-guide/"
+              target="_blank"
+              class="link link-primary">Guía de Control</a
+            >
+          </li>
+          <li>
+            Nvidia, Destiny 2 Guide. Andrew Burnes (17 de Octubre de 2017).
+            <a
+              href="https://www.nvidia.com/en-us/geforce/news/destiny-2-pc-graphics-and-performance-guide/"
+              target="_blank"
+              class="link link-primary">Guía de Destiny 2</a
+            >
+          </li>
+          <li>
+            PCGamingWiki, Depth of Field Comparison.
+            <a
+              href="https://community.pcgamingwiki.com/gallery/image/949-comparison-depth-of-field-high/"
+              target="_blank"
+              class="link link-primary">Comparación Depth of Field</a
+            >
+          </li>
+          <li>
+            VC-JCSS, SSDO.
+            <a
+              href="https://vc-jcss.github.io/vc/docs/workshops/rendering/globalIllumination/SSDO"
+              target="_blank"
+              class="link link-primary">https://vc-jcss.github.io/vc/docs/workshops/rendering/globalIllumination/SSDO</a
+            >
+          </li>
+          <li>
+            Epic Games, Planar Reflections.
+            <a
+              href="https://dev.epicgames.com/documentation/en-us/unreal-engine/planar-reflections-in-unreal-engine"
+              target="_blank"
+              class="link link-primary">Planar Reflections en Unreal Engine</a
+            >
+          </li>
+          <li>
+            Epic Games, Anti-Aliasing and Upscaling.
+            <a
+              href="https://dev.epicgames.com/documentation/en-us/unreal-engine/anti-aliasing-and-upscaling-in-unreal-engine"
+              target="_blank"
+              class="link link-primary">Anti-Aliasing en Unreal Engine</a
+            >
+          </li>
+          <li>
+            Unity Docs, Cubemap.
+            <a
+              href="https://docs.unity3d.com/es/2020.2/Manual/class-Cubemap.html"
+              target="_blank"
+              class="link link-primary">https://docs.unity3d.com/es/2020.2/Manual/class-Cubemap.html</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</DashboardLayout>

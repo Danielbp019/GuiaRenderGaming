@@ -26,6 +26,7 @@ export const indiceItems: Item[] = [
   { href: "/general/volumetric-effects", titleEs: "Efectos volumétricos", vendor: "general" },
   { href: "/general/vsync", titleEs: "Sincronización vertical (VSync)", vendor: "general" },
   { href: "/general/particles", titleEs: "Partículas (Particles)", vendor: "general" },
+  { href: "/general/post-procesamiento", titleEs: "Post-procesamiento", vendor: "general" },
 
   // NVIDIA
   { href: "/nvidia/dlss", titleEs: "DLSS", vendor: "nvidia" },
@@ -58,4 +59,5 @@ export const indiceItems: Item[] = [
 
   // Extra
   { href: "/extra/display", titleEs: "Monitores", vendor: "extra" },
+  { href: "/extra/references", titleEs: "Referencias", vendor: "extra" },
 ];
