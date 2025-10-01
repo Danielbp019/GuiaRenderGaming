@@ -1,0 +1,263 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Extra</li>
+            <li>Monitores</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Monitores</h1>
+        <p>
+          Los monitores son una parte clave de la experiencia de juego. Factores como el tipo de panel, cobertura de
+          colores, tiempo de respuesta, frecuencia de actualización y resolución determinan la calidad visual y la
+          fluidez.
+        </p>
+      </div>
+
+      <!-- Tipo de Panel -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-display text-info"></i> 1. Tipo de Panel</h2>
+        <p class="mb-3">
+          El panel determina cómo se ven los colores, el contraste y cómo responde la pantalla a la entrada del jugador.
+          No afecta directamente a FPS, pero influye en la fluidez visual y experiencia.
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>IPS (In-Plane Switching):</strong> Ofrece colores más vivos y amplios ángulos de visión. Perfecto para
+            juegos que requieren detalle visual, pero puede ser más lento en respuesta.
+          </li>
+          <li>
+            <strong>TN (Twisted Nematic):</strong> Típicamente más rápido en términos de tiempo de respuesta, pero con colores
+            y ángulos de visión más limitados. Ideal para juegos competitivos que priorizan la rapidez.
+          </li>
+          <li>
+            <strong>VA (Vertical Alignment):</strong> Buen contraste y negros profundos, pero menos brillantes en comparación
+            con IPS. Suele ser una opción intermedia en términos de calidad y precio.
+          </li>
+          <li>
+            <strong>Fast IPS (IPS optimizado):</strong> Evolución de IPS con tiempos de respuesta muy bajos (1ms) y frecuencias
+            de actualización altas, sin perder la fidelidad de color. Ideal para jugadores competitivos que también valoran
+            la calidad visual.
+          </li>
+          <li>
+            <strong>OLED (Organic Light-Emitting Diode):</strong> Cada píxel emite su propia luz, logrando negros perfectos,
+            contraste infinito y tiempos de respuesta ultrarrápidos (0.1ms). Es la opción premium, aunque con riesgo de burn-in
+            y precio elevado.
+          </li>
+        </ul>
+        <h3 class="mt-4 font-semibold">Notas de tecnologías propietarias:</h3>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            Algunos fabricantes mejoran la calidad de los paneles IPS con Nano-IPS (mayor gama de colores), OLED con
+            variantes QD-OLED que aumentan brillo y color o Quantum Dot en paneles VA para un mejor brillo y contraste.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cobertura de Colores y Tiempo de Respuesta en dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Cobertura de Colores -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-palette text-warning"></i> 2. Cobertura de Colores (Gamut)
+          </h2>
+          <p>
+            Define cuántos colores puede mostrar la pantalla en comparación con la gama completa de colores que el ojo
+            humano puede ver. Mientras mayor cobertura, más vivos y variados se ven los colores.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>sRGB:</strong> Cobertura básica de colores, adecuada para tareas cotidianas y juegos no exigentes visualmente.
+            </li>
+            <li>
+              <strong>Adobe RGB:</strong> Mejor para trabajos gráficos, ya que cubre una gama de colores más amplia.
+            </li>
+            <li>
+              <strong>DCI-P3:</strong> Es la gama estándar en la industria cinematográfica y se utiliza en monitores de alta
+              gama para cine o creación de contenido.
+            </li>
+            <li>
+              <strong>Rec. 2020:</strong> La gama más amplia, utilizada en el contenido 4K UHD y en aplicaciones de alta
+              gama.
+            </li>
+          </ul>
+          <h3 class="mt-4 font-semibold">Coste en rendimiento:</h3>
+          <p>
+            La cobertura de colores no afecta directamente al rendimiento (FPS), pero monitores con una mayor cobertura
+            de colores pueden tener una retroiluminación más compleja, lo que podría aumentar ligeramente el consumo de
+            energía o influir en el brillo máximo.
+          </p>
+        </div>
+
+        <!-- Tiempo de Respuesta -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-lightning-charge text-accent"></i> 3. Tiempo de Respuesta
+          </h2>
+          <p>
+            Se mide cuán rápido los píxeles de la pantalla cambian de color (de gris a gris o de color a color). Menor
+            tiempo de respuesta = menos "desenfoque" o "fantasmas" en escenas rápidas.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>1ms:</strong> Ideal para competitivos y FPS.</li>
+            <li><strong>2–5ms:</strong> Aceptable para la mayoría de juegos.</li>
+            <li>
+              <strong>6–8ms o más:</strong> Puede ser perceptible en juegos rápidos, ya que puede generar un leve "ghosting"
+              o imágenes duplicadas en movimientos rápidos.
+            </li>
+          </ul>
+          <h3 class="mt-4 font-semibold">Notas de tecnologías propietarias:</h3>
+          <p>
+            Algunas marcas tienen modos específicos de reducción de desenfoque de movimiento, como NVIDIA ULMB o DyAc de
+            BenQ, que mejoran aún más el tiempo de respuesta al reducir el "motion blur".
+          </p>
+        </div>
+      </div>
+
+      <!-- Frecuencia de Actualización y Resolución en dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Frecuencia de Actualización -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-arrow-repeat text-primary"></i> 4. Frecuencia de Actualización (Hz)
+          </h2>
+          <p>
+            Indica cuántas veces la pantalla se actualiza por segundo. Cuanto más alto el valor, más fluido se ve el
+            movimiento en la pantalla y mayo demanda de GPU.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>60Hz:</strong> El estándar para tareas generales y juegos casuales.</li>
+            <li><strong>120Hz:</strong> Mejor para juegos de ritmo moderado, haciendo la experiencia más fluida.</li>
+            <li>
+              <strong>144Hz:</strong> Popular para jugadores competitivos. Asegura una mayor fluidez en juegos de acción
+              rápida, por arriba de este valor es difícil notar diferencia.
+            </li>
+            <li>
+              <strong>240–360Hz:</strong> Para los jugadores más exigentes, especialmente en juegos FPS de alta velocidad.
+            </li>
+          </ul>
+          <h3 class="mt-4 font-semibold">Notas de tecnologías propietarias:</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>NVIDIA G-Sync:</strong> Sincroniza la tasa de refresco del monitor con la tarjeta gráfica para evitar
+              el “tearing” (desgarro de imagen).
+            </li>
+            <li>
+              <strong>AMD FreeSync:</strong> Similar a G-Sync, pero para tarjetas gráficas AMD, también mejora la fluidez
+              visual.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Resolución -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-aspect-ratio text-secondary"></i> 5. Resolución</h2>
+          <p>
+            La resolución determina cuántos píxeles muestra la pantalla. Cuantos más píxeles, más detallada y nítida es
+            la imagen.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Full HD (1080p):</strong> El estándar actual, buena calidad para la mayoría de juegos con unas pulgadas
+              en el tamaño del panel recomendadas de 24”.
+            </li>
+            <li>
+              <strong>QHD (1440p):</strong> Proporciona más detalle que Full HD y es ideal para monitores de 27” a 32”.
+            </li>
+            <li>
+              <strong>4K (2160p):</strong> Ofrece una calidad impresionante, pero requiere un hardware potente, especialmente
+              para juegos de alto rendimiento.
+            </li>
+          </ul>
+          <h3 class="mt-4 font-semibold">Coste en rendimiento:</h3>
+          <p>
+            A mayor resolución, más demandante para la GPU. En juegos 4K, la tasa de FPS puede bajar considerablemente a
+            menos que tengas una tarjeta gráfica muy potente.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tabla final en una sola columna -->
+      <div class="glass rounded-box w-full p-6">
+        <div class="overflow-x-auto rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-table text-neutral"></i> Cuadro Comparativo de Paneles
+          </h2>
+          <table class="table table-zebra w-full text-sm">
+            <thead class="bg-base-200 text-base-content">
+              <tr>
+                <th>Tipo de Panel</th>
+                <th>Colores</th>
+                <th>Contraste</th>
+                <th>Tiempo de Respuesta</th>
+                <th>Ángulos de Visión</th>
+                <th>Precio</th>
+                <th>Ideal para…</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TN</td>
+                <td>Limitados</td>
+                <td>Bajo</td>
+                <td>Muy rápido (1ms)</td>
+                <td>Reducidos</td>
+                <td>Bajo</td>
+                <td>FPS competitivos con presupuesto ajustado</td>
+              </tr>
+              <tr>
+                <td>IPS</td>
+                <td>Vivos y precisos</td>
+                <td>Medio</td>
+                <td>4–5ms típicos</td>
+                <td>Amplios</td>
+                <td>Medio</td>
+                <td>RPGs, estrategia, juegos narrativos</td>
+              </tr>
+              <tr>
+                <td>Fast IPS</td>
+                <td>Vivos y precisos</td>
+                <td>Medio</td>
+                <td>Muy rápido (1ms)</td>
+                <td>Amplios</td>
+                <td>Medio-Alto</td>
+                <td>Competitivos + buena calidad de imagen</td>
+              </tr>
+              <tr>
+                <td>VA</td>
+                <td>Buenos, menos brillantes</td>
+                <td>Alto (negros profundos)</td>
+                <td>4–6ms</td>
+                <td>Decentes</td>
+                <td>Medio</td>
+                <td>Experiencia cinematográfica, acción</td>
+              </tr>
+              <tr>
+                <td>OLED</td>
+                <td>Intensos y realistas</td>
+                <td>Infinito (negros puros)</td>
+                <td>Ultra rápido (0.1ms)</td>
+                <td>Excelentes</td>
+                <td>Alto</td>
+                <td>Experiencia premium, inmersión total</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</DashboardLayout>

@@ -1,5 +1,5 @@
 // src/data/graphicsItems.ts
-export type Vendor = "general" | "nvidia" | "amd" | "intel" | "apis";
+export type Vendor = "general" | "nvidia" | "amd" | "intel" | "apis" | "extra";
 
 export type Item = {
   href: string;
@@ -55,4 +55,7 @@ export const indiceItems: Item[] = [
   { href: "/apis/vulkan", titleEs: "Vulkan", vendor: "apis" },
   { href: "/apis/opengl", titleEs: "OpenGL", vendor: "apis" },
   { href: "/apis/metal", titleEs: "Metal", vendor: "apis" },
+
+  // Extra
+  { href: "/extra/display", titleEs: "Monitores", vendor: "extra" },
 ];

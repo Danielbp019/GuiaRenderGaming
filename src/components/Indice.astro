@@ -10,6 +10,7 @@ const orderVendors: { key: Vendor; label: string }[] = [
   { key: "amd", label: "AMD" },
   { key: "intel", label: "Intel" },
   { key: "apis", label: "APIs gráficas" },
+  { key: "extra", label: "Extra" },
 ];
 
 const activeClass = (href: string) => (path === href ? "active font-semibold text-primary" : "");
@@ -38,6 +39,7 @@ for (const arr of itemsByVendor.values()) {
               {section.key === "amd" && <i class="bi bi-amd text-error" aria-hidden="true" />}
               {section.key === "intel" && <img src="/intel_icon.svg" alt="" class="w-4 h-4" aria-hidden="true" />}
               {section.key === "apis" && <i class="bi bi-braces text-warning" aria-hidden="true" />}
+              {section.key === "extra" && <i class="bi bi-display text-accent" aria-hidden="true" />}
 
               <span class="ms-2">{section.label}</span>
               <i class="ms-auto transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
