@@ -1,0 +1,21 @@
+---
+interface Props {
+  title?: string;
+  img: string;
+  alt?: string;
+}
+
+const { title, img, alt } = Astro.props;
+---
+
+<details class="collapse collapse-arrow bg-base-100 border border-base-300">
+  <!-- Usamos text-base-content para que cambie según el tema -->
+  <summary class="collapse-title font-semibold text-base-content">
+    {title}
+  </summary>
+  <div class="collapse-content text-sm flex justify-center">
+    <figure class="aspect-16/9">
+      <img alt={alt} src={img} loading="lazy" class="w-auto h-auto object-cover" />
+    </figure>
+  </div>
+</details>

@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageSolo from "../../components/ImageSolo.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -48,19 +49,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             stuttering, pero aumenta un poco la latencia.
           </li>
           <br />
-          <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
-            <summary class="collapse-title font-semibold">Ver Screen Tearing</summary>
-            <div class="collapse-content text-sm">
-              <figure class="aspect-16/9">
-                <img
-                  alt="Screen Tearing"
-                  src="/img/general/VSync/screentearing.jpg"
-                  loading="lazy"
-                  class="w-full h-auto object-cover"
-                />
-              </figure>
-            </div>
-          </details>
+          <ImageSolo title="Ver Screen Tearing" img="/img/general/vsync/screentearing.jpg" alt="Screen Tearing" />
         </ul>
       </div>
 

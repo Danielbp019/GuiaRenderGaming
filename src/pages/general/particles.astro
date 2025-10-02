@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageSolo from "../../components/ImageSolo.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -55,20 +56,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
               <li><strong>Dinámicas:</strong> calculadas en tiempo real, más realistas pero costosas.</li>
             </ul>
           </li>
-
-          <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
-            <summary class="collapse-title font-semibold">Ver Partículas (Particles)</summary>
-            <div class="collapse-content text-sm">
-              <figure class="aspect-16/9">
-                <img
-                  alt="Partículas (Particles)"
-                  src="/img/general/particles/ue4_particles.webp"
-                  loading="lazy"
-                  class="w-full h-auto object-cover"
-                />
-              </figure>
-            </div>
-          </details>
+          <ImageSolo
+            title="Ver Partículas (Particles)"
+            img="/img/general/particles/ue4_particles.webp"
+            alt="Partículas (Particles)"
+          />
         </ul>
       </div>
 

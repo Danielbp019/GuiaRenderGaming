@@ -9,21 +9,40 @@ analiza su impacto real en tu experiencia de juego.
 arbol:
 ├── public/
 │   ├── favicon.svg
-│   ├── font/
-│   │   └── AlexBrush-Regular.ttf
+│   │
+│   ├── intel_icon.svg
+│   ├── fonts/
+│   │   ├── AlexBrush/
+│   │   │   └── AlexBrush-Regular.ttf
+│   │   └── Roboto/
+│   │       └── Roboto-Regular.ttf
 │   ├── img/
-│   │   └── fondoLibro.png
+│   │   ├── fondoLibro.png
+│   │   └── general/
+│   │       ├── tema1/
+│   │       ├── tema2/
+│   │       ├── tema3/
+│   │       └── ...             # una carpeta por tema mostrado
 │   └── video/
 │       └── intro.mp4
 ├── src/
 │   ├── assets/
-│   │   └── app.css
+│   │   ├── app.css
+│   │   └── AA.png
 │   ├── components/
-│   │   └── Indice.astro
+│   │   ├── Indice.astro
+│   │   ├── ImageDiff.astro
+│   │   └── ImageSolo.astro
+│   ├── data/
+│   │   └── indiceItems.ts
 │   ├── layouts/
 │   │   └── DashboardLayout.astro
 │   └── pages/
 │       ├── index.astro
+│       ├── temas.astro
+│       ├── extra/
+│       │   ├── display.astro
+│       │   └── references.astro
 │       ├── amd/
 │       │   └── index.astro
 │       ├── apis/

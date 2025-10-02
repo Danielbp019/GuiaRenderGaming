@@ -2,6 +2,7 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import ImageSolo from "../../components/ImageSolo.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -54,20 +55,11 @@ import ImageDiff from "../../components/ImageDiff.astro";
             <strong>Reflejos cúbicos (Cube Maps):</strong> usan imágenes pregrabadas del entorno. Son rápidos, pero poco
             precisos: no muestran cambios dinámicos (ejemplo: tu personaje no se refleja).
           </li>
-          <!-- Con imagen centrada y alto ajustado a la imagen -->
-          <details class="collapse collapse-arrow bg-base-100 border border-base-300">
-            <summary class="collapse-title font-semibold">Ver Reflejos cúbicos</summary>
-            <div class="collapse-content text-sm flex justify-center">
-              <figure>
-                <img
-                  alt="Reflejos cúbicos"
-                  src="/img/general/reflections/CubeMapExample.jpg"
-                  loading="lazy"
-                  class="w-[414px] h-[299px] object-cover"
-                />
-              </figure>
-            </div>
-          </details>
+          <ImageSolo
+            title="Ver Reflejos cúbicos"
+            img="/img/general/reflections/CubeMapExample.jpg"
+            alt="Reflejos cúbicos"
+          />
           <br />
           <li>
             <strong>Reflejos planos (Planar Reflections):</strong> calculan un “mundo espejo” en superficies planas como
@@ -101,9 +93,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
         </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
-            <strong>Reflejos Globales (Global Reflections):</strong> es un sistema de reflejos globales basado en cubemaps o
-            probes que complementa al SSR. Piensa en él como un “relleno” de reflejos generales en superficies, que no dependen
-            solo de lo que está en pantalla.
+            <strong>Reflejos Globales (Global Reflections):</strong> es un sistema de reflejos globales basado en cubemaps
+            o probes que complementa al SSR. Piensa en él como un “relleno” de reflejos generales en superficies, que no
+            dependen solo de lo que está en pantalla.
           </li>
           <li>
             <strong>NVIDIA RTX:</strong> implementa ray tracing acelerado por hardware para reflejos más rápidos y detallados.
