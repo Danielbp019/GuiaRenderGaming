@@ -27,6 +27,9 @@ export const indiceItems: Item[] = [
   { href: "/general/vsync", titleEs: "Sincronización vertical (VSync)", vendor: "general" },
   { href: "/general/particles", titleEs: "Partículas (Particles)", vendor: "general" },
   { href: "/general/post-procesamiento", titleEs: "Post-procesamiento", vendor: "general" },
+  { href: "/general/vignette", titleEs: "Viñeta (Vignette)", vendor: "general" },
+  { href: "/general/film-grain", titleEs: "Grano de película (Film Grain)", vendor: "general" },
+  { href: "/general/lens-flares", titleEs: "Destellos de lente (Lens Flares)", vendor: "general" },
 
   // NVIDIA
   { href: "/nvidia/dlss", titleEs: "DLSS", vendor: "nvidia" },

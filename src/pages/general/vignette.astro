@@ -1,0 +1,101 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card principal -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Viñeta (Vignette)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Viñeta (Vignette)</h1>
+        <p>
+          La viñeta es un efecto visual que oscurece o difumina ligeramente los bordes de la pantalla, dejando el centro
+          más claro. Se usa para dirigir la atención del jugador hacia el centro de la acción y dar un toque más
+          “cinematográfico”.
+        </p>
+      </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info"></i> Variantes generales
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li><strong>Viñeta estática:</strong> siempre presente, con un oscurecimiento fijo en los bordes.</li>
+          <li>
+            <strong>Viñeta dinámica:</strong> se activa o intensifica en situaciones específicas (ejemplo: cuando la salud
+            del personaje es baja).
+          </li>
+          <li>
+            <strong>Viñeta estilizada:</strong> puede añadir color, desenfoque o efectos artísticos en los bordes, no solo
+            oscurecimiento.
+          </li>
+        </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: Viñeta OFF vs Viñeta ON"
+          img1="/img/general/vignette/the-witcher-3-wild-hunt-vignette-001-off.png"
+          img2="/img/general/vignette/the-witcher-3-wild-hunt-vignette-001-on.png"
+          alt1="Escena con Viñeta OFF"
+          alt2="Escena con Viñeta ON"
+        /><br />
+        <ImageDiff
+          title="Comparar: Viñeta OFF vs Viñeta + Blur ON"
+          img1="/img/general/vignette/rise-of-the-tomb-raider-vignette-blur-001-off.png"
+          img2="/img/general/vignette/rise-of-the-tomb-raider-vignette-blur-001-on.png"
+          alt1="Escena con Viñeta OFF"
+          alt2="Escena con Viñeta + Blur ON"
+        />
+      </div>
+
+      <!-- Dos columnas: Coste + Cuándo conviene -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto muy bajo.</strong></li>
+            <li>Es un efecto de post-procesado simple.</li>
+            <li>Normalmente consume menos de 1–3% de FPS.</li>
+            <li>Depende solo de la GPU, y en equipos modernos es prácticamente gratis en rendimiento.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>PC de gama baja:</strong> puedes dejarlo activado, no afecta al rendimiento.</li>
+            <li><strong>PC de gama media/alta:</strong> mantenerlo activado aporta atmósfera y dirección visual.</li>
+            <li>
+              <strong>Competitivo/eSports:</strong> conviene desactivarlo, ya que oscurece los bordes y puede reducir la
+              visibilidad periférica.
+            </li>
+            <li>
+              <strong>Experiencia inmersiva/campañas:</strong> recomendable activarlo, ya que refuerza la sensación cinematográfica
+              y la inmersión.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

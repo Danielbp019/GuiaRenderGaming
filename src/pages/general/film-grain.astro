@@ -1,0 +1,106 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card principal -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Grano de película (Film Grain)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Grano de película (Film Grain)</h1>
+        <p>
+          El Grano de película es un efecto visual que añade un ligero “ruido” o textura granulada sobre la imagen,
+          imitando el aspecto de las películas grabadas en celuloide. Se usa para dar un estilo más cinematográfico,
+          transmitir crudeza o realismo, y en algunos casos para ocultar imperfecciones gráficas como el banding en los
+          cielos o superficies lisas. (Banding: es un defecto visual en imágenes o gráficos donde, en lugar de un
+          degradado suave, aparecen franjas o líneas de color visibles por falta de tonos intermedios)
+        </p>
+      </div>
+
+      <!-- Variantes generales -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info"></i> Variantes generales
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Grano de película estático:</strong> un patrón de grano fijo que se superpone a la imagen.
+          </li>
+          <li>
+            <strong>Grano de película dinámico:</strong> el grano cambia cuadro a cuadro, simulando mejor el ruido real de
+            una cámara o película.
+          </li>
+          <li>
+            <strong>Grano de película estilizado:</strong> se exagera para dar un look artístico (ejemplo: juegos de terror
+            o con estética retro).
+          </li>
+          <li>
+            <strong>Grano de película adaptativo:</strong> ajusta la intensidad según la iluminación o la escena (más fuerte
+            en zonas oscuras, más suave en claras).
+          </li>
+        </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: Grano de película OFF vs Grano de película ON"
+          img1="/img/general/film-grain/rise-of-the-tomb-raider-film-grain-001-off.png"
+          img2="/img/general/film-grain/rise-of-the-tomb-raider-film-grain-001-on.png"
+          alt1="Escena con Grano de película OFF"
+          alt2="Escena con Grano de película ON"
+        />
+      </div>
+
+      <!-- Dos columnas: Coste + Cuándo conviene -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto muy bajo.</strong></li>
+            <li>Es un filtro de post-procesado ligero.</li>
+            <li>Normalmente consume menos de 1–3% de FPS.</li>
+            <li>Depende solo de la GPU, y en hardware moderno es prácticamente gratis.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>PC de gama baja:</strong> puedes dejarlo activado, no afecta al rendimiento.</li>
+            <li>
+              <strong>PC de gama media/alta:</strong> mantenerlo activado aporta atmósfera, sobre todo en juegos narrativos
+              o de terror.
+            </li>
+            <li>
+              <strong>Competitivo/eSports:</strong> conviene desactivarlo, ya que añade ruido visual y puede dificultar la
+              nitidez.
+            </li>
+            <li>
+              <strong>Experiencia inmersiva/campañas:</strong> recomendable activarlo si buscas un estilo cinematográfico
+              o más “gritty”. (Gritty: en estilo visual significa algo crudo, áspero o realista, con una textura granulada
+              o un tono descarnado, a veces usado para dar dureza o autenticidad)
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

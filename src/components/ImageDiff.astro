@@ -10,8 +10,9 @@ interface Props {
 const { title, img1, img2, alt1 = "Imagen 1", alt2 = "Imagen 2" } = Astro.props;
 ---
 
+<!-- DaisyUI ya cambia los colores de "text-base-content" según el tema -->
 <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
-  <summary class="collapse-title font-semibold">{title}</summary>
+  <summary class="collapse-title font-semibold text-base-content">{title}</summary>
   <div class="collapse-content text-sm">
     <figure class="diff aspect-16/9">
       <div class="diff-item-1" role="img">
