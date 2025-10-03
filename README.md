@@ -3,55 +3,35 @@
 Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y
 analiza su impacto real en tu experiencia de juego.
 
-## 🚀 Arbol de archivos
+## Estructura del Proyecto
 
 ```text
-arbol:
-├── public/
+├── AGENTS.MD              # Guía de prompts e instrucciones para IA
+├── README.md              # Documentación principal del proyecto
+├── package.json           # Dependencias y scripts de npm
+├── astro.config.mjs       # Configuración de Astro
+├── tsconfig.json          # Configuración de TypeScript
+├── LICENSE                # Licencia del proyecto
+│
+├── public/                # Archivos estáticos (se sirven tal cual)
 │   ├── favicon.svg
-│   │
 │   ├── intel_icon.svg
-│   ├── fonts/
-│   │   ├── AlexBrush/
-│   │   │   └── AlexBrush-Regular.ttf
-│   │   └── Roboto/
-│   │       └── Roboto-Regular.ttf
-│   ├── img/
-│   │   ├── fondoLibro.png
-│   │   └── general/
-│   │       ├── tema1/
-│   │       ├── tema2/
-│   │       ├── tema3/
-│   │       └── ...
-│   └── video/
-│       └── intro.mp4
-├── src/
-│   ├── assets/
-│   │   ├── app.css
-│   │   └── AA.png
-│   ├── components/
-│   │   ├── Indice.astro
-│   │   ├── ImageDiff.astro
-│   │   └── ImageSolo.astro
-│   ├── data/
-│   │   └── indiceItems.ts
-│   ├── layouts/
-│   │   └── DashboardLayout.astro
-│   └── pages/
-│       ├── index.astro
-│       ├── temas.astro
-│       ├── extra/
-│       │   ├── display.astro
-│       │   └── references.astro
-│       ├── amd/
-│       │   └── index.astro
-│       ├── apis/
-│       │   └── index.astro
-│       ├── general/
-│       │   └── index.astro
-│       ├── intel/
-│       │   └── index.astro
-│       └── nvidia/
-│           └── index.astro
-└── package.json
+│   ├── fonts/             # Tipografías (Roboto, AlexBrush, etc.)
+│   ├── img/               # Imágenes generales y por tecnología
+│   └── video/             # Videos usados en la guía
+│
+├── src/                   # Código fuente principal
+│   ├── assets/            # Recursos como CSS y gráficos base
+│   ├── components/        # Componentes Astro reutilizables
+│   ├── data/              # Datos estáticos (índices, listas, etc.)
+│   ├── layouts/           # Plantillas de diseño (ej. Dashboard)
+│   └── pages/             # Páginas del sitio
+│       ├── general/       # Opciones gráficas comunes
+│       ├── nvidia/        # Tecnologías propietarias NVIDIA
+│       ├── amd/           # Tecnologías propietarias AMD
+│       ├── intel/         # Tecnologías propietarias Intel
+│       ├── apis/          # APIs gráficas (DirectX, Vulkan, etc.)
+│       ├── extra/         # Secciones adicionales (referencias, display)
+│       ├── index.astro    # Página principal
+│       └── temas.astro    # Índice temático
 ```
