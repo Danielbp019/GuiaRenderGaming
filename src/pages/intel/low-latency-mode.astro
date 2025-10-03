@@ -1,0 +1,92 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Intel Low Latency Mode</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Intel Low Latency Mode</h1>
+        <p>
+          Intel Low Latency Mode (a veces llamado Xe Low Latency en GPUs Arc) es una tecnología que sincroniza mejor el
+          trabajo entre CPU y GPU, evitando que la CPU genere demasiados fotogramas por adelantado. Esto reduce la
+          latencia de entrada, haciendo que los controles se sientan más rápidos y precisos. Es especialmente útil en
+          shooters competitivos, MOBAs o battle royale, donde cada milisegundo cuenta.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el software Intel Arc Control o en los juegos compatibles, suele aparecer como:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Desactivado:</strong> El juego procesa la cola de fotogramas de manera normal.</li>
+          <li><strong>Activado:</strong> Se reduce la latencia limitando la cola de renderizado.</li>
+          <li>
+            <strong>Activado + Boost (en algunas versiones):</strong> Además de reducir la cola, mantiene la GPU en frecuencias
+            más altas para asegurar la mínima latencia posible.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto en FPS:</strong> Generalmente no reduce los FPS, ya que no cambia la resolución ni la carga
+              gráfica.
+            </li>
+            <li><strong>Dependencia:</strong> Afecta a la GPU y su sincronización con la CPU, no a la CPU sola.</li>
+            <li>
+              <strong>Latencia reducida:</strong> Puede bajar entre 10 y 30 ms la latencia total del sistema, lo que se nota
+              mucho en juegos competitivos.
+            </li>
+            <li>
+              <strong>Resoluciones (1080p, 1440p, 4K):</strong> El beneficio se percibe en todas, pero es más evidente en
+              1080p y 1440p, donde los FPS suelen ser altos y la latencia es más crítica.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas títulos competitivos (ej. Valorant, CS2, Fortnite).</li>
+            <li>Buscas la máxima respuesta inmediata en tus controles.</li>
+            <li>Tienes una GPU Intel Arc o gráficos integrados modernos que soporten la función.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas campañas o títulos narrativos donde la latencia no es importante.</li>
+            <li>Prefieres priorizar la eficiencia energética (el modo Boost puede aumentar el consumo).</li>
+            <li>Tu GPU ya va muy justa y no quieres forzarla a frecuencias más altas.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

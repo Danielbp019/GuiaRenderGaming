@@ -1,0 +1,100 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Intel XeSS</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Intel XeSS (Xe Super Sampling)</h1>
+        <p>
+          XeSS es un sistema de reescalado inteligente que utiliza machine learning para mejorar la calidad visual
+          mientras incrementa el rendimiento. En GPUs Intel Arc, aprovecha núcleos especializados de IA para obtener la
+          mejor calidad, pero también funciona en tarjetas NVIDIA y AMD modernas, aunque con menor eficiencia. Su
+          objetivo es ofrecer más FPS sin perder demasiada nitidez, incluso en juegos exigentes con trazado de rayos.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En los juegos compatibles, XeSS suele ofrecer varios perfiles de calidad/rendimiento:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Ultra Calidad:</strong> Imagen muy cercana a la nativa, con ganancia moderada de FPS.</li>
+          <li><strong>Calidad:</strong> Buen equilibrio entre nitidez y rendimiento.</li>
+          <li><strong>Equilibrado:</strong> Más FPS, sacrificando algo de detalle.</li>
+          <li><strong>Rendimiento:</strong> Máxima ganancia de FPS, con pérdida visible de calidad.</li>
+          <li>
+            <strong>Ultra Rendimiento (en XeSS 1.3+):</strong> Escalado muy agresivo, pensado para 4K en GPUs menos potentes.
+          </li>
+          <li><strong>Nativo AA (en XeSS 1.3+):</strong> No escala, pero aplica un antialiasing avanzado por IA.</li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto general:</strong> XeSS no resta, sino que aumenta FPS al renderizar internamente a menor resolución.
+            </li>
+            <li>
+              <strong>Dependencia:</strong> Principalmente de la GPU; en Intel Arc se aprovechan núcleos de IA, en otras
+              GPUs se usa vía shaders.
+            </li>
+            <li>
+              <strong>Ganancia de FPS aproximada (según modo y resolución):</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>1080p:</strong> +10–20%.</li>
+                <li><strong>1440p:</strong> +20–35%.</li>
+                <li><strong>4K:</strong> +30–60%.</li>
+              </ul>
+            </li>
+            <li>
+              En Intel Arc, la calidad visual es más cercana a DLSS; en NVIDIA/AMD puede ser un poco menos precisa, pero
+              sigue siendo competitiva.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Quieres más FPS en juegos exigentes.</li>
+            <li>Usas una GPU Intel Arc (donde ofrece la mejor calidad).</li>
+            <li>Juegas en 1440p o 4K y necesitas fluidez extra.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Ya tienes FPS estables en resolución nativa.</li>
+            <li>Prefieres la máxima fidelidad visual sin reescalado.</li>
+            <li>Estás en 1080p con una GPU potente, donde la ganancia es menor.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

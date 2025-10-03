@@ -1,0 +1,99 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>AMD Radeon Anti-Lag y Anti-Lag+</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">AMD Radeon Anti-Lag y Anti-Lag+</h1>
+        <p>
+          AMD Anti-Lag es una función incluida en el software Radeon Adrenalin que sincroniza mejor el trabajo entre CPU
+          y GPU, evitando que la CPU se adelante demasiado y genere cola de fotogramas. Esto reduce el retraso de
+          entrada y hace que los controles se sientan más ágiles. La variante Anti-Lag+ o Boost va un paso más allá,
+          manteniendo la GPU en frecuencias más altas para asegurar la mínima latencia posible, aunque con un ligero
+          aumento en consumo energético.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el menú gráfico o en el software Adrenalin, puedes encontrar:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Anti-Lag activado:</strong> Reduce la latencia ajustando la sincronización CPU–GPU.</li>
+          <li>
+            <strong>Anti-Lag+ / Boost:</strong> Además de lo anterior, evita que la GPU baje frecuencias, asegurando la máxima
+            respuesta.
+          </li>
+          <li>
+            <strong>Anti-Lag 2 (nueva versión):</strong> Integración directa en algunos juegos (ej. Counter-Strike 2, Dota
+            2), ofreciendo reducción de latencia más estable y sin conflictos con sistemas antitrampas.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto en FPS:</strong> Anti-Lag no busca aumentar FPS, sino mejorar la respuesta. En la mayoría de
+              casos, no reduce el rendimiento; con Boost puede haber un consumo energético mayor, pero sin pérdida notable
+              de FPS.
+            </li>
+            <li><strong>Dependencia:</strong> Trabaja sobre todo en la GPU y su sincronización con la CPU.</li>
+            <li>
+              <strong>Latencia reducida:</strong> Puede bajar la latencia total del sistema en 10–30 ms, lo cual es muy perceptible
+              en shooters competitivos.
+            </li>
+            <li>
+              <strong>Resoluciones (1080p, 1440p, 4K):</strong> El beneficio se nota en todas, pero es más evidente en 1080p
+              y 1440p competitivos, donde los FPS son altos y cada milisegundo cuenta.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas a títulos competitivos (FPS, MOBAs, battle royale).</li>
+            <li>Buscas la máxima respuesta inmediata entre tus acciones y lo que ves en pantalla.</li>
+            <li>Tienes una GPU AMD Radeon RX 400 o superior, o una APU Ryzen 2000 en adelante.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas a títulos de un solo jugador donde la latencia no es crítica.</li>
+            <li>
+              Tu GPU se calienta demasiado y no quieres que el modo Boost la fuerce a trabajar a máxima frecuencia.
+            </li>
+            <li>Prefieres priorizar la eficiencia energética sobre la mínima latencia.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

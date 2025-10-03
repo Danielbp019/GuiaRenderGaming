@@ -47,6 +47,7 @@ export const indiceItems: Item[] = [
   { href: "/amd/ris", titleEs: "RIS (Radeon Image Sharpening)", vendor: "amd" },
   { href: "/amd/rsr", titleEs: "RSR (Radeon Super Resolution)", vendor: "amd" },
   { href: "/amd/anti-lag", titleEs: "Radeon Anti-Lag y Anti-Lag+", vendor: "amd" },
+  { href: "/amd/tressfx-hair", titleEs: "TressFX Hair", vendor: "amd" },
 
   // Intel
   { href: "/intel/xess", titleEs: "XeSS (Xe Super Sampling)", vendor: "intel" },

@@ -1,0 +1,102 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>AMD Radeon Super Resolution (RSR)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">AMD RSR (Radeon Super Resolution)</h1>
+        <p>
+          RSR es básicamente FSR integrado en el driver. Mientras que FSR debe estar implementado dentro del juego por
+          los desarrolladores, RSR funciona de forma global: basta con activarlo en el panel de AMD y luego bajar la
+          resolución dentro del juego. El controlador se encarga de reescalar la imagen a la resolución nativa de tu
+          pantalla aplicando el mismo algoritmo de nitidez que FSR. Esto significa que puedes obtener más rendimiento
+          incluso en juegos que no tienen soporte oficial para FSR.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el software Radeon Adrenalin, RSR ofrece:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>Activado:</strong> Permite usar resoluciones más bajas en el juego y reescalarlas automáticamente a la
+            resolución nativa.
+          </li>
+          <li><strong>Desactivado:</strong> El juego se renderiza de forma normal, sin reescalado.</li>
+          <li>
+            <strong>Control de nitidez:</strong> Un deslizador para ajustar cuánta nitidez aplicar tras el escalado.
+          </li>
+          <li>
+            <strong>Importante:</strong> RSR solo funciona en modo pantalla completa exclusiva y requiere GPUs con arquitectura
+            RDNA o superior.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto general:</strong> RSR no resta rendimiento, sino que lo aumenta al renderizar a menor resolución.
+            </li>
+            <li><strong>Dependencia:</strong> Solo de la GPU, no de la CPU.</li>
+            <li>
+              <strong>Ganancia de FPS aproximada (según resolución base y escalado):</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>1080p → 1440p:</strong> +20–40% de FPS.</li>
+                <li><strong>1440p → 4K:</strong> +30–60%.</li>
+                <li><strong>720p → 1080p:</strong> +15–25%.</li>
+              </ul>
+            </li>
+            <li>
+              La calidad visual es algo inferior a FSR nativo, ya que RSR no tiene acceso a vectores de movimiento ni
+              datos internos del motor del juego.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas títulos que no tienen soporte para FSR.</li>
+            <li>Necesitas un empujón de FPS en resoluciones altas (1440p o 4K).</li>
+            <li>Prefieres una solución rápida sin depender de parches o actualizaciones del juego.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>El juego ya incluye FSR 2/3, que ofrece mejor calidad visual.</li>
+            <li>Tienes FPS estables en resolución nativa y no necesitas escalado.</li>
+            <li>Juegas en 1080p, donde la ganancia es menor y la pérdida de nitidez se nota más.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

@@ -1,0 +1,143 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>TressFX Hair</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">TressFX Hair</h1>
+        <p>
+          TressFX Hair reemplaza el “bloque sólido” de cabello tradicional por miles de hebras individuales simuladas en
+          tiempo real. Esto hace que el pelo se mueva con el viento, la gravedad y las animaciones del personaje de
+          manera mucho más natural.
+        </p>
+      </div>
+
+      <!-- Evolución de TressFX -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-layers-fill text-info"></i> Evolución de TressFX</h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>TressFX 1.0 (2013):</strong> Primera versión, estrenada en Tomb Raider (2013). Solo soportaba cabello
+            humano.
+          </li>
+          <li>
+            <strong>TressFX 2.0 (2014):</strong> Mejoras de rendimiento y soporte para pelaje y césped, no solo cabello.
+          </li>
+          <li>
+            <strong>TressFX 3.0 (2016):</strong> Optimizado para DirectX 11, con simulación más estable y mejor integración
+            en juegos.
+          </li>
+          <li>
+            <strong>TressFX 4.0 / 4.1 (2018–2019):</strong> Compatibilidad con DirectX 12 y Vulkan, nuevo sistema de LOD
+            (niveles de detalle), y un exporter para Maya.
+          </li>
+          <li>
+            <strong>TressFX 5.0 (2023–2024):</strong> Integración con Unreal Engine 4.27 y 5.4, mejoras en sombras, iluminación
+            (Marschner shading, Skylight, TAA), soporte para Lumen y ray tracing, y optimizaciones de rendimiento.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>Dependiendo del juego, los nombres pueden variar, pero lo más común es encontrar:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>Off (Desactivado):</strong> El cabello se renderiza como un bloque estático o con animaciones simples.
+            Máximo rendimiento, pero menos realismo.
+          </li>
+          <li>
+            <strong>Normal / On / TressFX:</strong> Activa la simulación básica de hebras. El pelo se ve más suelto y con
+            movimiento natural.
+          </li>
+          <li>
+            <strong>High / Very High:</strong> Aumenta el número de hebras simuladas, la suavidad del movimiento y la interacción
+            con la luz. Mucho más realista, pero también más exigente.
+          </li>
+          <li>
+            <strong>TressFX + AA (en algunos juegos):</strong> Añade suavizado extra en las hebras para evitar bordes dentados,
+            con un coste adicional en GPU.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p>
+            TressFX es muy dependiente de la GPU, ya que calcula la física y el renderizado de miles de hebras en tiempo
+            real.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-3">
+            <li>
+              <strong>1080p:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Activado en calidad básica: pérdida de ~10–15% de FPS.</li>
+                <li>En calidad alta: pérdida de ~20–25%.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>1440p:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Activado en calidad básica: pérdida de ~15–20%.</li>
+                <li>En calidad alta: pérdida de ~25–30%.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>4K:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Activado en calidad básica: pérdida de ~20–25%.</li>
+                <li>En calidad alta: pérdida de ~30–40%.</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="mt-3">
+            El impacto es mayor en resoluciones altas porque la GPU ya está más cargada. La CPU apenas influye.
+          </p>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              Actívalo en calidad alta si tienes una GPU potente (ej. gama alta de los últimos 3–4 años) y juegas en
+              1080p o 1440p.
+            </li>
+            <li>Actívalo en calidad normal si quieres un balance entre realismo y rendimiento.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Desactívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tu GPU es de gama media/baja.</li>
+            <li>Juegas en 4K y necesitas cada FPS.</li>
+            <li>Prefieres priorizar fluidez sobre detalle visual.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

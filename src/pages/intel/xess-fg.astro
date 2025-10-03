@@ -1,0 +1,97 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Intel XeSS FG</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Intel XeSS FG (Frame Generation)</h1>
+        <p>
+          XeSS FG forma parte de XeSS 2, la evolución del supersampling de Intel. Mientras que XeSS tradicional (SR)
+          escala la resolución para ganar rendimiento, XeSS FG genera fotogramas nuevos mediante IA, interpolando entre
+          los cuadros reales que produce la GPU. El resultado es una experiencia mucho más fluida, con la sensación de
+          que el juego corre al doble o triple de FPS, sin necesidad de que la GPU renderiza cada cuadro desde cero.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>
+          En los juegos compatibles, XeSS FG suele aparecer como una opción adicional dentro de los ajustes gráficos:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Desactivado:</strong> Solo se usa XeSS SR (reescalado) o resolución nativa.</li>
+          <li><strong>Activado:</strong> Se generan cuadros extra mediante IA, que se suman a los renderizados.</li>
+          <li>
+            Puede combinarse con los distintos perfiles de XeSS (Ultra Calidad, Calidad, Equilibrado, Rendimiento).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto en FPS:</strong> Puede duplicar o incluso triplicar los FPS en títulos compatibles.</li>
+            <li>
+              <strong>Dependencia:</strong> Usa los núcleos XMX de las GPU Intel Arc y futuras Battlemage; en otras GPUs
+              (AMD/NVIDIA) funciona vía shaders, con menor eficiencia.
+            </li>
+            <li>
+              <strong>Ganancia típica:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>1080p:</strong> hasta 1.5–2× FPS.</li>
+                <li><strong>1440p:</strong> hasta 2–2.5× FPS.</li>
+                <li><strong>4K:</strong> hasta 3–4× FPS en modo Ultra Rendimiento.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Latencia:</strong> como toda generación de cuadros, puede añadir algo de retraso en la respuesta, aunque
+              Intel lo mitiga con optimizaciones propias.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Quieres más fluidez en juegos exigentes, sobre todo en 1440p y 4K.</li>
+            <li>Tu GPU Intel Arc o Battlemage soporta XeSS 2 con FG.</li>
+            <li>Prefieres priorizar suavidad de movimiento sobre la latencia mínima.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas títulos competitivos donde cada milisegundo de respuesta importa.</li>
+            <li>Ya tienes FPS estables y no necesitas interpolación.</li>
+            <li>Prefieres fidelidad absoluta sin cuadros generados artificialmente.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

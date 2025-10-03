@@ -1,0 +1,85 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Intel Xe Adaptive Sharpening</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Intel Xe Adaptive Sharpening</h1>
+        <p>
+          A diferencia de los filtros de nitidez tradicionales, que aplican el mismo nivel de afilado en toda la
+          pantalla, Intel Xe Adaptive Sharpening analiza regiones específicas de la imagen y ajusta la intensidad de
+          forma dinámica. Esto evita problemas comunes como el exceso de nitidez en algunas áreas o la pérdida de
+          detalle natural en otras. El resultado es una imagen más clara y definida, especialmente útil en juegos que
+          usan escalado o en contenido de baja resolución.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el software de Intel o en los controladores gráficos, el usuario puede:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>Activar/Desactivar el filtro.</li>
+          <li>
+            Ajustar la intensidad en un rango (por ejemplo, de 0 a 255), donde 0 significa desactivado, 1 es el mínimo y
+            255 el máximo nivel de nitidez.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto en FPS:</strong> Muy bajo, ya que el filtro está implementado en el motor de visualización
+              (Display Engine) y optimizado para eficiencia.
+            </li>
+            <li><strong>Dependencia:</strong> Solo de la GPU, no de la CPU.</li>
+            <li><strong>Consumo energético:</strong> Diseñado para ser ligero, ideal incluso en portátiles.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Usas escalado (XeSS, FSR, etc.) y notas la imagen algo borrosa.</li>
+            <li>Juegas en resoluciones medias (1080p/1440p) donde la nitidez extra es más perceptible.</li>
+            <li>Quieres más claridad en juegos retro o con texturas suaves.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas en 4K nativo, donde la nitidez ya es alta.</li>
+            <li>Prefieres una imagen más suave y natural.</li>
+            <li>Notas halos o bordes artificiales al subir demasiado la intensidad.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

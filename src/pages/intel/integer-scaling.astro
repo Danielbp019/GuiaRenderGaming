@@ -1,0 +1,91 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Intel Integer Scaling</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Intel Integer Scaling</h1>
+        <p>
+          Integer Scaling es una técnica de reescalado por múltiplos enteros: en lugar de interpolar o suavizar la
+          imagen, cada píxel original se multiplica en bloques exactos (x2, x3, x4, etc.) para llenar la pantalla. Así,
+          un juego de 720p en un monitor 1440p se escala en bloques perfectos sin desenfoque. El resultado es una imagen
+          nítida y fiel al estilo original, especialmente útil en títulos retro o indies con gráficos pixelados.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>
+          En el software Intel Arc Control o en el menú de gráficos integrados, Integer Scaling suele aparecer como:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Activado:</strong> Escala la imagen usando múltiplos enteros, manteniendo píxeles perfectos.</li>
+          <li>
+            <strong>Desactivado:</strong> El escalado se hace con interpolación tradicional (bilineal), lo que genera suavizado
+            o borrosidad.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto en FPS:</strong> Prácticamente nulo, ya que es un proceso muy ligero.</li>
+            <li><strong>Dependencia:</strong> Solo de la GPU, no de la CPU.</li>
+            <li>
+              <strong>Resoluciones:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>1080p en monitor 4K:</strong> Escalado perfecto x2.</li>
+                <li><strong>720p en monitor 1440p:</strong> Escalado perfecto x2.</li>
+                <li>
+                  <strong>Resoluciones no múltiplos exactos:</strong> Se añaden bordes negros para mantener la proporción.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas títulos retro o indies con gráficos pixelados (pixel art).</li>
+            <li>Quieres evitar el desenfoque típico del escalado tradicional.</li>
+            <li>Usas resoluciones más bajas en monitores de alta resolución.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas títulos modernos en 3D, donde el suavizado ayuda a evitar bordes duros.</li>
+            <li>Prefieres que la imagen ocupe toda la pantalla sin bordes negros.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

@@ -1,0 +1,140 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>AMD FidelityFX Super Resolution</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">AMD FidelityFX Super Resolution (FSR)</h1>
+        <p>
+          FSR es una tecnología de reescalado espacial y temporal desarrollada por AMD. Su objetivo es mejorar el
+          rendimiento en videojuegos al renderizar internamente a una resolución más baja y luego reconstruir la imagen
+          a la resolución nativa de tu monitor. Gracias a algoritmos avanzados de nitidez, la pérdida de calidad es
+          mínima en los modos más altos, y el aumento de FPS puede ser muy significativo. A diferencia de DLSS, FSR no
+          requiere hardware especializado (como Tensor Cores), por lo que es compatible con una gran variedad de GPUs,
+          incluso de generaciones anteriores.
+        </p>
+      </div>
+
+      <!-- Evolución de FSR -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-layers-fill text-info"></i> Evolución de FSR y sus puntos llamativos
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-left">
+          <li>
+            <strong>FSR 1.0 (2021)</strong><br />
+            Método de escalado espacial.<br />
+            No usaba datos de cuadros anteriores, solo algoritmos de nitidez.<br />
+            Muy ligero y compatible con casi cualquier GPU, incluso NVIDIA e Intel.<br />
+            <strong>Llamativo:</strong> fue la primera alternativa abierta a DLSS, con gran soporte inicial.
+          </li>
+          <li>
+            <strong>FSR 2.0 (2022)</strong><br />
+            Introdujo escalado temporal: usaba información de cuadros previos y vectores de movimiento.<br />
+            Mucha mejor calidad visual, menos artefactos y ghosting.<br />
+            <strong>Llamativo:</strong> se acercó bastante a la calidad de DLSS, pero sin requerir hardware especializado.
+          </li>
+          <li>
+            <strong>FSR 3.0 (2023)</strong><br />
+            Añadió Frame Generation (generación de cuadros), similar a DLSS 3.<br />
+            Permitía duplicar FPS insertando cuadros interpolados.<br />
+            <strong>Llamativo:</strong> grandes mejoras de fluidez, aunque con algo más de latencia.<br />
+            FSR 3.1 refinó la calidad y mejoró la API para desarrolladores.
+          </li>
+          <li>
+            <strong>FSR 4.0 (2025)</strong><br />
+            Evoluciona hacia un sistema de reescalado y generación de cuadros con IA.<br />
+            Usa machine learning y está optimizado para hardware RDNA 4, incluyendo técnicas de trazado de rayos asistidas
+            por ML.<br />
+            <strong>Llamativo:</strong> introduce conceptos como caché de radiancia neuronal y regeneración de rayos con
+            ML, lo que mejora la iluminación global y el ray tracing en tiempo real con menor coste.<br />
+            Exclusivo de las nuevas Radeon RX serie 9000, aunque la comunidad ha intentado adaptarlo a GPUs anteriores.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>FSR ofrece varios modos que puedes seleccionar en el menú gráfico del juego:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Ultra Calidad:</strong> Prioriza la calidad de imagen, con un aumento de FPS moderado.</li>
+          <li>
+            <strong>Calidad:</strong> Equilibrio entre nitidez y rendimiento, ideal para 1080p, 1440p y hasta 4K en GPUs
+            medias.
+          </li>
+          <li><strong>Equilibrado:</strong> Más FPS, sacrificando algo de detalle.</li>
+          <li><strong>Rendimiento:</strong> Máxima ganancia de FPS, pero con pérdida visible de calidad.</li>
+          <li>
+            <strong>FSR 3 y 4 (últimas versiones):</strong> Añaden frame generation (generación de cuadros) usando IA, lo
+            que puede duplicar los FPS en juegos compatibles.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto general:</strong> FSR no “consume” rendimiento extra, sino que lo aumenta al reducir la resolución
+              interna.
+            </li>
+            <li><strong>Dependencia:</strong> Solo de la GPU, no de la CPU.</li>
+            <li>
+              <strong>Ganancia de FPS aproximada (según modo y resolución):</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>1080p:</strong> +10–25% de FPS.</li>
+                <li><strong>1440p:</strong> +20–40%.</li>
+                <li><strong>4K:</strong> +30–60%.</li>
+              </ul>
+            </li>
+            <li>
+              Con frame generation (FSR 3/4), la ganancia puede ser aún mayor, aunque con algo más de latencia añadida.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Quieres más FPS en juegos exigentes.</li>
+            <li>Tienes una GPU de gama media o baja y buscas jugar en resoluciones altas.</li>
+            <li>Juegas en 1440p o 4K y necesitas fluidez extra.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Ya tienes FPS estables y prefieres la máxima calidad nativa.</li>
+            <li>Estás en 1080p con una GPU potente, donde la ganancia es menor.</li>
+            <li>Eres muy sensible a artefactos visuales (en modos Rendimiento/Equilibrado).</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

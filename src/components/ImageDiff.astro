@@ -3,29 +3,29 @@ interface Props {
   title: string;
   img1: string;
   img2: string;
-  alt1?: string;
-  alt2?: string;
+  alt1: string;
+  alt2: string;
 }
 
-const { title, img1, img2, alt1 = "Imagen 1", alt2 = "Imagen 2" } = Astro.props;
+const { title, img1, img2, alt1, alt2 } = Astro.props;
 ---
 
-<!-- DaisyUI ya cambia los colores de "text-base-content" según el tema -->
 <details class="collapse collapse-arrow bg-base-100 border-base-300 border">
   <summary class="collapse-title font-semibold text-base-content">{title}</summary>
   <div class="collapse-content text-sm">
     <figure class="diff aspect-16/9">
-      <div class="diff-item-1" role="img">
+      <div class="diff-item-1">
         <img alt={alt1} src={img1} loading="lazy" />
       </div>
-      <div class="diff-item-2" role="img">
+      <div class="diff-item-2">
         <img alt={alt2} src={img2} loading="lazy" />
       </div>
+
       <div
         class="diff-resizer"
         role="slider"
         tabindex="0"
-        aria-label="Control de comparación de imágenes"
+        aria-label={`Arrastra para comparar ${alt1} y ${alt2}`}
         aria-valuemin="0"
         aria-valuemax="100"
         aria-valuenow="50"

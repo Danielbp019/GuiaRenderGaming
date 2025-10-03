@@ -1,0 +1,100 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>AMD FidelityFX Suite</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">AMD FidelityFX Suite</h1>
+        <p>
+          La FidelityFX Suite es un paquete de efectos visuales optimizados para tarjetas gráficas AMD (aunque muchos
+          funcionan también en otras GPUs). Su objetivo es mejorar la fidelidad gráfica y la eficiencia del renderizado.
+          A diferencia de tecnologías cerradas, es de código abierto, lo que facilita su adopción en múltiples juegos.
+        </p>
+      </div>
+
+      <!-- Principales componentes -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-boxes text-info"></i> Principales componentes de la suite
+        </h2>
+        <p>Dentro del menú gráfico de los juegos compatibles, puedes encontrar varias de estas opciones:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>FSR (FidelityFX Super Resolution):</strong> Escalado espacial/temporal para aumentar FPS manteniendo
+            calidad visual.
+          </li>
+          <li>
+            <strong>CAS (Contrast Adaptive Sharpening):</strong> Filtro de nitidez adaptativo que recupera detalle perdido
+            tras aplicar TAA o escalado.
+          </li>
+          <li>
+            <strong>CACAO (Combined Adaptive Compute Ambient Occlusion):</strong> Oclusión ambiental avanzada para sombras
+            más realistas según la luz ambiente.
+          </li>
+          <li>
+            <strong>SSSR (Stochastic Screen Space Reflections):</strong> Reflejos en pantalla más naturales y menos ruidosos.
+          </li>
+          <li>
+            <strong>VRS (Variable Rate Shading):</strong> Ajusta dinámicamente la tasa de sombreado en distintas zonas de
+            la imagen para optimizar el rendimiento.
+          </li>
+          <li>
+            <strong>Denoiser para Ray Tracing:</strong> Filtros que reducen el ruido en reflejos e iluminación global generados
+            por trazado de rayos.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto general:</strong> Varía según el efecto activado.</li>
+            <li><strong>FSR:</strong> aumenta FPS (no resta).</li>
+            <li><strong>CAS:</strong> impacto mínimo (&lt;2%).</li>
+            <li><strong>CACAO y SSSR:</strong> moderado (5–15% de pérdida de FPS).</li>
+            <li><strong>VRS:</strong> mejora rendimiento al reducir carga de GPU.</li>
+            <li><strong>Denoiser RT:</strong> puede ser exigente en 1440p/4K, con pérdidas de 10–20%.</li>
+            <li><strong>Dependencia:</strong> Principalmente de la GPU.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Activa CAS si notas la imagen borrosa tras usar TAA o FSR.</li>
+            <li>Activa CACAO si quieres sombras más realistas y tu GPU lo permite.</li>
+            <li>
+              Activa SSSR en juegos con agua o superficies reflectantes, siempre que no comprometa demasiado los FPS.
+            </li>
+            <li>Usa VRS siempre que esté disponible: mejora rendimiento sin pérdida visible de calidad.</li>
+            <li>Activa el denoiser RT solo si juegas con trazado de rayos y tu GPU es potente.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

@@ -1,0 +1,96 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>AMD Radeon Image Sharpening (RIS)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">AMD RIS (Radeon Image Sharpening)</h1>
+        <p>
+          RIS es un sistema de afilado de imagen por contraste adaptativo. Lo que hace es analizar la escena y aplicar
+          un realce selectivo en los bordes y detalles finos, sin exagerar el ruido ni crear artefactos. Es
+          especialmente útil cuando se usan tecnologías de escalado como FSR, ya que compensa la ligera borrosidad que
+          puede aparecer al renderizar a menor resolución. También puede aplicarse en juegos nativos para dar un aspecto
+          más definido y claro a texturas y objetos.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el menú gráfico o en el software Radeon Adrenalin, RIS suele ofrecer:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Activado:</strong> Aplica el filtro de nitidez en todo el juego.</li>
+          <li><strong>Desactivado:</strong> El juego se muestra sin afilado adicional.</li>
+          <li>
+            <strong>Control de intensidad:</strong> Un deslizador que permite ajustar cuánta nitidez aplicar (valores altos
+            pueden generar bordes artificiales, valores bajos suavizan demasiado).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto general:</strong> RIS es muy ligero, prácticamente sin pérdida de FPS (menos del 2–3% en la
+              mayoría de casos).
+            </li>
+            <li><strong>Dependencia:</strong> Solo de la GPU, no de la CPU.</li>
+            <li>
+              <strong>Resoluciones:</strong>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li><strong>1080p:</strong> impacto casi nulo.</li>
+                <li><strong>1440p:</strong> impacto mínimo, ideal para compensar suavidad de FSR.</li>
+                <li>
+                  <strong>4K:</strong> también muy ligero, aunque la ganancia visual es más sutil porque la resolución ya
+                  es muy alta.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Usas FSR u otro escalado y notas la imagen algo borrosa.</li>
+            <li>Quieres más nitidez en texturas y objetos sin sacrificar rendimiento.</li>
+            <li>Juegas en resoluciones medias (1080p/1440p) donde el detalle extra se nota más.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Prefieres una imagen más suave y natural.</li>
+            <li>Juegas en 4K nativo con buena calidad, donde el efecto es menos perceptible.</li>
+            <li>Notas que el exceso de nitidez genera artefactos o halos en los bordes.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>
