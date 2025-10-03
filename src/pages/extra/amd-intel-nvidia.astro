@@ -1,0 +1,101 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card principal -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Extra</li>
+            <li>Comparativas</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">Cuadro comparativo de tecnologías gráficas</h1>
+        <p>
+          Este cuadro estandariza las principales tecnologías de <strong>NVIDIA</strong>, <strong>AMD</strong> e
+          <strong>Intel</strong>, mostrando sus equivalencias en categorías como reescalado, generación de cuadros,
+          reducción de latencia, nitidez y más.
+        </p>
+      </div>
+
+      <!-- Tabla comparativa -->
+      <div class="glass rounded-box w-full p-6 overflow-x-auto">
+        <table class="table w-full text-sm">
+          <thead>
+            <tr class="text-base font-semibold">
+              <th class="bg-base-200">Categoría / Función</th>
+              <th class="bg-base-200">NVIDIA</th>
+              <th class="bg-base-200">AMD</th>
+              <th class="bg-base-200">Intel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Reescalado por IA / Super Sampling</strong></td>
+              <td>DLSS (1.0 → 4.0)</td>
+              <td>FSR (1.0 → 4.0)</td>
+              <td>XeSS (1.0 → 2.1)</td>
+            </tr>
+            <tr>
+              <td><strong>Generación de cuadros (Frame Generation)</strong></td>
+              <td>DLSS 3 / 4 Frame Generation</td>
+              <td>FSR 3 / 4 Frame Generation</td>
+              <td>XeSS FG (parte de XeSS 2)</td>
+            </tr>
+            <tr>
+              <td><strong>Reducción de latencia</strong></td>
+              <td>NVIDIA Reflex</td>
+              <td>Radeon Anti-Lag / Anti-Lag+ / Anti-Lag 2</td>
+              <td>Intel Low Latency Mode (Xe Low Latency)</td>
+            </tr>
+            <tr>
+              <td><strong>Nitidez / Sharpening</strong></td>
+              <td>NVIDIA Freestyle (filtros)</td>
+              <td>Radeon Image Sharpening (RIS)</td>
+              <td>Xe Adaptive Sharpening</td>
+            </tr>
+            <tr>
+              <td><strong>Escalado global por driver</strong></td>
+              <td>—</td>
+              <td>RSR (Radeon Super Resolution)</td>
+              <td>Integer Scaling</td>
+            </tr>
+            <tr>
+              <td><strong>Paquete de efectos visuales</strong></td>
+              <td>GameWorks / Freestyle</td>
+              <td>FidelityFX Suite (CAS, CACAO, SSSR, VRS, Denoiser RT)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Cabello / simulación avanzada</strong></td>
+              <td>HairWorks</td>
+              <td>TressFX Hair</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Modo de baja latencia + Boost</strong></td>
+              <td>Reflex + Boost</td>
+              <td>Anti-Lag+ / Boost</td>
+              <td>Low Latency + Boost</td>
+            </tr>
+            <tr>
+              <td><strong>Filtros post-procesado</strong></td>
+              <td>NVIDIA Freestyle (GeForce Experience)</td>
+              <td>Adrenalin (FSR, RIS, CAS)</td>
+              <td>Arc Control (XeSS, Sharpening)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</DashboardLayout>

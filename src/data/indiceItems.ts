@@ -65,4 +65,5 @@ export const indiceItems: Item[] = [
   // Extra
   { href: "/extra/display", titleEs: "Monitores", vendor: "extra" },
   { href: "/extra/references", titleEs: "Referencias", vendor: "extra" },
+  { href: "/extra/amd-intel-nvidia", titleEs: "Comparación global", vendor: "extra" },
 ];

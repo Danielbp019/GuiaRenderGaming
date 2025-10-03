@@ -27,6 +27,48 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         </p>
       </div>
 
+      <!-- Evolución de DLSS -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-layers-fill text-info"></i> Evolución de DLSS y sus puntos llamativos
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-left">
+          <li>
+            <strong>DLSS 1.0 (2018)</strong><br />
+            Primera versión lanzada con las RTX 20 Series.<br />
+            Requería entrenamiento específico por juego y generaba artefactos y cierta borrosidad.<br />
+            <strong>Llamativo:</strong> fue la primera tecnología de reescalado por IA en tiempo real, aunque limitada.
+          </li>
+          <li>
+            <strong>DLSS 2.0 (2020)</strong><br />
+            Nuevo modelo de IA universal, sin necesidad de entrenar cada juego.<br />
+            Mucha mejor calidad visual, más nítida y estable.<br />
+            Compatible con más títulos y motores gráficos (Unreal Engine, Unity).<br />
+            <strong>Llamativo:</strong> marcó el verdadero salto de calidad, acercándose a la imagen nativa.
+          </li>
+          <li>
+            <strong>DLSS 3.0 (2022)</strong><br />
+            Introdujo <em>Frame Generation</em>, generando cuadros adicionales mediante IA.<br />
+            Requiere GPUs RTX 40 Series con núcleos Tensor de última generación.<br />
+            <strong>Llamativo:</strong> duplicaba o triplicaba FPS en juegos compatibles, aunque con algo más de latencia.
+          </li>
+          <li>
+            <strong>DLSS 3.5 (2023)</strong><br />
+            Añadió <em>Ray Reconstruction</em>, reemplazando denoisers tradicionales por IA.<br />
+            Mejora la calidad de reflejos, sombras e iluminación global en ray tracing.<br />
+            <strong>Llamativo:</strong> calidad de imagen muy superior en escenas con trazado de rayos.
+          </li>
+          <li>
+            <strong>DLSS 4.0 (2025)</strong><br />
+            Introduce <em>Multi Frame Generation</em>, capaz de generar hasta 3 cuadros por cada cuadro renderizado.<br
+            />
+            Compatible con GPUs RTX 50 Series (Blackwell) y Tensor Cores de quinta generación.<br />
+            <strong>Llamativo:</strong> multiplica el rendimiento hasta 8× frente al renderizado tradicional, manteniendo
+            baja latencia con NVIDIA Reflex.
+          </li>
+        </ul>
+      </div>
+
       <!-- Modos de funcionamiento -->
       <div class="glass rounded-box w-full p-6">
         <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
