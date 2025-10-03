@@ -1,0 +1,88 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>NVIDIA Freestyle</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">NVIDIA Freestyle</h1>
+        <p>
+          NVIDIA Freestyle es un sistema de filtros de postprocesado que se aplican directamente sobre la imagen del
+          juego mientras juegas. Funciona como un “Instagram para videojuegos”: puedes modificar la estética del título
+          con filtros prediseñados o ajustes manuales, desde mejorar la nitidez y el color hasta aplicar efectos retro,
+          blanco y negro, modo nocturno o filtros para daltónicos.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el menú de GeForce Experience (atajo Alt+F3 dentro del juego), puedes:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>Activar/Desactivar filtros en tiempo real.</li>
+          <li>Aplicar hasta 3 filtros simultáneamente.</li>
+          <li>
+            Elegir entre más de 15 filtros y 38 ajustes (ejemplos: nitidez, HDR, viñeta, exposición, modo daltónico,
+            reducción de luz azul, estilo retro, etc.).
+          </li>
+          <li>Guardar combinaciones personalizadas para distintos juegos.</li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Impacto en FPS:</strong> Muy bajo en la mayoría de filtros (1–5% de pérdida).</li>
+            <li><strong>Dependencia:</strong> Solo de la GPU, ya que son efectos de postprocesado.</li>
+            <li><strong>Resoluciones:</strong></li>
+            <ul class="list-disc list-inside ml-6 space-y-1">
+              <li><strong>1080p:</strong> impacto casi imperceptible.</li>
+              <li><strong>1440p:</strong> pérdida ligera (2–4%).</li>
+              <li><strong>4K:</strong> puede llegar a 5–8% si usas varios filtros pesados.</li>
+            </ul>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Quieres personalizar la estética de tus juegos.</li>
+            <li>Necesitas más nitidez o contraste en títulos que se ven borrosos.</li>
+            <li>Buscas filtros prácticos como reducción de luz azul o modo daltónico.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tu GPU ya va justa de rendimiento.</li>
+            <li>Prefieres la imagen original del juego sin alteraciones.</li>
+            <li>Juegas en 4K con filtros pesados y necesitas cada FPS.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

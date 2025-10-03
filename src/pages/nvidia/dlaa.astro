@@ -1,0 +1,94 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>DLAA</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">DLAA</h1>
+        <p>
+          DLAA (Deep Learning Anti-Aliasing) es una opción de suavizado de bordes desarrollada por Nvidia que usa IA
+          para reducir los “dientes de sierra” o aliasing en los videojuegos. Funciona sobre la resolución nativa del
+          juego (es decir, no escala la imagen hacia arriba o hacia abajo), y mejora la calidad visual a costa de
+          rendimiento.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>
+          En el menú gráfico, DLAA suele aparecer como una opción única (no tiene variantes como
+          “Calidad/Equilibrado/Rendimiento” de DLSS).
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>DLAA activado:</strong> El juego se renderiza a resolución nativa y la IA aplica suavizado avanzado.
+          </li>
+          <li>
+            <strong>DLAA desactivado:</strong> El juego usa el método de anti-aliasing por defecto (TAA, FXAA, MSAA, según
+            el título).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p>
+            <strong>Impacto general:</strong> DLAA consume más GPU que TAA/FXAA, porque usa IA y Tensor Cores. No afecta
+            a la CPU.
+          </p>
+          <p class="mt-3">FPS aproximados (puede variar según juego y GPU):</p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-2">
+            <li><strong>1080p:</strong> pérdida de 5–10% de FPS.</li>
+            <li><strong>1440p:</strong> pérdida de 8–15%.</li>
+            <li><strong>4K:</strong> pérdida de 10–20%.</li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tu GPU es potente y ya logras FPS estables en la resolución deseada.</li>
+            <li>Buscas la máxima calidad de imagen y no te importa perder algunos FPS.</li>
+            <li>
+              Juegas a títulos donde los bordes y detalles finos son muy visibles (ej. RPGs, juegos con mucho foliage o
+              arquitectura).
+            </li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tu PC ya va justo de FPS.</li>
+            <li>Prefieres priorizar fluidez sobre calidad visual.</li>
+            <li>Estás en 4K y cada frame extra cuenta.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

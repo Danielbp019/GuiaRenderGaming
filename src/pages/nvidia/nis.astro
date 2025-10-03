@@ -1,0 +1,95 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>NIS (NVIDIA Image Scaling)</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">NIS (NVIDIA Image Scaling)</h1>
+        <p>
+          NIS es un algoritmo de reescalado espacial desarrollado por NVIDIA que funciona en casi todas sus tarjetas
+          gráficas, incluso en las GTX. Lo que hace es renderizar el juego a una resolución más baja para ganar FPS y
+          luego reescalar la imagen a la resolución nativa de tu monitor, aplicando un filtro de nitidez configurable.
+          El resultado es un aumento de rendimiento con una calidad visual bastante cercana a la resolución nativa,
+          aunque no tan avanzada como DLSS, ya que no usa inteligencia artificial ni Tensor Cores.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el menú gráfico o en el panel de control de NVIDIA, NIS suele ofrecer:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>Activado:</strong> Permite usar resoluciones más bajas que la nativa y reescalarlas con nitidez.
+          </li>
+          <li><strong>Desactivado:</strong> El juego se renderiza a resolución nativa sin reescalado.</li>
+          <li>
+            <strong>Control de nitidez:</strong> Un deslizador (normalmente entre 0% y 100%) para ajustar cuán nítida se
+            verá la imagen tras el reescalado. Valores altos pueden generar bordes artificiales o aliasing, mientras que
+            valores bajos suavizan demasiado.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p>
+            <strong>Impacto general:</strong> NIS no consume recursos extra significativos, ya que es un proceso ligero de
+            postprocesado.
+          </p>
+          <p><strong>Dependencia:</strong> Solo afecta a la GPU, no a la CPU.</p>
+          <p class="mt-3">Ganancia de FPS aproximada (según resolución base y escalado aplicado):</p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-2">
+            <li><strong>1080p:</strong> mejora de 10–20% de FPS.</li>
+            <li><strong>1440p:</strong> mejora de 15–25%.</li>
+            <li><strong>4K:</strong> mejora de 20–30%.</li>
+          </ul>
+          <p class="mt-3">
+            Cuanto mayor sea la resolución nativa, más se nota el beneficio de NIS al bajar la resolución interna.
+          </p>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Quieres más FPS sin sacrificar demasiado la calidad visual.</li>
+            <li>Tu GPU no soporta DLSS o prefieres una opción más universal.</li>
+            <li>Juegas en 1440p o 4K y necesitas un empujón extra de rendimiento.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Ya tienes FPS estables y prefieres la máxima calidad nativa.</li>
+            <li>Usas DLSS, que suele dar mejor calidad visual que NIS.</li>
+            <li>Juegas en 1080p y la ganancia de rendimiento es menor.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

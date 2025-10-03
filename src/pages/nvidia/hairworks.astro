@@ -1,0 +1,94 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>HairWorks</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">HairWorks</h1>
+        <p>
+          HairWorks es una tecnología gráfica de NVIDIA que añade simulación avanzada de cabello, pelaje y pelo en
+          personajes y animales de los videojuegos. Se activa o desactiva en el menú gráfico, y su objetivo es dar un
+          aspecto más realista, aunque con un coste alto en rendimiento.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En la mayoría de juegos, HairWorks aparece como una opción binaria:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Activado:</strong> El cabello/pelaje se renderiza con simulación avanzada.</li>
+          <li><strong>Desactivado:</strong> El juego usa texturas simples o un anti-aliasing básico en el pelo.</li>
+        </ul>
+        <p class="mt-4">En algunos títulos (ej. The Witcher 3), puede haber ajustes adicionales:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>HairWorks en personajes principales:</strong> Solo afecta al protagonista.</li>
+          <li>
+            <strong>HairWorks en todos los personajes/animales:</strong> Mucho más realista, pero también mucho más exigente.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p>
+            <strong>Impacto general:</strong> Muy alto en GPU, ya que simula decenas o cientos de miles de hebras de pelo
+            en movimiento.
+          </p>
+          <p><strong>Dependencia:</strong> Solo carga la GPU, no la CPU.</p>
+          <p class="mt-3">FPS aproximados (según resolución y GPU de gama media/alta):</p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-2">
+            <li><strong>1080p:</strong> pérdida de 10–20% de FPS.</li>
+            <li><strong>1440p:</strong> pérdida de 15–25%.</li>
+            <li><strong>4K:</strong> pérdida de 20–35%.</li>
+          </ul>
+          <p class="mt-3">Cuantos más personajes con pelo/pelaje en pantalla, mayor es el impacto.</p>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tienes una GPU potente (RTX de gama media/alta o superior).</li>
+            <li>
+              Quieres la máxima fidelidad visual en juegos donde el pelo/pelaje es muy visible (ej. lobos en The Witcher
+              3).
+            </li>
+            <li>Juegas en 1080p o 1440p y aún te sobran FPS.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tu PC ya va justo de rendimiento.</li>
+            <li>Juegas en 4K, donde el coste es muy alto.</li>
+            <li>Prefieres fluidez estable a calidad visual extra.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

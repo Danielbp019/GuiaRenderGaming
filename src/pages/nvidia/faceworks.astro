@@ -1,0 +1,96 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>NVIDIA FaceWorks</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">NVIDIA FaceWorks</h1>
+        <p>
+          FaceWorks es un sistema de renderizado avanzado de piel y ojos desarrollado por NVIDIA. Su objetivo es que los
+          rostros de los personajes se vean más naturales, con efectos como la translucidez de la piel (subsurface
+          scattering) y reflejos más realistas en los ojos.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En los juegos que lo incluyen, normalmente no hay decenas de configuraciones, sino algo bastante directo:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>Desactivado (Off):</strong> El juego usa un renderizado estándar de piel y ojos, menos realista pero
+            más ligero.
+          </li>
+          <li>
+            <strong>Activado (On / High Quality):</strong> Se aplican los algoritmos de FaceWorks, con simulación de cómo
+            la luz atraviesa y rebota en la piel, y reflejos más naturales en los ojos.
+          </li>
+          <li>
+            <strong>A veces “Calidad Baja/Alta”:</strong> Algunos títulos permiten elegir entre un modo más ligero (menos
+            capas de dispersión de luz) y uno más completo (más realismo, más coste).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p>
+            <strong>Carga principal:</strong> Recae en la GPU, ya que se trata de cálculos de iluminación y sombreado avanzados.
+            La CPU apenas se ve afectada.
+          </p>
+          <p class="mt-3">Impacto aproximado en FPS:</p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-2">
+            <li><strong>1080p:</strong> pérdida de 5–10 FPS en promedio.</li>
+            <li><strong>1440p:</strong> pérdida de 8–15 FPS.</li>
+            <li><strong>4K:</strong> pérdida de 12–20 FPS o más, dependiendo del motor gráfico y la escena.</li>
+          </ul>
+          <p class="mt-3">
+            En tarjetas gráficas de gama media o baja, el impacto puede sentirse mucho más fuerte, sobre todo en 1440p y
+            4K.
+          </p>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tienes una GPU potente (RTX 3060 Ti/3070 en adelante o equivalentes).</li>
+            <li>El juego se centra mucho en cinemáticas o primeros planos de personajes.</li>
+            <li>Buscas la máxima fidelidad visual y no te importa perder algunos FPS.</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Desactívalo o usa calidad baja si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas competitivo o necesitas el mayor rendimiento posible.</li>
+            <li>Tu GPU es de gama media-baja y ya estás justo de FPS.</li>
+            <li>Juegas en 4K sin DLSS/FSR y necesitas cada cuadro extra.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

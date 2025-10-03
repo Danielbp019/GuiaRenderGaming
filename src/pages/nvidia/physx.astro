@@ -1,0 +1,101 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>NVIDIA PhysX</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">NVIDIA PhysX</h1>
+        <p>
+          PhysX es una tecnología desarrollada por NVIDIA que se encarga de simular físicas en tiempo real dentro de los
+          juegos. Esto incluye cómo se mueven y rompen los objetos, cómo reacciona la ropa o el pelo al viento, o cómo
+          se dispersan partículas como polvo, chispas o escombros. Sin PhysX, muchos de estos efectos se ven más simples
+          o directamente no aparecen; con PhysX activado, la experiencia es más inmersiva y realista.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el menú gráfico o en el Panel de Control de NVIDIA, PhysX suele ofrecer estas opciones:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>Automático (recomendado):</strong> El sistema decide si usar CPU o GPU según lo más eficiente.
+          </li>
+          <li>
+            <strong>CPU:</strong> Los cálculos de físicas se hacen en el procesador central. Puede funcionar en cualquier
+            PC, pero sobrecarga la CPU y baja el rendimiento.
+          </li>
+          <li>
+            <strong>GPU (NVIDIA):</strong> Los cálculos se hacen en la tarjeta gráfica, aprovechando su potencia paralela.
+            Es la opción más eficiente y la que permite efectos más complejos.
+          </li>
+        </ul>
+        <p class="mt-4">
+          En algunos juegos, la opción aparece simplemente como PhysX activado/desactivado, y al activarlo se usan
+          efectos extra de físicas.
+        </p>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p><strong>Impacto general:</strong> Activar PhysX añade carga extra, sobre todo a la GPU.</p>
+          <p>
+            <strong>Dependencia:</strong> Principalmente de la GPU (si se configura así), aunque puede caer en la CPU si
+            no tienes tarjeta NVIDIA.
+          </p>
+          <p class="mt-3">FPS aproximados (según efectos y resolución):</p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-2">
+            <li><strong>1080p:</strong> pérdida de 5–15% de FPS.</li>
+            <li><strong>1440p:</strong> pérdida de 10–20%.</li>
+            <li><strong>4K:</strong> pérdida de 15–25%.</li>
+          </ul>
+          <p class="mt-3">
+            El impacto depende mucho del juego: títulos con muchos efectos de partículas (ej. Borderlands 2, Batman
+            Arkham) pueden exigir bastante más.
+          </p>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tienes una GPU NVIDIA de gama media/alta.</li>
+            <li>Quieres la máxima calidad visual y efectos inmersivos.</li>
+            <li>Juegas a títulos donde los efectos de físicas son muy visibles (explosiones, humo, destrucción).</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Tu PC ya va justo de FPS.</li>
+            <li>Usas una GPU no muy potente o juegas en 4K.</li>
+            <li>Prefieres fluidez estable sobre efectos visuales extra.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

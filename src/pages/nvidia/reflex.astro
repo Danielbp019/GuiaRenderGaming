@@ -1,0 +1,96 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>NVIDIA Reflex</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">NVIDIA Reflex</h1>
+        <p>
+          NVIDIA Reflex es una función integrada en muchos juegos modernos que sincroniza mejor el trabajo entre CPU y
+          GPU para que los fotogramas se procesen justo a tiempo (Just-In-Time). Esto evita que la CPU genere más frames
+          de los que la GPU puede manejar, lo que normalmente causa retrasos. Al reducir esa cola de procesamiento,
+          Reflex logra que tus acciones (clics, disparos, movimientos) se reflejen en pantalla con menos retraso,
+          mejorando la sensación de inmediatez y dando ventaja en juegos competitivos.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En los menús gráficos de los juegos compatibles, Reflex suele ofrecer dos opciones:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li><strong>Activado:</strong> Reduce la latencia del sistema ajustando la sincronización CPU–GPU.</li>
+          <li>
+            <strong>Activado + Potenciado (Boost):</strong> Además de lo anterior, evita que la GPU baje sus frecuencias
+            por ahorro de energía cuando la CPU está muy cargada, manteniendo la máxima velocidad posible.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Impacto en FPS:</strong> Reflex no busca aumentar FPS, sino reducir la latencia. En la mayoría de casos,
+              no afecta negativamente al rendimiento; en algunos juegos incluso puede mejorar la estabilidad de los FPS.
+            </li>
+            <li>
+              <strong>Dependencia:</strong> Trabaja sobre todo en la GPU y la sincronización con la CPU, no en la CPU sola.
+            </li>
+            <li>
+              <strong>Latencia reducida:</strong> Puede bajar la latencia total del sistema en 10–30 ms, lo cual es muy notable
+              en shooters competitivos.
+            </li>
+            <li>
+              <strong>Resoluciones (1080p, 1440p, 4K):</strong> El beneficio se nota en todas, pero es más perceptible en
+              1080p y 1440p competitivos, donde los FPS suelen ser altos y cada milisegundo cuenta.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <p class="mb-2">Actívalo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas a títulos competitivos (shooters, MOBAs, battle royale).</li>
+            <li>Buscas la máxima respuesta inmediata entre tus acciones y lo que ves en pantalla.</li>
+            <li>Tienes una GPU NVIDIA GTX 900 o superior (es compatible desde esa serie).</li>
+          </ul>
+
+          <p class="mt-4 mb-2">Mejor desactivarlo si:</p>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Juegas a títulos de un solo jugador donde la latencia no es crítica.</li>
+            <li>
+              Tu GPU se calienta demasiado y no quieres que el modo Boost la fuerce a trabajar a máxima frecuencia.
+            </li>
+            <li>Prefieres priorizar la eficiencia energética sobre la mínima latencia.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>

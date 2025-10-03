@@ -1,0 +1,97 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>DLSS</li>
+          </ul>
+        </div>
+        <h1 class="mb-5 text-5xl font-bold">DLSS</h1>
+        <p>
+          DLSS (Deep Learning Super Sampling) es una tecnología de NVIDIA que usa inteligencia artificial para
+          renderizar el juego a menor resolución y luego "reconstruir" la imagen para que se vea como si estuviera en
+          más alta resolución. El objetivo: más FPS sin perder demasiada calidad visual.
+        </p>
+      </div>
+
+      <!-- Modos de funcionamiento -->
+      <div class="glass rounded-box w-full p-6">
+        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <p>En el menú gráfico normalmente verás:</p>
+        <ul class="list-disc list-inside space-y-2 text-left mt-3">
+          <li>
+            <strong>Quality (Calidad):</strong> Renderiza a una resolución un poco menor que la nativa, luego la escala.
+            Imagen casi igual a la resolución real, con ganancia moderada de FPS.
+          </li>
+          <li>
+            <strong>Balanced (Equilibrado):</strong> Punto medio. Imagen con un poco menos de nitidez que Quality, pero mejor
+            rendimiento.
+          </li>
+          <li>
+            <strong>Performance (Rendimiento):</strong> Renderiza a resoluciones mucho más bajas y las escala. Mucho aumento
+            en FPS, pero se puede notar pérdida de detalle o artefactos.
+          </li>
+          <li>
+            <strong>Ultra Performance:</strong> Diseñado para 4K y resoluciones altísimas. Escala desde resoluciones muy
+            bajas. FPS sube bastante, pero la calidad visual baja mucho si lo usas en 1080p o 1440p.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Coste en rendimiento -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
+          <p><strong>FPS:</strong> casi siempre aumenta, porque la GPU renderiza menos píxeles.</p>
+          <ul class="list-disc list-inside space-y-2 text-left mt-3">
+            <li><strong>Quality:</strong> +20–30% FPS aprox.</li>
+            <li><strong>Balanced:</strong> +30–40%.</li>
+            <li><strong>Performance:</strong> +40–60%.</li>
+            <li><strong>Ultra Performance:</strong> +60–70%.</li>
+          </ul>
+          <p class="mt-3">
+            <strong>Dependencia:</strong> afecta sobre todo a la GPU. Si tu cuello de botella es el CPU, DLSS casi no ayuda.
+          </p>
+        </div>
+
+        <!-- Cuándo conviene activarlo -->
+        <div class="glass rounded-box w-full p-6">
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Actívalo si juegas en resoluciones altas (1440p, 4K) o si tu GPU sufre para mantener buenos FPS.</li>
+            <li>
+              <strong>Quality</strong> es la opción ideal en la mayoría de casos: imagen muy cercana al nativo y buen boost.
+            </li>
+            <li><strong>Balanced</strong> es útil en 1440p cuando quieres más FPS sin perder demasiado detalle.</li>
+            <li>
+              <strong>Performance / Ultra Performance</strong> solo valen la pena en 4K o más, nunca en 1080p (se ve borroso).
+            </li>
+            <li>
+              Desactívalo si ya tienes muchos FPS estables en tu resolución nativa, o si notas que el juego se ve más
+              borroso o con artefactos que te molestan.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Dos columnas -->
+    </div>
+  </section>
+</DashboardLayout>
