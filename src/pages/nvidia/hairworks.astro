@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageDiff from "../../components/ImageDiff.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -42,6 +43,14 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <strong>HairWorks en todos los personajes/animales:</strong> Mucho más realista, pero también mucho más exigente.
           </li>
         </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: HairWorks OFF vs HairWorks ON"
+          img1="/img/nvidia/hairworks/the-witcher-3-wild-hunt-nvidia-hairworks-002-off.png"
+          img2="/img/nvidia/hairworks/the-witcher-3-wild-hunt-nvidia-hairworks-002-on.png"
+          alt1="Escena con HairWorks OFF"
+          alt2="Escena con HairWorks ON"
+        />
       </div>
 
       <!-- Dos columnas -->
