@@ -30,7 +30,7 @@ import aaImg from "../../assets/AA.png";
         </p>
 
         <figure class="aspect-16/9 w-[400px] mx-auto">
-          <Image src={aaImg} alt="Anti-Aliasing, AA" class="w-full h-full object-contain" loading="eager"/>
+          <Image src={aaImg} alt="Anti-Aliasing, AA" class="w-full h-full object-contain" loading="eager" />
         </figure>
       </div>
 
@@ -39,37 +39,44 @@ import aaImg from "../../assets/AA.png";
         <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
-            <strong>SSAA (Super-Sampling Anti-Aliasing):</strong> renderiza la imagen a mayor resolución y luego la reduce.
+            <strong>SSAA (Super-Sampling Anti-Aliasing):</strong> Renderiza la imagen a mayor resolución y luego la reduce.
             Es el más nítido, pero también el más costoso.
           </li>
           <li>
-            <strong>MSAA (Multi-Sampling Anti-Aliasing):</strong> suaviza solo los bordes de los polígonos, no toda la imagen.
+            <strong>MSAA (Multi-Sampling Anti-Aliasing):</strong> Suaviza solo los bordes de los polígonos, no toda la imagen.
             Buen equilibrio entre calidad y rendimiento.
           </li>
           <li>
-            <strong>FXAA (Fast Approximate Anti-Aliasing):</strong> post-proceso rápido que aplica un filtro de suavizado.
+            <strong>FXAA (Fast Approximate Anti-Aliasing):</strong> Post-proceso rápido que aplica un filtro de suavizado.
             Muy ligero, pero puede hacer la imagen algo borrosa.
           </li>
           <li>
-            <strong>TAA (Temporal Anti-Aliasing):</strong> usa información de varios fotogramas para suavizar bordes. Muy
+            <strong>TAA (Temporal Anti-Aliasing):</strong> Usa información de varios fotogramas para suavizar bordes. Muy
             efectivo, pero puede generar “ghosting” o imágenes borrosas en movimiento.
           </li>
           <li>
-            <strong>DLAA / DLSS (Deep Learning Anti-Aliasing / Super Sampling):</strong> técnicas modernas basadas en IA
+            <strong>TXAA (Temporal Approximate Anti-Aliasing, NVIDIA):</strong> Combina MSAA con técnicas temporales y filtros
+            de postprocesado avanzados. Reduce de forma notable el parpadeo y los bordes dentados en movimiento, ofreciendo
+            una imagen más suave y cinematográfica, aunque puede verse algo más difusa y con mayor coste en rendimiento que
+            TAA estándar.
+          </li>
+          <li>
+            <strong>DLAA / DLSS (Deep Learning Anti-Aliasing / Super Sampling):</strong> Técnicas modernas basadas en IA
             (NVIDIA). DLAA suaviza bordes con gran calidad; DLSS combina escalado y suavizado para mejorar FPS y nitidez.
           </li>
           <li>
-            <strong>FSR (FidelityFX Super Resolution, AMD):</strong> escalado con suavizado integrado, alternativa abierta
+            <strong>FSR (FidelityFX Super Resolution, AMD):</strong> Escalado con suavizado integrado, alternativa abierta
             a DLSS.
           </li>
-          <ImageDiff
-            title="Comparar: Suavizado de Bordes (Anti-Aliasing) OFF vs Suavizado de Bordes (Anti-Aliasing) ON"
-            img1="/img/general/anti-aliasing/no-aa.png"
-            img2="/img/general/anti-aliasing/with-aa.png"
-            alt1="Escena con Suavizado de Bordes (Anti-Aliasing) OFF"
-            alt2="Escena con Suavizado de Bordes (Anti-Aliasing) ON"
-          />
         </ul>
+        <br />
+        <ImageDiff
+          title="Comparar: Suavizado de Bordes (Anti-Aliasing) OFF vs Suavizado de Bordes (Anti-Aliasing) ON"
+          img1="/img/general/anti-aliasing/no-aa.png"
+          img2="/img/general/anti-aliasing/with-aa.png"
+          alt1="Escena con Suavizado de Bordes (Anti-Aliasing) OFF"
+          alt2="Escena con Suavizado de Bordes (Anti-Aliasing) ON"
+        />
       </div>
 
       <!-- Notas de tecnologías propietarias -->
@@ -78,7 +85,10 @@ import aaImg from "../../assets/AA.png";
           <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
         </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
-          <li><strong>NVIDIA DLSS / DLAA:</strong> usan IA para suavizar bordes y/o escalar resolución.</li>
+          <li>
+            <strong>NVIDIA DLSS / DLAA / TXAA:</strong> DLSS y DLAA usan IA para suavizar bordes y/o escalar resolución.
+            TXAA es una técnica propietaria que mezcla MSAA + TAA + filtros de postprocesado para lograr suavidad extra.
+          </li>
           <li><strong>AMD FSR:</strong> alternativa abierta, funciona en más GPUs.</li>
           <li><strong>Intel XeSS:</strong> otra solución de escalado con suavizado, basada en IA.</li>
         </ul>
@@ -97,10 +107,13 @@ import aaImg from "../../assets/AA.png";
             <li><strong>FXAA:</strong> impacto muy bajo, apenas 1–3% de FPS.</li>
             <li><strong>TAA:</strong> impacto bajo-medio, entre 5–10% de FPS.</li>
             <li>
+              <strong>TXAA:</strong> impacto medio, normalmente entre 5–15% de FPS en 1080p, 10–20% en 1440p y hasta 25%
+              en 4K. Depende casi siempre de la GPU, no de la CPU.
+            </li>
+            <li>
               <strong>DLAA / DLSS / FSR:</strong> impacto variable, pero suelen mejorar FPS al mismo tiempo que suavizan
               bordes.
             </li>
-            <li><strong>General:</strong> depende casi siempre de la GPU, no de la CPU.</li>
           </ul>
         </div>
 
@@ -111,8 +124,11 @@ import aaImg from "../../assets/AA.png";
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>PC de gama baja:</strong> usa FXAA (rápido y ligero).</li>
-            <li><strong>PC de gama media:</strong> TAA es la mejor opción por calidad/rendimiento.</li>
-            <li><strong>PC de gama alta:</strong> prueba MSAA o DLAA si buscas máxima nitidez.</li>
+            <li>
+              <strong>PC de gama media:</strong> TAA es la mejor opción por calidad/rendimiento. TXAA 2x puede ser viable
+              si buscas menos parpadeo en movimiento.
+            </li>
+            <li><strong>PC de gama alta:</strong> prueba MSAA, TXAA 4x o DLAA si buscas máxima nitidez y suavidad.</li>
             <li>
               <strong>Con GPU moderna (RTX, RX 7000, Arc):</strong> activa DLSS / FSR / XeSS para suavizado + más FPS.
             </li>
@@ -121,8 +137,8 @@ import aaImg from "../../assets/AA.png";
               en movimiento.
             </li>
             <li>
-              <strong>Experiencia inmersiva / campañas:</strong> TAA o DLSS ofrecen la mejor calidad visual sin sacrificar
-              demasiado rendimiento.
+              <strong>Experiencia inmersiva / campañas:</strong> TAA o TXAA ofrecen la mejor estabilidad visual en movimiento,
+              mientras que DLSS combina suavizado con más rendimiento.
             </li>
           </ul>
         </div>

@@ -32,27 +32,28 @@ export const indiceItems: Item[] = [
   { href: "/general/lens-flares", titleEs: "Destellos de lente (Lens Flares)", vendor: "general" },
 
   // NVIDIA
-  { href: "/nvidia/dlss", titleEs: "DLSS", vendor: "nvidia" },
-  { href: "/nvidia/dlaa", titleEs: "DLAA", vendor: "nvidia" },
+  { href: "/nvidia/dlss", titleEs: "DLSS (Deep Learning Super Sampling)", vendor: "nvidia" },
+  { href: "/nvidia/dlaa", titleEs: "DLAA (Deep Learning Anti-Aliasing)", vendor: "nvidia" },
   { href: "/nvidia/hairworks", titleEs: "HairWorks", vendor: "nvidia" },
-  { href: "/nvidia/hbao-plus", titleEs: "HBAO+", vendor: "nvidia" },
-  { href: "/nvidia/nis", titleEs: "NIS", vendor: "nvidia" },
+  { href: "/nvidia/nis", titleEs: "NIS (NVIDIA Image Scaling)", vendor: "nvidia" },
   { href: "/nvidia/physx", titleEs: "PhysX", vendor: "nvidia" },
-  { href: "/nvidia/reflex", titleEs: "NVIDIA Reflex", vendor: "nvidia" },
-  { href: "/nvidia/rtx", titleEs: "RTX", vendor: "nvidia" },
+  { href: "/nvidia/reflex", titleEs: "Reflex", vendor: "nvidia" },
+  { href: "/nvidia/faceworks", titleEs: "FaceWorks", vendor: "nvidia" },
+  { href: "/nvidia/freestyle", titleEs: "Freestyle", vendor: "nvidia" },
 
   // AMD
   { href: "/amd/fsr", titleEs: "FSR", vendor: "amd" },
-  { href: "/amd/fidelityfx-suite", titleEs: "Suite FidelityFX", vendor: "amd" },
-  { href: "/amd/ris", titleEs: "RIS", vendor: "amd" },
-  { href: "/amd/rsr", titleEs: "RSR", vendor: "amd" },
-  { href: "/amd/anti-lag", titleEs: "Anti-Lag / Boost", vendor: "amd" },
+  { href: "/amd/fidelityfx-suite", titleEs: "AMD FidelityFX Suite", vendor: "amd" },
+  { href: "/amd/ris", titleEs: "RIS (Radeon Image Sharpening)", vendor: "amd" },
+  { href: "/amd/rsr", titleEs: "RSR (Radeon Super Resolution)", vendor: "amd" },
+  { href: "/amd/anti-lag", titleEs: "Radeon Anti-Lag y Anti-Lag+", vendor: "amd" },
 
   // Intel
-  { href: "/intel/xess", titleEs: "XeSS", vendor: "intel" },
-  { href: "/intel/oidn", titleEs: "OIDN", vendor: "intel" },
-  { href: "/intel/xess-fg", titleEs: "XeSS FG / XeLL", vendor: "intel" },
-  { href: "/intel/arc-control", titleEs: "Arc Control", vendor: "intel" },
+  { href: "/intel/xess", titleEs: "XeSS (Xe Super Sampling)", vendor: "intel" },
+  { href: "/intel/integer-scaling", titleEs: "Integer Scaling", vendor: "intel" },
+  { href: "/intel/xess-fg", titleEs: "XeSS FG (Frame Generation)", vendor: "intel" },
+  { href: "/intel/low-latency-mode", titleEs: "Low Latency Mode", vendor: "intel" },
+  { href: "/intel/xe-adaptive-sharpening", titleEs: "Xe Adaptive Sharpening", vendor: "intel" },
 
   // APIs gráficas
   { href: "/apis/directx", titleEs: "DirectX", vendor: "apis" },
