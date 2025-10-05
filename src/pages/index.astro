@@ -9,7 +9,18 @@ import DashboardLayout from "../layouts/DashboardLayout.astro";
   <!-- Hero ocupa toda la pantalla con video -->
   <section class="hero h-full relative overflow-hidden">
     <!-- Video de fondo -->
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      disablepictureinpicture
+      controlslist="nodownload noremoteplayback"
+      class="absolute inset-0 w-full h-full object-cover aria-hidden="
+      true"
+      tabindex="-1"
+      "
+    >
       <source src="/video/libro1284x719.mp4" type="video/mp4" />
     </video>
     <!-- Overlay -->
@@ -21,8 +32,58 @@ import DashboardLayout from "../layouts/DashboardLayout.astro";
         <h1 class="mb-5 text-5xl font-bold">Guía de Rénder Gaming</h1>
         <p class="mb-5">
           Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y
-          analiza su impacto real en tu experiencia de juego.
+          analiza su impacto real en tu experiencia de juego. Esta guía está diseñada para ayudarte a comprender cada
+          ajuste visual y a tomar decisiones informadas para optimizar tu experiencia gamer, sin importar si juegas en
+          PC de gama alta, portátil o equipo integrado.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características en 3 columnas -->
+  <section class="py-16 bg-base-200">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Columna 1: Imágenes comparativas -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-images text-4xl mb-4 text-info"></i>
+            <h2 class="card-title">Imágenes comparativas</h2>
+            <p>
+              En cada sección encontrarás ejemplos visuales que muestran cómo cambian los gráficos al modificar
+              configuraciones como sombras, texturas, antialiasing o reflejos. Estas comparaciones te permiten ver de
+              forma clara qué mejoras visuales obtienes y cuánto rendimiento sacrificas, ayudándote a decidir qué
+              ajustes realmente valen la pena.
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna 2: Fácil de entender -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-lightbulb text-4xl mb-4 text-warning"></i>
+            <h2 class="card-title">Fácil de entender sin experiencia</h2>
+            <p>
+              La guía está escrita en un lenguaje sencillo, sin tecnicismos innecesarios. Incluso si nunca has explorado
+              las opciones gráficas de un videojuego, aquí aprenderás paso a paso qué significa cada parámetro y cómo
+              impacta en la fluidez. Nuestro objetivo es que cualquier jugador, desde principiantes hasta entusiastas,
+              pueda optimizar su experiencia sin complicaciones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna 3: Organizado por tecnología -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-gpu-card text-4xl mb-4 text-success"></i>
+            <h2 class="card-title">Organizado por tecnología y fabricantes</h2>
+            <p>
+              El contenido está estructurado por categorías: configuraciones generales, tecnologías gráficas (DirectX,
+              Vulkan, OpenGL) y recomendaciones específicas para tarjetas NVIDIA, AMD e Intel. De esta manera, puedes ir
+              directo a la sección que más te interesa y aplicar consejos prácticos adaptados a tu hardware.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

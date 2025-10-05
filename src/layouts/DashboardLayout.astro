@@ -8,7 +8,13 @@ const year = new Date().getFullYear();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y analiza su impacto real en tu experiencia de juego."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- 180×180 px -->
     <title>Guía de Rénder Gaming</title>
     <script is:inline>
       // Al cargar la página, aplicar el tema guardado
@@ -34,7 +40,7 @@ const year = new Date().getFullYear();
         </label>
 
         <header class="sr-only">
-          <h1>Guía de Rénder Gaming</h1>
+          <h2>Guía de Rénder Gaming</h2>
         </header>
 
         <!-- Contenedor central con scroll interno, El props para mostrar un fondo en cada página y en la página se usa DashboardLayout background="bg-ambient" para mostrar el fondo asociado a una regla css -->
@@ -44,8 +50,21 @@ const year = new Date().getFullYear();
 
         <!-- Footer fijo -->
         <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70" aria-label="Información del sitio">
-          © {year} Guía de Rénder Gaming - Creado por:
-          <span id="miFirma" class="ms-2" style="font-size: 22px;">Daniel Bautista Pradilla.</span>
+          <div class="flex justify-center items-center gap-2">
+            <span>© {year} Guía de Rénder Gaming - Creado por:</span>
+            <span id="miFirma" class="text-base" style="font-size: 22px;">Daniel Bautista Pradilla</span>
+            -
+            <!-- Enlace a GitHub -->
+            <a
+              href="https://github.com/Danielbp019"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de GitHub de Daniel Bautista Pradilla"
+              class="hover:text-primary transition-colors"
+            >
+              <i class="bi bi-github text-xl align-middle"></i>
+            </a>
+          </div>
         </footer>
       </div>
 

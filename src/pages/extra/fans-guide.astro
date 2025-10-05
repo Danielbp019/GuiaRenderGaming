@@ -1,0 +1,418 @@
+---
+import Indice from "../../components/Indice.astro";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout background="bg-ambient">
+  <Indice slot="sidebar" />
+
+  <section class="hero h-full">
+    <div class="hero-overlay bg-black/50" aria-hidden="true"></div>
+
+    <div class="hero-content w-full p-6 flex flex-col gap-6">
+      <!-- Card con título + descripción -->
+      <div class="glass rounded-box w-full p-8">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li>Tecnologías de uso general</li>
+            <li>Guía de ventiladores para PC</li>
+          </ul>
+        </div>
+        <h1 id="titulo-guia" class="mb-5 text-5xl font-bold">Guía de ventiladores para PC</h1>
+        <p>
+          Bajar la temperatura alarga la vida de los componentes y mejora el rendimiento. Esta guía está pensada para
+          quien tiene pocos conocimientos técnicos y quiere elegir, instalar y mantener ventiladores de forma práctica y
+          segura.
+        </p>
+      </div>
+
+      <!-- Tipos de ventiladores del PC -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="tipos-ventiladores">
+        <h2 id="tipos-ventiladores" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-wind text-info" aria-hidden="true"></i> Tipos de ventiladores del PC
+        </h2>
+
+        <!-- Dos columnas: axiales y centrífugos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          <!-- Ventiladores axiales (helicoidales) -->
+          <article class="rounded-box w-full p-6" aria-labelledby="axiales">
+            <h3 id="axiales" class="text-xl font-semibold mb-3">Ventiladores axiales (helicoidales)</h3>
+            <p>
+              El flujo de aire va paralelo al eje. Mueven grandes volúmenes de aire con baja presión estática. Son los
+              más comunes en PCs de sobremesa.
+            </p>
+          </article>
+
+          <!-- Ventiladores centrífugos (radiales) -->
+          <article class="rounded-box w-full p-6" aria-labelledby="centrifugos">
+            <h3 id="centrifugos" class="text-xl font-semibold mb-3">Ventiladores centrífugos (radiales)</h3>
+            <p>
+              El aire sale radialmente. Generan mayor presión y suelen usarse en portátiles y consolas por su capacidad
+              para vencer restricciones.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Características de un ventilador de PC -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="caracteristicas">
+        <h2 id="caracteristicas" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-gear-wide-connected text-secondary" aria-hidden="true"></i> Características de un ventilador de
+          PC
+        </h2>
+
+        <!-- Flujo vs presión -->
+        <article aria-labelledby="flujo-presion">
+          <h3 id="flujo-presion" class="text-xl font-semibold mb-3">Flujo de aire vs. presión estática</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Muchas aspas:</strong> suelen priorizar CFM (flujo), buen rendimiento en espacios sin obstáculos.
+            </li>
+            <li>
+              <strong>Pocas aspas:</strong> priorizan presión estática (mm/H2O), mejores para radiadores, filtros y lugares
+              con restricción.
+            </li>
+            <li>
+              <strong>Aspas curvadas:</strong> Suelen presentar estadísticas mixtas, buen flujo y buena presión estática.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Unidades y qué significan (tabla) -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="unidades">
+        <h2 id="unidades" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-table text-primary" aria-hidden="true"></i> Unidades y qué significan
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="table w-full" role="table" aria-describedby="unidades-desc">
+            <caption id="unidades-desc" class="text-left mb-2">
+              Magnitudes comunes en ventiladores de PC, sus unidades y qué indican.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Magnitud</th>
+                <th scope="col">Unidad</th>
+                <th scope="col">Qué indica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Presión estática</th>
+                <td>mm/H2O</td>
+                <td>Capacidad para empujar aire a través de filtros, radiadores o rejillas.</td>
+              </tr>
+              <tr>
+                <th scope="row">Flujo de aire</th>
+                <td>CFM (cubic feet per minute)</td>
+                <td>Volumen de aire que mueve el ventilador por minuto.</td>
+              </tr>
+              <tr>
+                <th scope="row">Velocidad</th>
+                <td>RPM</td>
+                <td>Revoluciones por minuto del motor (no es lo único que importa).</td>
+              </tr>
+              <tr>
+                <th scope="row">Ruido</th>
+                <td>dBA</td>
+                <td>Nivel sonoro percibido. Más abajo hay una tabla orientativa.</td>
+              </tr>
+              <tr>
+                <th scope="row">Tamaño</th>
+                <td>mm</td>
+                <td>Medida del lado del ventilador: 120mm, 140mm son las más comunes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Ruido — ¿qué es “silencioso”? -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="ruido">
+        <h2 id="ruido" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-volume-down-fill text-warning" aria-hidden="true"></i> Ruido — ¿qué es “silencioso”?
+        </h2>
+        <p>Umbrales aproximados para orientarte:</p>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Muy silencioso: 10–18 dB</strong> — apenas perceptible en una habitación tranquila; típico de ventiladores
+            muy optimizados en bajas RPM y con rodamientos magnéticos o FDB.
+          </li>
+          <li>
+            <strong>Silencioso: 18–24 dB</strong> — ruido bajo en uso normal; muchos ventiladores premium rinden en este
+            rango a RPM moderadas.
+          </li>
+          <li>
+            <strong>Moderado: 24–30 dB</strong> — audible en entornos tranquilos pero aceptable para gaming; algunos ventiladores
+            de alto flujo pueden quedarse aquí a máxima velocidad.
+          </li>
+          <li>
+            <strong>Alto: &gt;30 dB</strong> — claramente audible y molesto en uso prolongado; suele corresponder a ventiladores
+            a máxima RPM o modelos con menor control de ruido.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Conectores -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="conectores">
+        <h2 id="conectores" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-plug-fill text-success" aria-hidden="true"></i> Conectores
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>PWM (4 pines)</strong> — control digital por señal PWM; ideal para control fino desde BIOS o software.
+          </li>
+          <li><strong>DC (3 pines)</strong> — control por voltaje (analógico).</li>
+          <li><strong>Molex / LP4</strong> — alimentación constante; sin control por RPM salvo adaptadores.</li>
+        </ul>
+      </section>
+
+      <!-- Rodamientos y vida útil -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="rodamientos">
+        <h2 id="rodamientos" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-life-preserver text-info" aria-hidden="true"></i> Rodamientos y vida útil
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-left">
+          <li>
+            <strong>Fluid Dynamic Bearing (FDB):</strong> larga vida y funcionamiento silencioso; buena elección para uso
+            prolongado.
+          </li>
+          <li>
+            <strong>Sleeve Bearing:</strong> económico, vida útil menor; recomendable solo si el ventilador está siempre
+            en posición vertical u horizontal según especificación.
+          </li>
+          <li>
+            <strong>Ball Bearing:</strong> durabilidad intermedia, bueno para ventiladores montados en cualquier orientación
+            y es usualmente utilizado en tarjetas gráficas.
+          </li>
+          <li>
+            <strong>Rodamiento de levitación magnética (MagLev / Magnetic Dome / MFDB):</strong> Utiliza fuerzas magnéticas
+            para centrar el rotor y reducir fricción. Tiene un menor desgaste y buen rendimiento a RPM altas, pero no siempre
+            es más silencioso que el mejor FDB.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Ventiladores mixtos en detalle y cuándo elegirlos -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="mixtos">
+        <h2 id="mixtos" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-shuffle text-secondary" aria-hidden="true"></i> Ventiladores mixtos en detalle y cuándo elegirlos
+        </h2>
+
+        <article aria-labelledby="que-son">
+          <h3 id="que-son" class="text-xl font-semibold mb-3">Qué son y cómo funcionan</h3>
+          <p>
+            Los ventiladores mixtos optimizan perfil de las aspas para ofrecer mayor presión estática que un axial
+            clásico manteniendo una buena entrega de CFM; son un equilibrio entre empuje y volumen de aire. Esto los
+            hace apropiados para radiadores compactos, cajas con filtros o posiciones donde hay cierta restricción al
+            flujo.
+          </p>
+        </article>
+
+        <article aria-labelledby="cuando-preferir">
+          <h3 id="cuando-preferir" class="text-xl font-semibold mb-3">Cuándo preferir un ventilador mixto</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Radiadores AIO o ventiladores frontales con filtros moderados.</li>
+            <li>
+              Cajas compactas o configuraciones donde quieres una sola familia de ventiladores capaz de trabajar bien
+              tanto en extracción como empuje con restricción ligera.
+            </li>
+            <li>Cuando no quieres combinar muchos tipos diferentes y prefieres un “todo‑en‑uno” eficiente.</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="comparacion-practica">
+          <h3 id="comparacion-practica" class="text-xl font-semibold mb-3">Comparación práctica</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              Si tu objetivo es máxima presión pura para un radiador muy denso, prioriza ventiladores de alta presión
+              estática (mm/H2O) especializados.
+            </li>
+            <li>
+              Si buscas versatilidad y menor complejidad, los mixtos ofrecen buen rendimiento tanto en radiador como en
+              flujo de caja.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Instalación y configuración básica -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="instalacion">
+        <h2 id="instalacion" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-tools text-primary" aria-hidden="true"></i> Instalación y configuración básica
+        </h2>
+
+        <article aria-labelledby="push-pull">
+          <h3 id="push-pull" class="text-xl font-semibold mb-3">Orientación y flujo Push Pull</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Push:</strong> ventilador empuja el aire hacia el interior del radiador o caja.</li>
+            <li><strong>Pull:</strong> Ventilador tira el aire a través del radiador o rejilla.</li>
+            <li>
+              <strong>Configuración recomendada para radiadores:</strong> push + pull si puedes; mejora intercambio térmico.
+            </li>
+            <li>Busca la flecha en el marco del ventilador para conocer la dirección del flujo.</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="ubicacion-caja">
+          <h3 id="ubicacion-caja" class="text-xl font-semibold mb-3">Ubicación recomendada en caja típica</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>Frontal:</strong> entrada de aire frío.</li>
+            <li><strong>Superior:</strong> salida de aire caliente.</li>
+            <li><strong>Trasera:</strong> salida de aire caliente.</li>
+            <li>Mantén un equilibrio ligero a favor de extracción para evitar acumulación de aire caliente.</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="montaje">
+          <h3 id="montaje" class="text-xl font-semibold mb-3">Montaje y antivibración</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Usa anclajes de goma o arandelas para reducir vibraciones.</li>
+            <li>Alinea correctamente tornillos; no aprietes en exceso para evitar deformaciones.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Herramientas para controlar curvas y monitorizar temperaturas -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="herramientas">
+        <h2 id="herramientas" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-speedometer2 text-warning" aria-hidden="true"></i> Herramientas para controlar curvas de ventiladores
+          y monitorizar temperaturas
+        </h2>
+
+        <article aria-labelledby="software">
+          <h3 id="software" class="text-xl font-semibold mb-3">Software de control y monitorización (PC/Windows)</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>BIOS / UEFI de la placa base:</strong> permite crear curvas por temperatura para CPU, GPU y chasis;
+              recomendado para control base, sin software adicional.
+            </li>
+            <li>
+              <strong>Corsair iCUE:</strong> controla ventiladores y sincronización RGB de ecosistema Corsair; permite curvas
+              y perfiles avanzados para modelos compatibles.
+            </li>
+            <li>
+              <strong>NZXT CAM:</strong> gestión de ventiladores y RGB para dispositivos NZXT; crea perfiles y monitoriza
+              temperaturas en tiempo real.
+            </li>
+            <li>
+              <strong>Argus Monitor:</strong> monitoriza temperaturas y permite control de curvas para ventiladores conectados;
+              enfoque en simplicidad y gráficos de evolución.
+            </li>
+            <li>
+              <strong>SpeedFan (antiguo y menos mantenido):</strong> capaz de leer temperaturas y ajustar ventiladores en
+              algunas placas; útil en hardware soportado aunque su compatibilidad es variable hoy en día.
+            </li>
+            <li>
+              <strong>NoteBook FanControl (NBFC):</strong> herramienta multiplataforma pensada para portátiles que no exponen
+              control de ventilador en BIOS; permite perfiles por modelo de equipo.
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="hardware">
+          <h3 id="hardware" class="text-xl font-semibold mb-3">Hardware / Controladores físicos</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Fan hubs controlados por PWM</strong> alimentados por la fuente: permiten conectar muchos ventiladores
+              y aplicar control PWM desde la placa.
+            </li>
+            <li>
+              <strong>Controladores dedicados (fan controllers)</strong> frontales o en bahías: control manual por potenciómetro
+              o con pantalla y presets.
+            </li>
+            <li>
+              <strong>Splitters y hubs Molex</strong> (alimentados desde PSU): útiles para alimentar muchos ventiladores
+              pero reducen el control individual a menos que el hub acepte señal de RPM/PWM.
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="consejos-curvas">
+          <h3 id="consejos-curvas" class="text-xl font-semibold mb-3">Consejos prácticos para curvas</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              Define un umbral cómodo (ej. 35–45 °C CPU) y crea una pendiente progresiva para evitar cambios bruscos de
+              RPM y reducir ruido.
+            </li>
+            <li>
+              Prioriza control PWM desde la placa cuando sea posible para usar perfiles por sensor de temperatura.
+            </li>
+            <li>
+              Prueba cambios con una o dos unidades antes de reemplazar todo el conjunto para verificar impacto en ruido
+              y temperaturas.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Mantenimiento, recomendaciones prácticas y ejemplos concretos -->
+      <section class="glass rounded-box w-full p-6" aria-labelledby="mantenimiento">
+        <h2 id="mantenimiento" class="text-2xl font-semibold mb-4">
+          <i class="bi bi-brush-fill text-info" aria-hidden="true"></i> Mantenimiento, recomendaciones prácticas y ejemplos
+          concretos
+        </h2>
+
+        <article aria-labelledby="mantenimiento-basico">
+          <h3 id="mantenimiento-basico" class="text-xl font-semibold mb-3">Mantenimiento básico</h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Limpia filtros y rejillas periódicamente; polvo incrementa restricción y ruido.</li>
+            <li>Usa aire comprimido o un pincel suave en las aspas con el equipo apagado y desconectado.</li>
+            <li>
+              Sustituye ventiladores con ruido persistente o vibraciones; limpiar puede no arreglar rodamientos
+              desgastados.
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="eleccion-prioridad">
+          <h3 id="eleccion-prioridad" class="text-xl font-semibold mb-3">
+            Elección según prioridad (resumen práctico)
+          </h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Silencio extremo:</strong> ventilador grande (140 mm), FDB o magnético, bajo RPM y buena curva PWM.
+            </li>
+            <li>
+              <strong>Radiador/AIO:</strong> prioriza mm/H2O alto o ventilador mixto optimizado para presión estática.
+            </li>
+            <li>
+              <strong>Flujo de caja general:</strong> busca CFM alto con buena relación dB/CFM; 120/140 mm según montaje
+              y huecos disponibles.
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="ejemplo-comparativo">
+          <h3 id="ejemplo-comparativo" class="text-xl font-semibold mb-3">
+            Ejemplo comparativo breve (interpretación de datos reales)
+          </h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>
+              <strong>Noctua NF‑F12:</strong> muy bajo ruido en rango 18–22 dB, buen equilibrio para disipadores; elección
+              sólida si priorizas silencio y fiabilidad.
+            </li>
+            <li>
+              <strong>Corsair ML120 Pro:</strong> tecnología magnética para mayor presión y rango amplio de RPM; puede ofrecer
+              más presión estática pero a mayor ruido si se fuerza a RPM altas.
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="recomendaciones-finales">
+          <h3 id="recomendaciones-finales" class="text-xl font-semibold mb-3">
+            Recomendaciones finales y pasos para elegir tu ventilador
+          </h3>
+          <ul class="list-disc list-inside space-y-2 text-left">
+            <li>Identifica el uso principal: silencio, radiador o flujo de caja.</li>
+            <li>Mide el espacio disponible y el tipo de montaje.</li>
+            <li>Comprueba el tipo de conector en placa y decide si quieres control PWM.</li>
+            <li>Lee especificaciones clave: mm/H2O, CFM, dB, RPM, rodamiento.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </section>
+</DashboardLayout>
