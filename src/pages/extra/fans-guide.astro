@@ -87,15 +87,15 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         </h2>
 
         <div class="overflow-x-auto">
-          <table class="table w-full" role="table" aria-describedby="unidades-desc">
+          <table class="table w-full text-sm" role="table" aria-describedby="unidades-desc">
             <caption id="unidades-desc" class="text-left mb-2">
               Magnitudes comunes en ventiladores de PC, sus unidades y qué indican.
             </caption>
             <thead>
-              <tr>
-                <th scope="col">Magnitud</th>
-                <th scope="col">Unidad</th>
-                <th scope="col">Qué indica</th>
+              <tr class="text-base font-semibold">
+                <th class="bg-base-200" scope="col">Magnitud</th>
+                <th class="bg-base-200" scope="col">Unidad</th>
+                <th class="bg-base-200" scope="col">Qué indica</th>
               </tr>
             </thead>
             <tbody>
@@ -222,6 +222,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li>Cuando no quieres combinar muchos tipos diferentes y prefieres un “todo‑en‑uno” eficiente.</li>
           </ul>
         </article>
+        <br />
 
         <article aria-labelledby="comparacion-practica">
           <h3 id="comparacion-practica" class="text-xl font-semibold mb-3">Comparación práctica</h3>
@@ -256,6 +257,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </ul>
         </article>
 
+        <br />
         <article aria-labelledby="ubicacion-caja">
           <h3 id="ubicacion-caja" class="text-xl font-semibold mb-3">Ubicación recomendada en caja típica</h3>
           <ul class="list-disc list-inside space-y-2 text-left">
@@ -266,6 +268,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </ul>
         </article>
 
+        <br />
         <article aria-labelledby="montaje">
           <h3 id="montaje" class="text-xl font-semibold mb-3">Montaje y antivibración</h3>
           <ul class="list-disc list-inside space-y-2 text-left">
@@ -312,6 +315,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </ul>
         </article>
 
+        <br />
         <article aria-labelledby="hardware">
           <h3 id="hardware" class="text-xl font-semibold mb-3">Hardware / Controladores físicos</h3>
           <ul class="list-disc list-inside space-y-2 text-left">
@@ -330,6 +334,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </ul>
         </article>
 
+        <br />
         <article aria-labelledby="consejos-curvas">
           <h3 id="consejos-curvas" class="text-xl font-semibold mb-3">Consejos prácticos para curvas</h3>
           <ul class="list-disc list-inside space-y-2 text-left">
@@ -351,8 +356,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
       <!-- Mantenimiento, recomendaciones prácticas y ejemplos concretos -->
       <section class="glass rounded-box w-full p-6" aria-labelledby="mantenimiento">
         <h2 id="mantenimiento" class="text-2xl font-semibold mb-4">
-          <i class="bi bi-brush-fill text-info" aria-hidden="true"></i> Mantenimiento, recomendaciones prácticas y ejemplos
-          concretos
+          <i class="bi bi-brush-fill text-info" aria-hidden="true"></i> Mantenimiento y recomendaciones prácticas
         </h2>
 
         <article aria-labelledby="mantenimiento-basico">
@@ -367,10 +371,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </ul>
         </article>
 
+        <br />
         <article aria-labelledby="eleccion-prioridad">
-          <h3 id="eleccion-prioridad" class="text-xl font-semibold mb-3">
-            Elección según prioridad (resumen práctico)
-          </h3>
+          <h3 id="eleccion-prioridad" class="text-xl font-semibold mb-3">Elección según prioridad</h3>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>
               <strong>Silencio extremo:</strong> ventilador grande (140 mm), FDB o magnético, bajo RPM y buena curva PWM.
@@ -385,22 +388,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           </ul>
         </article>
 
-        <article aria-labelledby="ejemplo-comparativo">
-          <h3 id="ejemplo-comparativo" class="text-xl font-semibold mb-3">
-            Ejemplo comparativo breve (interpretación de datos reales)
-          </h3>
-          <ul class="list-disc list-inside space-y-2 text-left">
-            <li>
-              <strong>Noctua NF‑F12:</strong> muy bajo ruido en rango 18–22 dB, buen equilibrio para disipadores; elección
-              sólida si priorizas silencio y fiabilidad.
-            </li>
-            <li>
-              <strong>Corsair ML120 Pro:</strong> tecnología magnética para mayor presión y rango amplio de RPM; puede ofrecer
-              más presión estática pero a mayor ruido si se fuerza a RPM altas.
-            </li>
-          </ul>
-        </article>
-
+        <br />
         <article aria-labelledby="recomendaciones-finales">
           <h3 id="recomendaciones-finales" class="text-xl font-semibold mb-3">
             Recomendaciones finales y pasos para elegir tu ventilador

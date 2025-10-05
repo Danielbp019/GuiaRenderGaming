@@ -211,6 +211,7 @@ Al trabajar con este proyecto, se deben ignorar las siguientes carpetas:
 │       ├── extra/
 │       │   ├── amd-intel-nvidia.astro
 │       │   ├── display.astro
+│       │   ├── fans-guide.astro
 │       │   └── references.astro
 │       ├── general/
 │       │   ├── ambient-occlusion.astro
