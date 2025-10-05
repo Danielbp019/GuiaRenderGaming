@@ -12,13 +12,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Metal</li>
+            <li aria-current="page">Metal</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Metal</h1>
         <p>
           Metal es la API gráfica de Apple, diseñada para que los juegos y aplicaciones aprovechen al máximo el hardware
@@ -29,7 +29,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 
       <!-- Evolución y capacidades -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-layers-fill text-info"></i> Evolución y capacidades</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-layers-fill text-info" aria-hidden="true"></i> Evolución y capacidades
+        </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
             <strong>Metal (2014):</strong> Sustituyó a OpenGL en dispositivos Apple, ofreciendo acceso de bajo nivel a la
@@ -69,7 +71,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Impacto en rendimiento -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-speedometer2 text-warning"></i> Impacto en rendimiento
+            <i class="bi bi-speedometer2 text-warning" aria-hidden="true"></i> Impacto en rendimiento
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>CPU:</strong> Reduce la sobrecarga, liberando recursos para IA, físicas y lógica del juego.</li>
@@ -82,7 +84,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Rango de impacto -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-graph-up-arrow text-primary"></i> Rango de impacto
+            <i class="bi bi-graph-up-arrow text-primary" aria-hidden="true"></i> Rango de impacto
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>Frente a OpenGL en macOS:</strong> Hasta un 20–40% más de rendimiento.</li>
@@ -96,7 +98,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Compatibilidad y plataformas -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-pc-display text-accent"></i> Compatibilidad y plataformas
+            <i class="bi bi-pc-display text-accent" aria-hidden="true"></i> Compatibilidad y plataformas
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>Exclusivo de Apple:</strong> macOS, iOS, iPadOS y tvOS.</li>
@@ -110,7 +112,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Resumen práctico -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-dpad-fill text-success"></i> Resumen práctico para el jugador
+            <i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Resumen práctico para el jugador
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>

@@ -12,13 +12,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Alto Rango Dinámico (HDR) y Mapeo de Tonos</li>
+            <li aria-current="page">Alto Rango Dinámico (HDR) y Mapeo de Tonos</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Alto Rango Dinámico (HDR) y Mapeo de Tonos</h1>
         <p class="mb-3">
           <strong>HDR (Alto Rango Dinámico):</strong> permite que la imagen muestre negros más profundos y luces más brillantes
@@ -33,7 +33,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 
       <!-- Variantes generales -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
+        </h2>
         <p class="mb-3">Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
@@ -60,7 +62,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         <!-- Coste en rendimiento -->
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-speedometer text-warning"></i> Coste en rendimiento</h2>
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
           <p class="mb-3">El impacto depende de si hablamos de HDR o del mapeo de tonos:</p>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>
@@ -77,7 +81,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 
         <!-- Cuándo conviene activarlo -->
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo</h2>
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>
               <strong>Conviene activarlo si:</strong> tu monitor/TV soporta HDR real (HDR10, HDR10+, Dolby Vision) y quieres

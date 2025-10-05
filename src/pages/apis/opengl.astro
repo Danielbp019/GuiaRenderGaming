@@ -12,13 +12,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>OpenGL</li>
+            <li aria-current="page">OpenGL</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">OpenGL</h1>
         <p>
           OpenGL (Open Graphics Library) es una API gráfica multiplataforma que sirve como puente entre el juego y la
@@ -30,7 +30,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 
       <!-- Evolución y capacidades -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-layers-fill text-info"></i> Evolución y capacidades</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-layers-fill text-info" aria-hidden="true"></i> Evolución y capacidades
+        </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li><strong>Años 90 – OpenGL inicial:</strong> Base para los primeros juegos 3D en PC.</li>
           <li>
@@ -50,7 +52,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
       <!-- Notas de tecnologías propietarias -->
       <div class="glass rounded-box w-full p-6">
         <h2 class="text-2xl font-semibold mb-3">
-          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+          <i class="bi bi-journal-bookmark-fill text-secondary" aria-hidden="true"></i> Notas de tecnologías propietarias
         </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
@@ -70,7 +72,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Impacto en rendimiento -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-speedometer2 text-warning"></i> Impacto en rendimiento
+            <i class="bi bi-speedometer2 text-warning" aria-hidden="true"></i> Impacto en rendimiento
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>CPU:</strong> Tiene más sobrecarga que Vulkan o DX12, menos eficiente en multinúcleo.</li>
@@ -81,7 +83,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Rango de impacto -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-graph-up-arrow text-primary"></i> Rango de impacto
+            <i class="bi bi-graph-up-arrow text-primary" aria-hidden="true"></i> Rango de impacto
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>Hardware antiguo:</strong> Estable y suficiente.</li>
@@ -97,7 +99,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Compatibilidad y plataformas -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-pc-display text-accent"></i> Compatibilidad y plataformas
+            <i class="bi bi-pc-display text-accent" aria-hidden="true"></i> Compatibilidad y plataformas
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>
@@ -113,7 +115,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Resumen práctico -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-dpad-fill text-success"></i> Resumen práctico para el jugador
+            <i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Resumen práctico para el jugador
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>

@@ -12,13 +12,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>AMD Radeon Image Sharpening (RIS)</li>
+            <li aria-current="page">AMD Radeon Image Sharpening (RIS)</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">AMD RIS (Radeon Image Sharpening)</h1>
         <p>
           RIS es un sistema de afilado de imagen por contraste adaptativo. Lo que hace es analizar la escena y aplicar
@@ -31,7 +31,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 
       <!-- Modos de funcionamiento -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-gear-fill text-info" aria-hidden="true"></i> Modos de funcionamiento
+        </h2>
         <p>En el menú gráfico o en el software Radeon Adrenalin, RIS suele ofrecer:</p>
         <ul class="list-disc list-inside space-y-2 text-left mt-3">
           <li><strong>Activado:</strong> Aplica el filtro de nitidez en todo el juego.</li>

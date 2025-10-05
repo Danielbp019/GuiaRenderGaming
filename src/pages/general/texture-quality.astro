@@ -13,13 +13,13 @@ import ImageDiff from "../../components/ImageDiff.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Calidad de Texturas</li>
+            <li aria-current="page">Calidad de Texturas</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Calidad de Texturas</h1>
         <p>
           La calidad de texturas en un videojuego define qué tan nítidas y detalladas se ven las superficies de los
@@ -78,7 +78,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         <!-- Coste en rendimiento -->
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-speedometer text-warning"></i> Coste en rendimiento</h2>
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+          </h2>
           <p class="mb-3">El impacto principal depende más de la VRAM de la GPU que del procesador:</p>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>
@@ -99,7 +101,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
 
         <!-- Cuándo conviene activarlo -->
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo</h2>
+          <h2 class="text-2xl font-semibold mb-3">
+            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+          </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>2–4 GB de VRAM:</strong> usa Medio o Alto, evita Ultra.</li>
             <li>

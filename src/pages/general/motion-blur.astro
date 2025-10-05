@@ -13,13 +13,13 @@ import ImageSolo from "../../components/ImageSolo.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Desenfoque de Movimiento (Blur & Motion Blur)</li>
+            <li aria-current="page">Desenfoque de Movimiento (Blur & Motion Blur)</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Desenfoque de Movimiento (Blur & Motion Blur)</h1>
         <p>
           El desenfoque de movimiento es un efecto visual que simula cómo las cámaras o los ojos perciben los objetos en
@@ -30,7 +30,9 @@ import ImageSolo from "../../components/ImageSolo.astro";
 
       <!-- Variantes generales -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
+        </h2>
         <p class="mb-3">En los menús gráficos suele aparecer como:</p>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li><strong>Desactivado:</strong> no hay desenfoque, todo se ve nítido incluso en giros rápidos.</li>

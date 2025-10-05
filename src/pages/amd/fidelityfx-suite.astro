@@ -12,13 +12,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>AMD FidelityFX Suite</li>
+            <li aria-current="page">AMD FidelityFX Suite</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">AMD FidelityFX Suite</h1>
         <p>
           La FidelityFX Suite es un paquete de efectos visuales optimizados para tarjetas gráficas AMD (aunque muchos
@@ -30,7 +30,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
       <!-- Principales componentes -->
       <div class="glass rounded-box w-full p-6">
         <h2 class="text-2xl font-semibold mb-3">
-          <i class="bi bi-boxes text-info"></i> Principales componentes de la suite
+          <i class="bi bi-boxes text-info" aria-hidden="true"></i> Principales componentes de la suite
         </h2>
         <p>Dentro del menú gráfico de los juegos compatibles, puedes encontrar varias de estas opciones:</p>
         <ul class="list-disc list-inside space-y-2 text-left mt-3">

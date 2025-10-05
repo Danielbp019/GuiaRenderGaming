@@ -13,13 +13,13 @@ import ImageDiff from "../../components/ImageDiff.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Efectos Volumétricos (Volumetric Effects)</li>
+            <li aria-current="page">Efectos Volumétricos (Volumetric Effects)</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Efectos Volumétricos (Volumetric Effects)</h1>
         <p>
           Los efectos volumétricos son técnicas gráficas que simulan cómo la luz interactúa con partículas en el aire
@@ -31,7 +31,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
 
       <!-- Variantes generales -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
+        </h2>
         <p class="mb-3">En los menús gráficos suelen aparecer como:</p>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li><strong>Desactivado:</strong> no hay niebla ni rayos de luz volumétricos, la escena se ve más plana.</li>
@@ -58,7 +60,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
       <!-- Notas de tecnologías propietarias -->
       <div class="glass rounded-box w-full p-6">
         <h2 class="text-2xl font-semibold mb-3">
-          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+          <i class="bi bi-journal-bookmark-fill text-secondary" aria-hidden="true"></i> Notas de tecnologías propietarias
         </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
@@ -85,7 +87,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
         <!-- Coste en rendimiento -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+            <i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento
           </h2>
           <p class="mb-3">El impacto principal depende de la GPU, ya que requiere cálculos de iluminación avanzados:</p>
           <ul class="list-disc list-inside space-y-2 text-left">
@@ -102,7 +104,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
         <!-- Cuándo conviene activarlo -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+            <i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>

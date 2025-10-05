@@ -13,13 +13,13 @@ import ImageDiff from "../../components/ImageDiff.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Filtrado de Texturas</li>
+            <li aria-current="page">Filtrado de Texturas</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Filtrado de Texturas</h1>
         <p>
           El filtrado de texturas es la forma en que el juego suaviza y mejora la nitidez de las imágenes (texturas)
@@ -30,7 +30,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
 
       <!-- Variantes generales -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
+        </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
             <strong>Filtrado puntual (Nearest/Point):</strong> usa el píxel más cercano de la textura. Es rápido, pero genera
@@ -76,7 +78,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
       <!-- Notas de tecnologías propietarias -->
       <div class="glass rounded-box w-full p-6">
         <h2 class="text-2xl font-semibold mb-3">
-          <i class="bi bi-journal-bookmark-fill text-secondary"></i> Notas de tecnologías propietarias
+          <i class="bi bi-journal-bookmark-fill text-secondary" aria-hidden="true"></i> Notas de tecnologías propietarias
         </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
@@ -94,7 +96,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
         <!-- Coste en rendimiento -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+            <i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li><strong>Nearest / Bilineal:</strong> impacto casi nulo en FPS.</li>
@@ -114,7 +116,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
         <!-- Cuándo conviene activarlo -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+            <i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo
           </h2>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>

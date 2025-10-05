@@ -13,13 +13,13 @@ import ImageDiff from "../../components/ImageDiff.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Nivel de Detalle (LOD, Level of Detail)</li>
+            <li aria-current="page">Nivel de Detalle (LOD, Level of Detail)</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Nivel de Detalle (LOD, Level of Detail)</h1>
         <p>
           El nivel de detalle (LOD) es una técnica que ajusta la complejidad de los modelos 3D según la distancia a la
@@ -30,7 +30,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
 
       <!-- Variantes generales -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
+        </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
             <strong>Desactivado:</strong> todos los objetos se muestran siempre con el máximo detalle (muy costoso en rendimiento).

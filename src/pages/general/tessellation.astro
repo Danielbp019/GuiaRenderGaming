@@ -13,13 +13,13 @@ import ImageDiff from "../../components/ImageDiff.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Teselación (Tessellation)</li>
+            <li aria-current="page">Teselación (Tessellation)</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">Teselación (Tessellation)</h1>
         <p>
           La teselación es una técnica que divide los polígonos grandes de un modelo 3D en polígonos más pequeños. Esto
@@ -30,7 +30,9 @@ import ImageDiff from "../../components/ImageDiff.astro";
 
       <!-- Variantes generales -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
+        </h2>
         <ul class="list-disc list-inside space-y-2 text-left">
           <li>
             <strong>Teselación básica:</strong> añade subdivisiones a los polígonos para suavizar curvas y dar más detalle

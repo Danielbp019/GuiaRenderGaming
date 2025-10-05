@@ -12,13 +12,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>NIS (NVIDIA Image Scaling)</li>
+            <li aria-current="page">NIS (NVIDIA Image Scaling)</li>
           </ul>
-        </div>
+        </nav>
         <h1 class="mb-5 text-5xl font-bold">NIS (NVIDIA Image Scaling)</h1>
         <p>
           NIS es un algoritmo de reescalado espacial desarrollado por NVIDIA que funciona en casi todas sus tarjetas
@@ -31,7 +31,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 
       <!-- Modos de funcionamiento -->
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-gear-fill text-info"></i> Modos de funcionamiento</h2>
+        <h2 class="text-2xl font-semibold mb-3">
+          <i class="bi bi-gear-fill text-info" aria-hidden="true"></i> Modos de funcionamiento
+        </h2>
         <p>En el menú gráfico o en el panel de control de NVIDIA, NIS suele ofrecer:</p>
         <ul class="list-disc list-inside space-y-2 text-left mt-3">
           <li>
@@ -51,7 +53,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Coste en rendimiento -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
+            <i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento
           </h2>
           <p>
             <strong>Impacto general:</strong> NIS no consume recursos extra significativos, ya que es un proceso ligero de
@@ -72,7 +74,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <!-- Cuándo conviene activarlo -->
         <div class="glass rounded-box w-full p-6">
           <h2 class="text-2xl font-semibold mb-3">
-            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
+            <i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo
           </h2>
           <p class="mb-2">Actívalo si:</p>
           <ul class="list-disc list-inside space-y-2 text-left">
