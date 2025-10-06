@@ -3,6 +3,11 @@
 Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y
 analiza su impacto real en tu experiencia de juego.
 
+## Imágenes del proyecto
+
+- **Vista general:**
+  ![general](ImgReadme/portada.png)
+
 ## Estructura del Proyecto
 
 ```text

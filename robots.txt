@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /src/
+Disallow: /.vscode/
 Disallow: /.git/
 Disallow: /node_modules/
+Disallow: /package-lock.json
 Allow: /
