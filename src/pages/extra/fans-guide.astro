@@ -1,6 +1,7 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ImageSolo from "../../components/ImageSolo.astro";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -15,7 +16,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
             <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
-            <li>Tecnologías de uso general</li>
+            <li>Extra</li>
             <li aria-current="page">Guía de ventiladores para PC</li>
           </ul>
         </nav>
@@ -42,6 +43,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
               El flujo de aire va paralelo al eje. Mueven grandes volúmenes de aire con baja presión estática. Son los
               más comunes en PCs de sobremesa.
             </p>
+            <ImageSolo
+              title="Ver Ventilador axial (helicoidal)"
+              img="/img/extra/fans-guide/axial.png"
+              alt="Ventilador axial (helicoidal)"
+            />
           </article>
 
           <!-- Ventiladores centrífugos (radiales) -->
@@ -51,6 +57,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
               El aire sale radialmente. Generan mayor presión y suelen usarse en portátiles y consolas por su capacidad
               para vencer restricciones.
             </p>
+            <ImageSolo
+              title="Ver Ventilador centrífugo (radial)"
+              img="/img/extra/fans-guide/radial.png"
+              alt="Ventilador centrífugo (radial)"
+            />
           </article>
         </div>
       </section>
@@ -87,7 +98,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
         </h2>
 
         <div class="overflow-x-auto">
-          <table class="table w-full text-sm" role="table" aria-describedby="unidades-desc">
+          <table class="table w-full text-sm">
             <caption id="unidades-desc" class="text-left mb-2">
               Magnitudes comunes en ventiladores de PC, sus unidades y qué indican.
             </caption>
@@ -167,6 +178,8 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <li><strong>DC (3 pines)</strong> — control por voltaje (analógico).</li>
           <li><strong>Molex / LP4</strong> — alimentación constante; sin control por RPM salvo adaptadores.</li>
         </ul>
+        <br />
+        <ImageSolo title="Ver Conectores" img="/img/extra/fans-guide/conectores.png" alt="Conectores" />
       </section>
 
       <!-- Rodamientos y vida útil -->
@@ -235,6 +248,66 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
               Si buscas versatilidad y menor complejidad, los mixtos ofrecen buen rendimiento tanto en radiador como en
               flujo de caja.
             </li>
+            <br />
+            <div class="w-full p-6 overflow-x-auto">
+              <table class="table w-full text-sm">
+                <caption class="text-lg font-semibold mb-2">Ejemplo: Thermalright TL-C12C-S — Especificaciones</caption>
+                <!-- Encabezado -->
+                <thead>
+                  <tr>
+                    <th class="bg-base-200">Elemento</th>
+                    <th class="bg-base-200">Especificación</th>
+                  </tr>
+                </thead>
+                <!-- Cuerpo -->
+                <tbody>
+                  <tr>
+                    <td>Modelo</td>
+                    <td>Thermalright TL-C12C-S</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensiones (L × W × H)</td>
+                    <td>120 mm × 120 mm × 25 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Peso</td>
+                    <td>120 g</td>
+                  </tr>
+                  <tr>
+                    <td>Rated Speed</td>
+                    <td>1550 RPM ± 10% (MAX)</td>
+                  </tr>
+                  <tr>
+                    <td>Noise Level</td>
+                    <td>25.6 dBA (MAX)</td>
+                  </tr>
+                  <tr>
+                    <td>Air Flow</td>
+                    <td>66.17 CFM (MAX)</td>
+                  </tr>
+                  <tr>
+                    <td>Air Pressure</td>
+                    <td>1.53 mm H₂O (MAX)</td>
+                  </tr>
+                  <tr>
+                    <td>Ampere</td>
+                    <td>0.20 A</td>
+                  </tr>
+                  <tr>
+                    <td>Connector (PWM)</td>
+                    <td>4-PIN PWM</td>
+                  </tr>
+                  <tr>
+                    <td>ARGB Connector</td>
+                    <td>3-PIN 5V</td>
+                  </tr>
+                  <tr>
+                    <td>Bearing Type</td>
+                    <td>S-FDB Bearing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </ul>
         </article>
       </section>
@@ -363,10 +436,19 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
           <h3 id="mantenimiento-basico" class="text-xl font-semibold mb-3">Mantenimiento básico</h3>
           <ul class="list-disc list-inside space-y-2 text-left">
             <li>Limpia filtros y rejillas periódicamente; polvo incrementa restricción y ruido.</li>
-            <li>Usa aire comprimido o un pincel suave en las aspas con el equipo apagado y desconectado.</li>
+            <li>
+              Usa aire comprimido o un pincel suave en las aspas con el equipo apagado y desconectado. (No permitas que
+              las aspas giren mientras lo haces)
+            </li>
             <li>
               Sustituye ventiladores con ruido persistente o vibraciones; limpiar puede no arreglar rodamientos
               desgastados.
+            </li>
+            <li>
+              Los ventiladores con rodamiento "Sleeve Bearing" y "Ball Bearing", pueden ser lubricados retirando un
+              tapón de goma en la parte posterior. Se suele usar aceite WD-40 o aceite 3 en 1. La cantidad de aceite
+              varía; los de rodamiento de balines, bolas o "Ball Bearing"suelen necesitar una cantidad más grande para
+              estar bien lubricados.
             </li>
           </ul>
         </article>
