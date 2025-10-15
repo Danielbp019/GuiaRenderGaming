@@ -1,10 +1,11 @@
 ---
 import "../assets/app.css";
+import { ClientRouter } from "astro:transitions";
 const { slots, background } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
-<html lang="es" data-theme="dim">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,16 +13,10 @@ const year = new Date().getFullYear();
       name="description"
       content="Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y analiza su impacto real en tu experiencia de juego."
     />
+    <ClientRouter />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Guía de Rénder Gaming</title>
-    <script is:inline>
-      // Al cargar la página, aplicar el tema guardado
-      const theme = localStorage.getItem("theme");
-      if (theme) {
-        document.documentElement.setAttribute("data-theme", theme);
-      }
-    </script>
   </head>
   <body class="h-screen">
     <div class="drawer lg:drawer-open h-screen">
@@ -43,7 +38,7 @@ const year = new Date().getFullYear();
         </header>
 
         <!-- Contenedor central con scroll interno, El props para mostrar un fondo en cada página y en la página se usa DashboardLayout background="bg-ambient" para mostrar el fondo asociado a una regla css -->
-        <main id="contenido" class={`flex-1 overflow-y-auto bg-base-100 ${background ?? ""}`}>
+        <main id="contenido" class={`flex-1 overflow-y-auto bg-base-100 ${background ?? ""}`} transition:animate="fade">
           <slot />
         </main>
 
@@ -78,7 +73,8 @@ const year = new Date().getFullYear();
           <!-- Botones fijos arriba -->
           <div class="flex justify-center gap-2 mb-2 join join-horizontal">
             <a href="/" class="btn btn-primary join-item"><i class="bi bi-house-fill" aria-hidden="true"></i> Inicio</a>
-            <a href="/temas/" class="btn btn-secondary join-item"><i class="bi bi-stars" aria-hidden="true"></i> Temas</a
+            <a href="/temas/" class="btn btn-secondary join-item"
+              ><i class="bi bi-stars" aria-hidden="true"></i> Temas</a
             >
           </div>
 
@@ -96,19 +92,33 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <!-- Script para actualizar el texto del tema activo -->
+    <!-- Script para gestionar el tema con Astro View Transitions -->
     <script is:inline>
-      function actualizarTemaActivo() {
-        const tema = document.documentElement.getAttribute("data-theme") || "dim";
-        document.getElementById("tema-nombre").textContent = tema;
+      // Función para aplicar el tema y actualizar la UI
+      function applyTheme() {
+        const storedTheme = localStorage.getItem("theme") || "dim";
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+
+        // Solo actualiza el atributo si el tema ha cambiado.
+        // Esto es CRUCIAL para evitar el bucle infinito con el MutationObserver.
+        if (storedTheme !== currentTheme) {
+          document.documentElement.setAttribute("data-theme", storedTheme);
+        }
+
+        const themeNameElement = document.getElementById("tema-nombre");
+        if (themeNameElement) {
+          themeNameElement.textContent = storedTheme;
+        }
       }
 
-      // Inicializar al cargar
-      actualizarTemaActivo();
+      // 1. Aplicar el tema inmediatamente en la carga inicial para evitar FOUC.
+      applyTheme();
 
-      // Observar cambios en el atributo data-theme
-      const observer = new MutationObserver(actualizarTemaActivo);
-      observer.observe(document.documentElement, {
+      // 2. Escuchar el evento de Astro para aplicar el tema en cada navegación del cliente.
+      document.addEventListener("astro:page-load", applyTheme);
+
+      // 3. Observar cambios si el tema se cambia dinámicamente (ej: con un selector de temas).
+      new MutationObserver(applyTheme).observe(document.documentElement, {
         attributes: true,
         attributeFilter: ["data-theme"],
       });
