@@ -1,6 +1,7 @@
 ---
 import "../assets/app.css";
 import { ClientRouter } from "astro:transitions";
+import { fade } from "astro:transitions";
 const { slots, background } = Astro.props;
 const year = new Date().getFullYear();
 ---
@@ -38,7 +39,11 @@ const year = new Date().getFullYear();
         </header>
 
         <!-- Contenedor central con scroll interno, El props para mostrar un fondo en cada página y en la página se usa DashboardLayout background="bg-ambient" para mostrar el fondo asociado a una regla css -->
-        <main id="contenido" class={`flex-1 overflow-y-auto bg-base-100 ${background ?? ""}`} transition:animate="fade">
+        <main
+          id="contenido"
+          class={`flex-1 overflow-y-auto bg-base-100 ${background ?? ""}`}
+          transition:animate={fade({ duration: "0.5s" })}
+        >
           <slot />
         </main>
 
