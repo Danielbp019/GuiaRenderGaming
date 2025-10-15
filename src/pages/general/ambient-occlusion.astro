@@ -18,13 +18,13 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
             <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Oclusión ambiental (Ambient Occlusion)</li>
+            <li aria-current="page">{title}</li>
           </ul>
-        </div>
+        </nav>
 
         <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
