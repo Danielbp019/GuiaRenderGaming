@@ -4,6 +4,10 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import Image from "astro/components/Image.astro";
 import aaImg from "../../assets/AA.png";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -22,7 +26,7 @@ import aaImg from "../../assets/AA.png";
             <li>Suavizado de Bordes (Anti-Aliasing, AA)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">Suavizado de Bordes (Anti-Aliasing, AA)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           El anti-aliasing es una técnica para suavizar los bordes “dientes de sierra” que aparecen en objetos y líneas
           diagonales o curvas en los juegos. Hace que las imágenes se vean más limpias y menos pixeladas, mejorando la

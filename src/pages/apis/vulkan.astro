@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">Vulkan</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Vulkan</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Vulkan es una API gráfica de bajo nivel que actúa como puente directo entre el juego y la tarjeta gráfica.
           Permite que los desarrolladores tengan un control más preciso sobre la GPU y la CPU, logrando gráficos más

@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">Intel Integer Scaling</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Intel Integer Scaling</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Integer Scaling es una técnica de reescalado por múltiplos enteros: en lugar de interpolar o suavizar la
           imagen, cada píxel original se multiplica en bloques exactos (x2, x3, x4, etc.) para llenar la pantalla. Así,

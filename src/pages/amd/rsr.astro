@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">AMD Radeon Super Resolution (RSR)</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">AMD RSR (Radeon Super Resolution)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           RSR es básicamente FSR integrado en el driver. Mientras que FSR debe estar implementado dentro del juego por
           los desarrolladores, RSR funciona de forma global: basta con activarlo en el panel de AMD y luego bajar la

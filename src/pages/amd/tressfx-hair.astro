@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li>TressFX Hair</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">TressFX Hair</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           TressFX Hair reemplaza el “bloque sólido” de cabello tradicional por miles de hebras individuales simuladas en
           tiempo real. Esto hace que el pelo se mueva con el viento, la gravedad y las animaciones del personaje de

@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -20,7 +24,7 @@ import ImageSolo from "../../components/ImageSolo.astro";
             <li aria-current="page">Guía de ventiladores para PC</li>
           </ul>
         </nav>
-        <h1 id="titulo-guia" class="mb-5 text-5xl font-bold">Guía de ventiladores para PC</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Bajar la temperatura alarga la vida de los componentes y mejora el rendimiento. Esta guía está pensada para
           quien tiene pocos conocimientos técnicos y quiere elegir, instalar y mantener ventiladores de forma práctica y

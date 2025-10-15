@@ -3,6 +3,10 @@ import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -22,7 +26,7 @@ import ImageSolo from "../../components/ImageSolo.astro";
           </ul>
         </div>
 
-        <h1 class="mb-5 text-5xl font-bold">Oclusión ambiental (Ambient Occlusion)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           La Oclusión ambiental es un efecto gráfico que añade sombras suaves en los rincones, bordes, juntas, bajo
           objetos u otras superficies que están cerca unas de otras, para que la escena se vea más realista. No es una

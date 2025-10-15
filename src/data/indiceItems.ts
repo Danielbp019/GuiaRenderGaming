@@ -9,21 +9,21 @@ export type Item = {
 
 export const indiceItems: Item[] = [
   // Tecnologías de uso general
-  { href: "/general/ambient-occlusion", titleEs: "Oclusión ambiental", vendor: "general" },
-  { href: "/general/anti-aliasing", titleEs: "Suavizado de bordes (Anti-Aliasing)", vendor: "general" },
+  { href: "/general/ambient-occlusion", titleEs: "Oclusión ambiental (Ambient Occlusion)", vendor: "general" },
+  { href: "/general/anti-aliasing", titleEs: "Suavizado de Bordes (Anti-Aliasing, AA)", vendor: "general" },
   { href: "/general/bloom", titleEs: "Resplandor (Bloom)", vendor: "general" },
-  { href: "/general/chromatic-aberration", titleEs: "Aberración cromática", vendor: "general" },
-  { href: "/general/depth-of-field", titleEs: "Profundidad de campo (DoF)", vendor: "general" },
+  { href: "/general/chromatic-aberration", titleEs: "Aberración Cromática (Chromatic Aberration)", vendor: "general" },
+  { href: "/general/depth-of-field", titleEs: "Profundidad de Campo (Depth of Field, DoF)", vendor: "general" },
   { href: "/general/hdr-tone-mapping", titleEs: "Alto rango dinámico (HDR) y mapeo de tonos", vendor: "general" },
-  { href: "/general/lod", titleEs: "Nivel de detalle (LOD)", vendor: "general" },
+  { href: "/general/lod", titleEs: "Nivel de Detalle (LOD, Level of Detail)", vendor: "general" },
   { href: "/general/motion-blur", titleEs: "Desenfoque de movimiento (Blur & Motion Blur)", vendor: "general" },
-  { href: "/general/reflections", titleEs: "Reflejos", vendor: "general" },
-  { href: "/general/shadows", titleEs: "Sombras", vendor: "general" },
+  { href: "/general/reflections", titleEs: "Reflejos (Reflections)", vendor: "general" },
+  { href: "/general/shadows", titleEs: "Sombras (Shadows)", vendor: "general" },
   { href: "/general/texture-filtering", titleEs: "Filtrado de texturas", vendor: "general" },
   { href: "/general/texture-quality", titleEs: "Calidad de texturas", vendor: "general" },
-  { href: "/general/tessellation", titleEs: "Teselación", vendor: "general" },
-  { href: "/general/upscaling", titleEs: "Escalado de imagen", vendor: "general" },
-  { href: "/general/volumetric-effects", titleEs: "Efectos volumétricos", vendor: "general" },
+  { href: "/general/tessellation", titleEs: "Teselación (Tessellation)", vendor: "general" },
+  { href: "/general/upscaling", titleEs: "Escalado de Imagen (Image Upscaling)", vendor: "general" },
+  { href: "/general/volumetric-effects", titleEs: "Efectos Volumétricos (Volumetric Effects)", vendor: "general" },
   { href: "/general/vsync", titleEs: "Sincronización vertical (VSync)", vendor: "general" },
   { href: "/general/particles", titleEs: "Partículas (Particles)", vendor: "general" },
   { href: "/general/post-procesamiento", titleEs: "Post-procesamiento", vendor: "general" },
@@ -42,7 +42,7 @@ export const indiceItems: Item[] = [
   { href: "/nvidia/freestyle", titleEs: "Freestyle", vendor: "nvidia" },
 
   // AMD
-  { href: "/amd/fsr", titleEs: "FSR", vendor: "amd" },
+  { href: "/amd/fsr", titleEs: "FidelityFX Super Resolution (FSR)", vendor: "amd" },
   { href: "/amd/fidelityfx-suite", titleEs: "AMD FidelityFX Suite", vendor: "amd" },
   { href: "/amd/ris", titleEs: "RIS (Radeon Image Sharpening)", vendor: "amd" },
   { href: "/amd/rsr", titleEs: "RSR (Radeon Super Resolution)", vendor: "amd" },
@@ -65,6 +65,6 @@ export const indiceItems: Item[] = [
   // Extra
   { href: "/extra/display", titleEs: "Monitores", vendor: "extra" },
   { href: "/extra/references", titleEs: "Referencias", vendor: "extra" },
-  { href: "/extra/amd-intel-nvidia", titleEs: "Comparación global", vendor: "extra" },
+  { href: "/extra/amd-intel-nvidia", titleEs: "Cuadro comparativo de tecnologías gráficas", vendor: "extra" },
   { href: "/extra/fans-guide", titleEs: "Guía de ventiladores para PC", vendor: "extra" },
 ];

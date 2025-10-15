@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">Intel XeSS FG</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Intel XeSS FG (Frame Generation)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           XeSS FG forma parte de XeSS 2, la evolución del supersampling de Intel. Mientras que XeSS tradicional (SR)
           escala la resolución para ganar rendimiento, XeSS FG genera fotogramas nuevos mediante IA, interpolando entre

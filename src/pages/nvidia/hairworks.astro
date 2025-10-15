@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -20,7 +24,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
             <li aria-current="page">HairWorks</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">HairWorks</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           HairWorks es una tecnología gráfica de NVIDIA que añade simulación avanzada de cabello, pelaje y pelo en
           personajes y animales de los videojuegos. Se activa o desactiva en el menú gráfico, y su objetivo es dar un

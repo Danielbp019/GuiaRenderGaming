@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -13,14 +17,14 @@ import ImageDiff from "../../components/ImageDiff.astro";
     <div class="hero-content w-full p-6 flex flex-col gap-6">
       <!-- Card con título + descripción -->
       <div class="glass rounded-box w-full p-8">
-        <div class="breadcrumbs text-sm">
+        <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
           <ul>
-            <li><a href="/"><i class="bi bi-house-fill"></i>Inicio</a></li>
+            <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li>Profundidad de Campo (Depth of Field, DoF)</li>
+            <li aria-current="page">{title}</li>
           </ul>
-        </div>
-        <h1 class="mb-5 text-5xl font-bold">Profundidad de Campo (Depth of Field, DoF)</h1>
+        </nav>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           El desenfoque por profundidad es un efecto visual que imita cómo funcionan las cámaras: lo que está enfocado
           (normalmente el personaje o un objeto cercano) se ve nítido, mientras que el fondo o elementos fuera de foco

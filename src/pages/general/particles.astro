@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -17,10 +21,10 @@ import ImageSolo from "../../components/ImageSolo.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li aria-current="page">Partículas (Particles)</li>
+            <li aria-current="page">{title}</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Partículas (Particles)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Las partículas son pequeños elementos gráficos que se usan para simular efectos visuales dinámicos como humo,
           fuego, chispas, lluvia, nieve, polvo, hojas cayendo o magia. En lugar de modelar cada detalle, el motor del

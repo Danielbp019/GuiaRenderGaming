@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">NIS (NVIDIA Image Scaling)</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">NIS (NVIDIA Image Scaling)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           NIS es un algoritmo de reescalado espacial desarrollado por NVIDIA que funciona en casi todas sus tarjetas
           gráficas, incluso en las GTX. Lo que hace es renderizar el juego a una resolución más baja para ganar FPS y

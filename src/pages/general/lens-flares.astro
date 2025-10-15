@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -17,10 +21,10 @@ import ImageDiff from "../../components/ImageDiff.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li aria-current="page">Destellos de lente (Lens Flares)</li>
+            <li aria-current="page">{title}</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Destellos de lente (Lens Flares)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Los Destellos de lente es un efecto visual que simula los destellos y halos de luz que aparecen cuando una
           cámara apunta hacia una fuente luminosa intensa (como el sol o un foco). En videojuegos no ocurre de forma

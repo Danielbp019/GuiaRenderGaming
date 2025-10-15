@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -17,10 +21,10 @@ import ImageDiff from "../../components/ImageDiff.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li aria-current="page">Teselación (Tessellation)</li>
+            <li aria-current="page">{title}</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Teselación (Tessellation)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           La teselación es una técnica que divide los polígonos grandes de un modelo 3D en polígonos más pequeños. Esto
           permite que superficies que antes eran planas (como un muro de piedra o el caparazón de una tortuga) se vean

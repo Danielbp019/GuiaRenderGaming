@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">OpenGL</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">OpenGL</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           OpenGL (Open Graphics Library) es una API gráfica multiplataforma que sirve como puente entre el juego y la
           tarjeta gráfica. Durante décadas fue el estándar para mostrar gráficos en 2D y 3D en PC, consolas antiguas y

@@ -3,6 +3,10 @@ import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -18,10 +22,10 @@ import ImageSolo from "../../components/ImageSolo.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li aria-current="page">Reflejos (Reflections)</li>
+            <li aria-current="page">{title}</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Reflejos (Reflections)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Los reflejos son los “espejos” que ves en superficies brillantes dentro del juego: agua, ventanas, charcos,
           metales pulidos. Sirven para que el mundo se vea más realista mostrando lo que hay alrededor en esas

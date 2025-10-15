@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">AMD Radeon Anti-Lag y Anti-Lag+</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">AMD Radeon Anti-Lag y Anti-Lag+</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           AMD Anti-Lag es una función incluida en el software Radeon Adrenalin que sincroniza mejor el trabajo entre CPU
           y GPU, evitando que la CPU se adelante demasiado y genere cola de fotogramas. Esto reduce el retraso de

@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -17,10 +21,10 @@ import ImageDiff from "../../components/ImageDiff.astro";
           <ul>
             <li><a href="/"><i class="bi bi-house-fill" aria-hidden="true"></i>Inicio</a></li>
             <li>Tecnologías de uso general</li>
-            <li aria-current="page">Sombras (Shadows)</li>
+            <li aria-current="page">{title}</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Sombras (Shadows)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Las sombras son las zonas oscuras que aparecen cuando un objeto bloquea la luz. En los videojuegos, ayudan a
           dar realismo y profundidad, pero también son uno de los efectos más costosos de renderizar.

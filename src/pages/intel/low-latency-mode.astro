@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">Intel Low Latency Mode</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Intel Low Latency Mode</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Intel Low Latency Mode (a veces llamado Xe Low Latency en GPUs Arc) es una tecnología que sincroniza mejor el
           trabajo entre CPU y GPU, evitando que la CPU genere demasiados fotogramas por adelantado. Esto reduce la

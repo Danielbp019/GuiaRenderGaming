@@ -2,6 +2,10 @@
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -20,7 +24,7 @@ import ImageDiff from "../../components/ImageDiff.astro";
             <li>Resplandor (Bloom)</li>
           </ul>
         </div>
-        <h1 class="mb-5 text-5xl font-bold">Resplandor (Bloom)</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           El Bloom es un efecto gráfico que hace que las luces brillantes “se derramen” o se vean más intensas, creando
           un halo o resplandor alrededor de ellas. Imita cómo las cámaras o los ojos humanos perciben luces muy fuertes,

@@ -1,6 +1,10 @@
 ---
 import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { indiceItems } from "../../data/indiceItems.ts";
+
+const item = indiceItems.find((i) => i.href === Astro.url.pathname);
+const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
 
 <DashboardLayout background="bg-ambient">
@@ -19,7 +23,7 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
             <li aria-current="page">Referencias</li>
           </ul>
         </nav>
-        <h1 class="mb-5 text-5xl font-bold">Referencias</h1>
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
         <p>
           Aquí encontrarás una recopilación de fuentes y guías utilizadas para la elaboración de las secciones de
           tecnologías gráficas y configuraciones de videojuegos.
