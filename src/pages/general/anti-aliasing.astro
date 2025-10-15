@@ -3,8 +3,9 @@ import Indice from "../../components/Indice.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import Image from "astro/components/Image.astro";
-import aaImg from "../../assets/AA.png";
 import { indiceItems } from "../../data/indiceItems.ts";
+/* Enlaces de imagenes */
+import aaImg from "../../assets/img/AA.png";
 
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";

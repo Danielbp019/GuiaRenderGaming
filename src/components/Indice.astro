@@ -1,6 +1,8 @@
 ---
 import type { Item, Vendor } from "../data/indiceItems.ts";
 import { indiceItems } from "../data/indiceItems.ts";
+/* Enlaces de imagenes */
+import intelIcon from "../assets/img/intel_icon.svg";
 
 const path = Astro.url.pathname;
 
@@ -37,7 +39,7 @@ for (const arr of itemsByVendor.values()) {
               {section.key === "general" && <i class="bi bi-gear text-primary" aria-hidden="true" />}
               {section.key === "nvidia" && <i class="bi bi-nvidia text-success" aria-hidden="true" />}
               {section.key === "amd" && <i class="bi bi-amd text-error" aria-hidden="true" />}
-              {section.key === "intel" && <img src="/intel_icon.svg" alt="" class="w-4 h-4" aria-hidden="true" />}
+              {section.key === "intel" && <img src={intelIcon.src} alt="intelIcon" class="w-4 h-4" aria-hidden="true" />}
               {section.key === "apis" && <i class="bi bi-braces text-warning" aria-hidden="true" />}
               {section.key === "extra" && <i class="bi bi-display text-accent" aria-hidden="true" />}
 
