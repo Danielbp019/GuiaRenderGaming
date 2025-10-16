@@ -93,8 +93,8 @@ const year = new Date().getFullYear();
           <hr />
 
           <!-- Buscador -->
-          <div class="join py-4">
-            <label for="searchInput" class="input join-item">
+          <div class="py-4">
+            <label for="searchInput" class="input flex items-center gap-2 shadow-xl">
               <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
                   <circle cx="11" cy="11" r="8"></circle>
@@ -102,9 +102,8 @@ const year = new Date().getFullYear();
                 </g>
               </svg>
               <span class="sr-only">Buscar</span>
-              <input id="searchInput" type="search" required placeholder="Buscar Tema" aria-label="Search field" />
+              <input id="searchInput" type="search" required placeholder="Buscar Tema" aria-label="Buscar Tema" />
             </label>
-            <button class="btn btn-neutral join-item">Buscar</button>
           </div>
 
           <!-- Menu de la web -->
@@ -133,7 +132,6 @@ const year = new Date().getFullYear();
           themeNameElement.textContent = storedTheme;
         }
       }
-
       // 1. Aplicar el tema inmediatamente en la carga inicial para evitar FOUC.
       applyTheme();
 
@@ -145,6 +143,58 @@ const year = new Date().getFullYear();
         attributes: true,
         attributeFilter: ["data-theme"],
       });
+
+      // --- Lógica del buscador ---
+      function setupSearch() {
+        const searchInput = document.getElementById("searchInput");
+        if (!searchInput) return;
+
+        searchInput.addEventListener("input", (e) => {
+          const searchTerm = e.target.value.toLowerCase().trim();
+          const menuCategories = document.querySelectorAll(".menu-category");
+
+          // Si el término de búsqueda es menor a 3 caracteres, mostramos todo y salimos.
+          if (searchTerm.length < 3) {
+            menuCategories.forEach((category) => {
+              category.style.display = "";
+              const items = category.querySelectorAll(".menu-item");
+              items.forEach((item) => (item.style.display = ""));
+              // Cerramos los detalles para una vista limpia, excepto si una página está activa dentro.
+              const details = category.querySelector("details");
+              if (details && !details.querySelector("a.active")) {
+                details.open = false;
+              }
+            });
+            return;
+          }
+
+          // Filtramos con 3 o más caracteres.
+          menuCategories.forEach((category) => {
+            const items = category.querySelectorAll(".menu-item");
+            let categoryHasVisibleItems = false;
+
+            items.forEach((item) => {
+              const text = item.textContent.toLowerCase();
+              const isVisible = text.includes(searchTerm);
+              item.style.display = isVisible ? "" : "none";
+              if (isVisible) {
+                categoryHasVisibleItems = true;
+              }
+            });
+
+            // Mostramos u ocultamos la categoría completa si tiene o no items visibles.
+            category.style.display = categoryHasVisibleItems ? "" : "none";
+            // Abrimos la categoría para mostrar los resultados.
+            if (categoryHasVisibleItems) {
+              const details = category.querySelector("details");
+              if (details) details.open = true;
+            }
+          });
+        });
+      }
+
+      // Ejecutar la lógica del buscador en la carga de la página.
+      document.addEventListener("astro:page-load", setupSearch);
     </script>
   </body>
 </html>

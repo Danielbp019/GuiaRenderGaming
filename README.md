@@ -1,7 +1,6 @@
 # Guía de Rénder Gaming
 
-Descubre cómo las diversas opciones gráficas en los videojuegos afectan el rendimiento y tu hardware, y
-analiza su impacto real en tu experiencia de juego.
+Esta guía proporciona un desglose detallado de todas las opciones gráficas más comunes en los videojuegos, explicando cómo afectan al rendimiento del juego y a la calidad visual. Además, proporciona recomendaciones sobre qué configuraciones usar según las especificaciones del hardware de cada jugador.
 
 # Dirección web
 

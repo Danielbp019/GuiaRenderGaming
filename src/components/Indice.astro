@@ -33,7 +33,7 @@ for (const arr of itemsByVendor.values()) {
     orderVendors.map((section) => {
       const items = itemsByVendor.get(section.key) || [];
       return (
-        <li class="border border-base-300 mb-2 rounded-box">
+        <li class="menu-category border border-base-300 mb-2 rounded-box">
           <details class="group" open={path.startsWith(`/${section.key}`)}>
             <summary class="font-semibold flex items-center">
               {section.key === "general" && <i class="bi bi-gear text-primary" aria-hidden="true" />}
@@ -50,7 +50,7 @@ for (const arr of itemsByVendor.values()) {
             </summary>
             <ul>
               {items.map((item) => (
-                <li>
+                <li class="menu-item">
                   <a
                     href={item.href}
                     class={activeClass(item.href)}
