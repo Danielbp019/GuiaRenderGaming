@@ -73,23 +73,41 @@ const year = new Date().getFullYear();
           <span class="sr-only">Cerrar menú lateral</span>
         </label>
 
-        <aside class="bg-base-200 p-4 h-screen overflow-y-auto">
-          <br />
-          <!-- Botones fijos arriba -->
-          <div class="flex justify-center gap-2 mb-2 join join-horizontal">
-            <a href="/" class="btn btn-primary join-item"><i class="bi bi-house-fill" aria-hidden="true"></i> Inicio</a>
-            <a href="/temas/" class="btn btn-secondary join-item"
-              ><i class="bi bi-stars" aria-hidden="true"></i> Temas</a
-            >
-          </div>
-
-          <!-- Texto de tema activo -->
-          <div id="tema-activo" class="text-center text-sm font-semibold mb-4">
-            Tema activo:
-            <i class="bi bi-stars text-warning" aria-hidden="true"></i><span id="tema-nombre">dim</span>
+        <aside class="bg-base-200 p-4 h-screen overflow-y-auto w-78">
+          <!-- Contenedor para botones y tema -->
+          <div class="flex flex-col items-center gap-2 mt-10 mb-4">
+            <!-- Botones fijos arriba -->
+            <div class="join join-horizontal">
+              <a href="/" class="btn btn-primary join-item"
+                ><i class="bi bi-house-fill" aria-hidden="true"></i> Inicio</a
+              >
+              <a href="/temas/" class="btn btn-secondary join-item"
+                ><i class="bi bi-stars" aria-hidden="true"></i> Temas</a
+              >
+            </div>
+            <!-- Texto de tema activo -->
+            <div id="tema-activo" class="text-center text-sm font-semibold">
+              Tema activo: <i class="bi bi-stars text-warning" aria-hidden="true"></i><span id="tema-nombre">dim</span>
+            </div>
           </div>
           <hr />
-          <br />
+
+          <!-- Buscador -->
+          <div class="join py-4">
+            <label for="searchInput" class="input join-item">
+              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </g>
+              </svg>
+              <span class="sr-only">Buscar</span>
+              <input id="searchInput" type="search" required placeholder="Buscar Tema" aria-label="Search field" />
+            </label>
+            <button class="btn btn-neutral join-item">Buscar</button>
+          </div>
+
+          <!-- Menu de la web -->
           <nav aria-label="Menú principal">
             <slot name="sidebar" />
           </nav>
