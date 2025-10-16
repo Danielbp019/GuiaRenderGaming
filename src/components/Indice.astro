@@ -28,7 +28,7 @@ for (const arr of itemsByVendor.values()) {
 }
 ---
 
-<ul class="menu bg-base-100 rounded-box">
+<ul class="menu bg-base-100 rounded-box w-full">
   {
     orderVendors.map((section) => {
       const items = itemsByVendor.get(section.key) || [];
@@ -39,7 +39,9 @@ for (const arr of itemsByVendor.values()) {
               {section.key === "general" && <i class="bi bi-gear text-primary" aria-hidden="true" />}
               {section.key === "nvidia" && <i class="bi bi-nvidia text-success" aria-hidden="true" />}
               {section.key === "amd" && <i class="bi bi-amd text-error" aria-hidden="true" />}
-              {section.key === "intel" && <img src={intelIcon.src} alt="intelIcon" class="w-4 h-4" aria-hidden="true" />}
+              {section.key === "intel" && (
+                <img src={intelIcon.src} alt="intelIcon" class="w-4 h-4" aria-hidden="true" />
+              )}
               {section.key === "apis" && <i class="bi bi-braces text-warning" aria-hidden="true" />}
               {section.key === "extra" && <i class="bi bi-display text-accent" aria-hidden="true" />}
 

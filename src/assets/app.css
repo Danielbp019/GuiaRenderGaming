@@ -63,7 +63,6 @@ p {
 aside {
   scrollbar-gutter: stable;
 }
-
 /* reducir el ancho de la barra de scroll */
 aside::-webkit-scrollbar {
   width: 6px; /* ancho de la barra */
