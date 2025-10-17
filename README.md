@@ -11,6 +11,9 @@ Esta guía proporciona un desglose detallado de todas las opciones gráficas má
 - **Vista general:**
   ![general](ImgReadme/portada.png)
 
+- **Optimización**
+  ![optimización](ImgReadme/optimizacion.png)
+
 ## Estructura del Proyecto
 
 ```text
