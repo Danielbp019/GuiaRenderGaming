@@ -1,6 +1,6 @@
+# Permite el acceso a todos los crawlers a todo el contenido del sitio.
 User-agent: *
-Disallow: /.vscode/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /package-lock.json
 Allow: /
+
+# Apunta a la ubicación del sitemap para que los crawlers lo encuentren.
+Sitemap: https://guiarendergaming.pages.dev/sitemap-index.xml

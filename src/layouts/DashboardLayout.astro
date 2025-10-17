@@ -104,6 +104,9 @@ const year = new Date().getFullYear();
               <span class="sr-only">Buscar</span>
               <input id="searchInput" type="search" required placeholder="Buscar Tema" aria-label="Buscar Tema" />
             </label>
+            <div id="no-results-message" class="text-error text-center mt-2" style="display: none;">
+              No se encontraron resultados.
+            </div>
           </div>
 
           <!-- Menu de la web -->
@@ -147,11 +150,16 @@ const year = new Date().getFullYear();
       // --- Lógica del buscador ---
       function setupSearch() {
         const searchInput = document.getElementById("searchInput");
-        if (!searchInput) return;
+        const noResultsMessage = document.getElementById("no-results-message");
+        if (!searchInput || !noResultsMessage) return;
 
         searchInput.addEventListener("input", (e) => {
           const searchTerm = e.target.value.toLowerCase().trim();
           const menuCategories = document.querySelectorAll(".menu-category");
+          let anyResultFound = false;
+
+          // Ocultar el mensaje al inicio de cada búsqueda
+          noResultsMessage.style.display = "none";
 
           // Si el término de búsqueda es menor a 3 caracteres, mostramos todo y salimos.
           if (searchTerm.length < 3) {
@@ -179,6 +187,7 @@ const year = new Date().getFullYear();
               item.style.display = isVisible ? "" : "none";
               if (isVisible) {
                 categoryHasVisibleItems = true;
+                anyResultFound = true;
               }
             });
 
@@ -190,6 +199,11 @@ const year = new Date().getFullYear();
               if (details) details.open = true;
             }
           });
+
+          // Si después de recorrer todo no se encontró ningún resultado, mostrar el mensaje.
+          if (!anyResultFound && searchTerm.length >= 3) {
+            noResultsMessage.style.display = "block";
+          }
         });
       }
 
