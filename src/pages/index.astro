@@ -90,3 +90,22 @@ import DashboardLayout from "../layouts/DashboardLayout.astro";
     </div>
   </section>
 </DashboardLayout>
+
+<script>
+  // Escucha el evento `astro:page-load` que se dispara después de una transición de vista.
+  document.addEventListener("astro:page-load", async () => {
+    // Busca el elemento de video en la página.
+    const video = document.querySelector("video");
+    if (!video) return; // Si no hay video, no hacemos nada.
+
+    try {
+      // 1. Reinicia el video para asegurar que se cargue correctamente en cada navegación.
+      video.load();
+      // 2. Intenta reproducir el video. await maneja la promesa que devuelve play().
+      await video.play();
+    } catch (error) {
+      // Captura errores si el navegador bloquea la reproducción automática.
+      console.error("Error al intentar reproducir el video automáticamente:", error);
+    }
+  });
+</script>
