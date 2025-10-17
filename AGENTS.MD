@@ -29,8 +29,8 @@ Al trabajar con este proyecto, se deben ignorar las siguientes carpetas:
 
 - `node_modules/`
 - Cualquier carpeta que comience con un punto (`.`), como `.git/`, `.vscode/`, etc.
-- Al recrear este árbol, se debe ignorar el contenido de las carpetas `img`.
-- Al recrear este árbol, se debe nombrar la carpeta principal de fuentes e ignorar el contenido de la carpeta.
+- Al recrear el Arbol de archivos, se debe ignorar el contenido de las carpetas `img`.
+- Al recrear el Arbol de archivos, se debe nombrar la carpeta principal de fuentes e ignorar el contenido de la carpeta.
 
 ## Arbol de archivos
 
