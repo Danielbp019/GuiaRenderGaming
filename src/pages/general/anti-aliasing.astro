@@ -4,7 +4,6 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import Image from "astro/components/Image.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
-/* Enlaces de imagenes */
 import aaImg from "../../assets/img/AA.png";
 
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
@@ -35,7 +34,13 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         </p>
 
         <figure class="aspect-16/9 w-[400px] mx-auto">
-          <Image src={aaImg} alt="Anti-Aliasing, AA" class="w-full h-full object-contain" loading="eager" />
+          <Image
+            src={aaImg}
+            alt="Anti-Aliasing, AA"
+            class="w-full h-full object-contain"
+            quality={90}
+            loading="eager"
+          />
         </figure>
       </div>
 
