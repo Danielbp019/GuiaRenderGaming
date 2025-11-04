@@ -10,6 +10,24 @@ Esta guía proporciona un desglose detallado de todas las opciones gráficas má
 - **Frameworks**: Astro.js (5.14.5), DaisyUI (5.1.18).
 - **Librerías**: bootstrap-icons (1.13.1)
 
+## Reglas
+
+- Toma tiempo para pensar.
+- Usar el mcp context7 para buscar documentación.
+- Los parrafos p deben contener la clase: class="antialiased".
+- Todos las etiquetas h1 a h6 deben contener un aria-label o aria-labelledby segun corresponda.
+- Agrega accesibilidad al código si se puede.
+- Al usar componentes de DaisyUI, nunca se usan códigos legacy.
+
+## Escala tipográfica:
+
+- h1: text-5xl font-bold mb-6
+- h2: text-4xl font-semibold mb-5
+- h3: text-3xl font-semibold mb-4
+- h4: text-2xl font-medium mb-3
+- h5: text-xl font-medium mb-2
+- h6: text-lg font-medium mb-2
+
 ## Instalación
 
 ### Comandos comunes
