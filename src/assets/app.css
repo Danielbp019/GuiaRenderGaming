@@ -39,6 +39,7 @@ p {
 }
 
 .bg-ambient {
+  background-color: #121212;
   background-image: url("/img/fondoLibro.png");
   background-size: cover;
   background-position: center;
