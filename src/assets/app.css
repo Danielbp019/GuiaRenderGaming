@@ -22,15 +22,6 @@
   font-display: swap;
 }
 
-/* AlexBrush (solo Regular) */
-@font-face {
-  font-family: "AlexBrush";
-  src: url("/fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -38,11 +29,6 @@ body {
 /* Color del texto fijo porque el fondo no cambia */
 .hero-content {
   color: #f5f5f5;
-}
-
-/* Mi Firma */
-#miFirma {
-  font-family: "AlexBrush", cursive;
 }
 
 /* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/

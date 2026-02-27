@@ -2,6 +2,8 @@
 import "../assets/app.css";
 import { ClientRouter } from "astro:transitions";
 import { fade } from "astro:transitions";
+import Image from "astro/components/Image.astro";
+import firmaImg from "../assets/img/daniel_firma_w.svg";
 const { slots, background } = Astro.props;
 const year = new Date().getFullYear();
 ---
@@ -49,22 +51,23 @@ const year = new Date().getFullYear();
         </main>
 
         <!-- Footer fijo -->
-        <footer class="bg-base-300 text-center p-4 text-xs text-base-content/70" aria-label="Información del sitio">
-          <div class="flex justify-center items-center gap-2">
-            <span>© {year} Guía de Rénder Gaming - Creado por:</span>
-            <span id="miFirma" class="text-base" style="font-size: 22px;">Daniel Bautista Pradilla</span>
-            -
-            <!-- Enlace a GitHub -->
-            <a
-              href="https://github.com/Danielbp019"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Perfil de GitHub de Daniel Bautista Pradilla"
-              class="hover:text-primary transition-colors"
-            >
-              <i class="bi bi-github text-xl align-middle"></i>
-            </a>
-          </div>
+        <footer
+          class="bg-base-300 flex flex-wrap justify-center items-center gap-x-2 p-4 text-xs text-base-content/70"
+          aria-label="Información del sitio"
+        >
+          <span>© {year} Guía de Rénder Gaming - Creado por:</span>
+          <Image src={firmaImg} alt="Daniel Bautista Pradilla" height={30} loading="eager" />
+          <span>-</span>
+          <!-- Enlace a GitHub -->
+          <a
+            href="https://github.com/Danielbp019"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Perfil de GitHub de Daniel Bautista Pradilla"
+            class="hover:text-primary transition-colors"
+          >
+            <i class="bi bi-github text-xl align-middle"></i>
+          </a>
         </footer>
       </div>
 
