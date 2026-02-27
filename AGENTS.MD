@@ -7,8 +7,8 @@ Esta guía proporciona un desglose detallado de todas las opciones gráficas má
 ## Tecnologías Usadas
 
 - **Frontend**: HTML, CSS, JavaScript.
-- **Frameworks**: Astro.js (5.14.5), DaisyUI (5.1.18).
-- **Librerías**: bootstrap-icons (1.13.1)
+- **Frameworks**: Astro.js, DaisyUI.
+- **Librerías**: bootstrap-icons.
 
 ## Reglas
 

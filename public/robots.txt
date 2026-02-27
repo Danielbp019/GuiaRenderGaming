@@ -1,8 +1,0 @@
-# Guía de Rénder Gaming robots.txt
-# https://guiarendergaming.pages.dev/
-
-# Permite que todos los rastreadores accedan a todo el sitio.
-User-agent: *
-
-# Ubicación del sitemap.
-Sitemap: https://guiarendergaming.pages.dev/sitemap-index.xml
