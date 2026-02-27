@@ -5,6 +5,16 @@ import ImageDiff from "../../components/ImageDiff.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import ssr1Off from "../../assets/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-001-off.png";
+import ssr1On from "../../assets/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-001-on.png";
+import ssr2Off from "../../assets/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-002-off.png";
+import ssr2On from "../../assets/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-002-on.png";
+import cubeMapImg from "../../assets/img/general/reflections/CubeMapExample.jpg";
+import planarOff from "../../assets/img/general/reflections/01-plan-refl-scene-disabled.png";
+import planarOn from "../../assets/img/general/reflections/02-plan-refl-scene-enabled.png";
+import rtOn from "../../assets/img/general/reflections/control-ray-traced-reflections-004-on.jpg";
+import rtOff from "../../assets/img/general/reflections/control-ray-traced-reflections-004-off.jpg";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -45,15 +55,15 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Reflejos en pantalla (SSR) OFF vs Reflejos en pantalla (SSR) ON"
-            img1="/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-001-off.png"
-            img2="/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-001-on.png"
+            img1={ssr1Off}
+            img2={ssr1On}
             alt1="Escena con Reflejos en pantalla (SSR) OFF"
             alt2="Escena con Reflejos en pantalla (SSR) ON"
           /><br />
           <ImageDiff
             title="Comparar: Reflejos en pantalla (SSR) OFF vs Reflejos en pantalla (SSR) ON"
-            img1="/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-002-off.png"
-            img2="/img/general/reflections/rise-of-the-tomb-raider-screen-space-reflections-002-on.png"
+            img1={ssr2Off}
+            img2={ssr2On}
             alt1="Escena con Reflejos en pantalla (SSR) OFF"
             alt2="Escena con Reflejos en pantalla (SSR) ON"
           /><br />
@@ -63,7 +73,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageSolo
             title="Ver Reflejos cúbicos"
-            img="/img/general/reflections/CubeMapExample.jpg"
+            img={cubeMapImg}
             alt="Reflejos cúbicos"
           />
           <br />
@@ -73,8 +83,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Reflejos en pantalla ON vs Reflejos planos ON"
-            img1="/img/general/reflections/01-plan-refl-scene-disabled.png"
-            img2="/img/general/reflections/02-plan-refl-scene-enabled.png"
+            img1={planarOff}
+            img2={planarOn}
             alt1="Escena con Reflejos en pantalla OFF"
             alt2="Escena con Reflejos planos ON"
           /><br />
@@ -84,8 +94,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Reflejos por trazado de rayos ON vs Reflejos en pantalla (SSR) + Reflejos Globales ON"
-            img1="/img/general/reflections/control-ray-traced-reflections-004-on.jpg"
-            img2="/img/general/reflections/control-ray-traced-reflections-004-off.jpg"
+            img1={rtOn}
+            img2={rtOff}
             alt1="Escena con Reflejos por trazado de rayos ON"
             alt2="Escena con Reflejos en pantalla (SSR) + Reflejos Globales ON"
           />

@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import caOff from "../../assets/img/general/chromatic-aberration/the-witcher-3-wild-hunt-chromatic-aberration-001-off.png";
+import caOn from "../../assets/img/general/chromatic-aberration/the-witcher-3-wild-hunt-chromatic-aberration-001-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -53,8 +56,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: Aberración Cromática OFF vs Aberración Cromática ON"
-          img1="/img/general/chromatic-aberration/the-witcher-3-wild-hunt-chromatic-aberration-001-off.png"
-          img2="/img/general/chromatic-aberration/the-witcher-3-wild-hunt-chromatic-aberration-001-on.png"
+          img1={caOff}
+          img2={caOn}
           alt1="Aberración Cromática OFF"
           alt2="Aberración Cromática ON"
         />

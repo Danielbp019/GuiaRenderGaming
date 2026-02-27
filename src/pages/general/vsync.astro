@@ -4,6 +4,8 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import tearingImg from "../../assets/img/general/vsync/screentearing.jpg";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -55,7 +57,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
             stuttering, pero aumenta un poco la latencia.
           </li>
           <br />
-          <ImageSolo title="Ver Screen Tearing" img="/img/general/vsync/screentearing.jpg" alt="Screen Tearing" />
+          <ImageSolo title="Ver Screen Tearing" img={tearingImg} alt="Screen Tearing" />
         </ul>
       </div>
 

@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import tessOff from "../../assets/img/general/tessellation/rise-of-the-tomb-raider-tessellation-002-off.png";
+import tessOn from "../../assets/img/general/tessellation/rise-of-the-tomb-raider-tessellation-002-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -56,8 +59,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Teselación OFF vs Teselación ON"
-            img1="/img/general/tessellation/rise-of-the-tomb-raider-tessellation-002-off.png"
-            img2="/img/general/tessellation/rise-of-the-tomb-raider-tessellation-002-on.png"
+            img1={tessOff}
+            img2={tessOn}
             alt1="Escena con Teselación OFF"
             alt2="Escena con Teselación ON"
           />

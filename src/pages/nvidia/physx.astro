@@ -4,6 +4,8 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import physxImg from "../../assets/img/nvidia/physx/PhysX.jpg";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -57,7 +59,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           efectos extra de físicas.
         </p>
         <br />
-        <ImageSolo title="Ver NVIDIA PhysX" img="/img/nvidia/physx/PhysX.jpg" alt="NVIDIA PhysX" />
+        <ImageSolo title="Ver NVIDIA PhysX" img={physxImg} alt="NVIDIA PhysX" />
       </div>
 
       <!-- Dos columnas -->
@@ -69,8 +71,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </h2>
           <p><strong>Impacto general:</strong> Activar PhysX añade carga extra, sobre todo a la GPU.</p>
           <p>
-            <strong>Dependencia:</strong> Principalmente de la GPU (si se configura así), aunque puede caer en la CPU si
-            no tienes tarjeta NVIDIA.
+            <strong>Dependencia:</strong> Principalmente de la GPU (si se configura así), aunque puede caer en la CPU si no
+            tienes tarjeta NVIDIA.
           </p>
           <p class="mt-3">FPS aproximados (según efectos y resolución):</p>
           <ul class="list-disc list-inside space-y-2 text-left mt-2">

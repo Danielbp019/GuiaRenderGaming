@@ -4,6 +4,8 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import mbOn from "../../assets/img/general/motion-blur/the-witcher-3-wild-hunt-blur-001-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -54,7 +56,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageSolo
           title="Ver Blur & Motion Blur"
-          img="/img/general/motion-blur/the-witcher-3-wild-hunt-blur-001-on.png"
+          img={mbOn}
           alt="Blur & Motion Blur"
         />
       </div>

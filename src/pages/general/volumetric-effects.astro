@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import volOff from "../../assets/img/general/volumetric-effects/the-witcher-3-wild-hunt-light-shafts-001-off.png";
+import volOn from "../../assets/img/general/volumetric-effects/the-witcher-3-wild-hunt-light-shafts-001-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -53,8 +56,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Ejes de luz (Light Shafts) OFF vs Ejes de luz (Light Shafts) ON"
-            img1="/img/general/volumetric-effects/the-witcher-3-wild-hunt-light-shafts-001-off.png"
-            img2="/img/general/volumetric-effects/the-witcher-3-wild-hunt-light-shafts-001-on.png"
+            img1={volOff}
+            img2={volOn}
             alt1="Escena con Ejes de luz (Light Shafts) OFF"
             alt2="Escena con Ejes de luz (Light Shafts) ON"
           />

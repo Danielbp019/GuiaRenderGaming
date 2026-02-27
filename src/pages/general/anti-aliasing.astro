@@ -6,6 +6,9 @@ import Image from "astro/components/Image.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 import aaImg from "../../assets/img/AA.png";
 
+import noAa from "../../assets/img/general/anti-aliasing/no-aa.png";
+import withAa from "../../assets/img/general/anti-aliasing/with-aa.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -82,8 +85,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: Suavizado de Bordes (Anti-Aliasing) OFF vs Suavizado de Bordes (Anti-Aliasing) ON"
-          img1="/img/general/anti-aliasing/no-aa.png"
-          img2="/img/general/anti-aliasing/with-aa.png"
+          img1={noAa}
+          img2={withAa}
           alt1="Escena con Suavizado de Bordes (Anti-Aliasing) OFF"
           alt2="Escena con Suavizado de Bordes (Anti-Aliasing) ON"
         />

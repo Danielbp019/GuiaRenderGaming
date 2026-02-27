@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import fgOff from "../../assets/img/general/film-grain/rise-of-the-tomb-raider-film-grain-001-off.png";
+import fgOn from "../../assets/img/general/film-grain/rise-of-the-tomb-raider-film-grain-001-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -59,8 +62,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: Grano de película OFF vs Grano de película ON"
-          img1="/img/general/film-grain/rise-of-the-tomb-raider-film-grain-001-off.png"
-          img2="/img/general/film-grain/rise-of-the-tomb-raider-film-grain-001-on.png"
+          img1={fgOff}
+          img2={fgOn}
           alt1="Escena con Grano de película OFF"
           alt2="Escena con Grano de película ON"
         />

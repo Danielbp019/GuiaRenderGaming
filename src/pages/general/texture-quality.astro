@@ -4,6 +4,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import tqLow from "../../assets/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-low.png";
+import tqMed from "../../assets/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-medium.png";
+import tqHigh from "../../assets/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-high.png";
+import tqVeryHigh from "../../assets/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-very-high.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -41,8 +46,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           <li><strong>Baja:</strong> Texturas muy comprimidas y borrosas. Se usan para ahorrar memoria de video.</li>
           <ImageDiff
             title="Comparar: Calidad de Texturas Baja vs Calidad de Texturas Medio"
-            img1="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-low.png"
-            img2="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-medium.png"
+            img1={tqLow}
+            img2={tqMed}
             alt1="Calidad de Texturas Bajas"
             alt2="Calidad de Texturas Medio"
           /><br />
@@ -52,8 +57,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Calidad de Texturas Medio vs Calidad de Texturas Alto"
-            img1="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-medium.png"
-            img2="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-high.png"
+            img1={tqMed}
+            img2={tqHigh}
             alt1="Calidad de Texturas Medio"
             alt2="Calidad de Texturas Alto"
           /><br />
@@ -61,8 +66,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           <li><strong>Alta:</strong> Texturas nítidas, con buena definición en la mayoría de superficies.</li>
           <ImageDiff
             title="Comparar: Calidad de Texturas Alto vs Calidad de Texturas Ultra / Muy Alta"
-            img1="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-high.png"
-            img2="/img/general/texture-quality/rise-of-the-tomb-raider-texture-quality-005-very-high.png"
+            img1={tqHigh}
+            img2={tqVeryHigh}
             alt1="Calidad de Texturas Alto"
             alt2="Calidad de Texturas Ultra / Muy Alta"
           /><br />

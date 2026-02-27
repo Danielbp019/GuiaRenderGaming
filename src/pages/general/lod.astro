@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import lodLow from "../../assets/img/general/lod/control-far-object-detail-001-low.jpg";
+import lodHigh from "../../assets/img/general/lod/control-far-object-detail-001-high.jpg";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -59,8 +62,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: LOD Bajo vs LOD Alto"
-          img1="/img/general/lod/control-far-object-detail-001-low.jpg"
-          img2="/img/general/lod/control-far-object-detail-001-high.jpg"
+          img1={lodLow}
+          img2={lodHigh}
           alt1="Escena con LOD Bajo"
           alt2="Escena con LOD Alto"
         />

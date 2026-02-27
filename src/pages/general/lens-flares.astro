@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import lfOff from "../../assets/img/general/lens-flare/rise-of-the-tomb-raider-lens-flares-002-off.png";
+import lfOn from "../../assets/img/general/lens-flare/rise-of-the-tomb-raider-lens-flares-002-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -56,8 +59,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: Destellos de lente OFF vs Destellos de lente ON"
-          img1="/img/general/lens-flare/rise-of-the-tomb-raider-lens-flares-002-off.png"
-          img2="/img/general/lens-flare/rise-of-the-tomb-raider-lens-flares-002-on.png"
+          img1={lfOff}
+          img2={lfOn}
           alt1="Escena con Destellos de lente OFF"
           alt2="Escena con Destellos de lente ON"
         />

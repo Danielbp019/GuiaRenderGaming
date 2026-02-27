@@ -4,6 +4,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import tfTrilinear from "../../assets/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-trilinear.png";
+import tf4x from "../../assets/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-4x.png";
+import tf8x from "../../assets/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-8x.png";
+import tf16x from "../../assets/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-16x.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -58,22 +63,22 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: Trilineal vs Anisotrópico 4x"
-          img1="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-trilinear.png"
-          img2="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-4x.png"
+          img1={tfTrilinear}
+          img2={tf4x}
           alt1="Escena con Trilineal"
           alt2="Escena con Anisotrópico 4x"
         /><br />
         <ImageDiff
           title="Comparar: Anisotrópico 4x vs Anisotrópico 8x"
-          img1="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-4x.png"
-          img2="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-8x.png"
+          img1={tf4x}
+          img2={tf8x}
           alt1="Escena con Anisotrópico 4x"
           alt2="Escena con Anisotrópico 8x"
         /><br />
         <ImageDiff
           title="Comparar: Anisotrópico 8x vs Anisotrópico 16x"
-          img1="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-8x.png"
-          img2="/img/general/texture-filtering/rise-of-the-tomb-raider-anisotropic-filtering-001-16x.png"
+          img1={tf8x}
+          img2={tf16x}
           alt1="Escena con Anisotrópico 8x"
           alt2="Escena con Anisotrópico 16x"
         />

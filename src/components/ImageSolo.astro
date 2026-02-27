@@ -1,7 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
   title?: string;
-  img: string;
+  img: ImageMetadata;
   alt?: string;
 }
 
@@ -14,8 +17,8 @@ const { title, img, alt } = Astro.props;
     {title}
   </summary>
   <div class="collapse-content text-sm flex justify-center">
-    <figure class="aspect-16/9">
-      <img alt={alt} src={img} loading="lazy" class="w-auto h-auto object-cover" />
+    <figure class="w-full">
+      <Image src={img} alt={alt || ""} class="w-full h-auto" />
     </figure>
   </div>
 </details>

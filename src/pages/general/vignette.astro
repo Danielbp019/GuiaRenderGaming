@@ -4,6 +4,11 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import vigOff from "../../assets/img/general/vignette/the-witcher-3-wild-hunt-vignette-001-off.png";
+import vigOn from "../../assets/img/general/vignette/the-witcher-3-wild-hunt-vignette-001-on.png";
+import vigBlurOff from "../../assets/img/general/vignette/rise-of-the-tomb-raider-vignette-blur-001-off.png";
+import vigBlurOn from "../../assets/img/general/vignette/rise-of-the-tomb-raider-vignette-blur-001-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -51,15 +56,15 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: Viñeta OFF vs Viñeta ON"
-          img1="/img/general/vignette/the-witcher-3-wild-hunt-vignette-001-off.png"
-          img2="/img/general/vignette/the-witcher-3-wild-hunt-vignette-001-on.png"
+          img1={vigOff}
+          img2={vigOn}
           alt1="Escena con Viñeta OFF"
           alt2="Escena con Viñeta ON"
         /><br />
         <ImageDiff
           title="Comparar: Viñeta OFF vs Viñeta + Blur ON"
-          img1="/img/general/vignette/rise-of-the-tomb-raider-vignette-blur-001-off.png"
-          img2="/img/general/vignette/rise-of-the-tomb-raider-vignette-blur-001-on.png"
+          img1={vigBlurOff}
+          img2={vigBlurOn}
           alt1="Escena con Viñeta OFF"
           alt2="Escena con Viñeta + Blur ON"
         />

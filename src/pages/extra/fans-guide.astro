@@ -4,6 +4,10 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageSolo from "../../components/ImageSolo.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import axialImg from "../../assets/img/extra/fans-guide/axial.png";
+import radialImg from "../../assets/img/extra/fans-guide/radial.png";
+import conectoresImg from "../../assets/img/extra/fans-guide/conectores.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -41,7 +45,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <!-- Dos columnas: axiales y centrífugos -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           <!-- Ventiladores axiales (helicoidales) -->
-          <article class="rounded-box w-full p-6" aria-labelledby="axiales">
+          <article class="rounded-box w-full p-6 flex flex-col" aria-labelledby="axiales">
             <h3 id="axiales" class="text-xl font-semibold mb-3">Ventiladores axiales (helicoidales)</h3>
             <p>
               El flujo de aire va paralelo al eje. Mueven grandes volúmenes de aire con baja presión estática. Son los
@@ -49,13 +53,13 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
             </p>
             <ImageSolo
               title="Ver Ventilador axial (helicoidal)"
-              img="/img/extra/fans-guide/axial.png"
+              img={axialImg}
               alt="Ventilador axial (helicoidal)"
             />
           </article>
 
           <!-- Ventiladores centrífugos (radiales) -->
-          <article class="rounded-box w-full p-6" aria-labelledby="centrifugos">
+          <article class="rounded-box w-full p-6 flex flex-col" aria-labelledby="centrifugos">
             <h3 id="centrifugos" class="text-xl font-semibold mb-3">Ventiladores centrífugos (radiales)</h3>
             <p>
               El aire sale radialmente. Generan mayor presión y suelen usarse en portátiles y consolas por su capacidad
@@ -63,7 +67,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
             </p>
             <ImageSolo
               title="Ver Ventilador centrífugo (radial)"
-              img="/img/extra/fans-guide/radial.png"
+              img={radialImg}
               alt="Ventilador centrífugo (radial)"
             />
           </article>
@@ -183,7 +187,7 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           <li><strong>Molex / LP4</strong> — alimentación constante; sin control por RPM salvo adaptadores.</li>
         </ul>
         <br />
-        <ImageSolo title="Ver Conectores" img="/img/extra/fans-guide/conectores.png" alt="Conectores" />
+        <ImageSolo title="Ver Conectores" img={conectoresImg} alt="Conectores" />
       </section>
 
       <!-- Rodamientos y vida útil -->

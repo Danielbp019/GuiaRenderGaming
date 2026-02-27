@@ -4,6 +4,13 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import bloomOff from "../../assets/img/general/bloom/the-witcher-3-wild-hunt-bloom-001-off.png";
+import bloomOn from "../../assets/img/general/bloom/the-witcher-3-wild-hunt-bloom-001-on.png";
+import bloomHdrOff from "../../assets/img/general/bloom/rise-of-the-tomb-raider-bloom-001-off-hdr.png";
+import bloomHdrOn from "../../assets/img/general/bloom/rise-of-the-tomb-raider-bloom-001-on-hdr.png";
+import bloomSsrOff from "../../assets/img/general/bloom/rise-of-the-tomb-raider-bloom-002-off-alt.png";
+import bloomSsrOn from "../../assets/img/general/bloom/rise-of-the-tomb-raider-bloom-002-on-SSR-HDR.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -41,8 +48,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Bloom OFF vs Bloom ON"
-            img1="/img/general/bloom/the-witcher-3-wild-hunt-bloom-001-off.png"
-            img2="/img/general/bloom/the-witcher-3-wild-hunt-bloom-001-on.png"
+            img1={bloomOff}
+            img2={bloomOn}
             alt1="Escena con Bloom OFF"
             alt2="Escena con Bloom ON"
           /><br />
@@ -52,8 +59,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Bloom OFF vs Bloom + HDR ON"
-            img1="/img/general/bloom/rise-of-the-tomb-raider-bloom-001-off-hdr.png"
-            img2="/img/general/bloom/rise-of-the-tomb-raider-bloom-001-on-hdr.png"
+            img1={bloomHdrOff}
+            img2={bloomHdrOn}
             alt1="Escena con Bloom OFF"
             alt2="Escena con Bloom + HDR ON"
           /><br />
@@ -67,8 +74,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li><br />
           <ImageDiff
             title="Comparar: Bloom OFF vs Bloom + HDR + SSR ON"
-            img1="/img/general/bloom/rise-of-the-tomb-raider-bloom-002-off-alt.png"
-            img2="/img/general/bloom/rise-of-the-tomb-raider-bloom-002-on-SSR-HDR.png"
+            img1={bloomSsrOff}
+            img2={bloomSsrOn}
             alt1="Escena Bloom OFF"
             alt2="Escena con Bloom + HDR + SSR ON"
           />

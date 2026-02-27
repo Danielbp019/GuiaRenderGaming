@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import hairworksOff from "../../assets/img/nvidia/hairworks/the-witcher-3-wild-hunt-nvidia-hairworks-002-off.png";
+import hairworksOn from "../../assets/img/nvidia/hairworks/the-witcher-3-wild-hunt-nvidia-hairworks-002-on.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -52,8 +55,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: HairWorks OFF vs HairWorks ON"
-          img1="/img/nvidia/hairworks/the-witcher-3-wild-hunt-nvidia-hairworks-002-off.png"
-          img2="/img/nvidia/hairworks/the-witcher-3-wild-hunt-nvidia-hairworks-002-on.png"
+          img1={hairworksOff}
+          img2={hairworksOn}
           alt1="Escena con HairWorks OFF"
           alt2="Escena con HairWorks ON"
         />

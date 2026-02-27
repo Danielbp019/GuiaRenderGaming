@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
   title: string;
-  img1: string;
-  img2: string;
+  img1: ImageMetadata;
+  img2: ImageMetadata;
   alt1: string;
   alt2: string;
 }
@@ -15,10 +18,10 @@ const { title, img1, img2, alt1, alt2 } = Astro.props;
   <div class="collapse-content text-sm">
     <figure class="diff aspect-16/9">
       <div class="diff-item-1">
-        <img alt={alt1} src={img1} loading="lazy" />
+        <Image src={img1} alt={alt1} />
       </div>
       <div class="diff-item-2">
-        <img alt={alt2} src={img2} loading="lazy" />
+        <Image src={img2} alt={alt2} />
       </div>
 
       <div

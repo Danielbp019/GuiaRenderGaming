@@ -4,6 +4,17 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import shadowOff from "../../assets/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-off.png";
+import shadowMed from "../../assets/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-medium.png";
+import shadowHigh from "../../assets/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-high.png";
+import shadowVeryHigh from "../../assets/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-very-high.png";
+import shadowResLow from "../../assets/img/general/shadows/control-shadow-resolution-001-low.jpg";
+import shadowResHigh from "../../assets/img/general/shadows/control-shadow-resolution-001-high.jpg";
+import shadowFiltLow from "../../assets/img/general/shadows/control-shadow-filtering-001-low.jpg";
+import shadowFiltMed from "../../assets/img/general/shadows/control-shadow-filtering-001-medium.jpg";
+import rtShadowOff from "../../assets/img/general/shadows/cp2077-porschedof-rtx-off-badged.jpg";
+import rtShadowOn from "../../assets/img/general/shadows/cp2077-porschedof-rtx-on-badged.jpg";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -44,22 +55,22 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Sombras OFF vs Sombras Mediano"
-            img1="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-off.png"
-            img2="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-medium.png"
+            img1={shadowOff}
+            img2={shadowMed}
             alt1="Escena con Sombras OFF"
             alt2="Escena con Sombras Mediano"
           /><br />
           <ImageDiff
             title="Comparar: Sombras Mediano vs Sombras Alto"
-            img1="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-medium.png"
-            img2="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-high.png"
+            img1={shadowMed}
+            img2={shadowHigh}
             alt1="Escena con Sombras Mediano"
             alt2="Escena con Sombras Alto"
           /><br />
           <ImageDiff
             title="Comparar: Sombras Alto vs Sombras Muy alto"
-            img1="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-high.png"
-            img2="/img/general/shadows/rise-of-the-tomb-raider-shadow-quality-002-very-high.png"
+            img1={shadowHigh}
+            img2={shadowVeryHigh}
             alt1="Escena con Sombras Alto"
             alt2="Escena con Sombras Muy alto"
           /><br />
@@ -69,8 +80,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Resolución de sombras Bajo vs Resolución de sombras Alto"
-            img1="/img/general/shadows/control-shadow-resolution-001-low.jpg"
-            img2="/img/general/shadows/control-shadow-resolution-001-high.jpg"
+            img1={shadowResLow}
+            img2={shadowResHigh}
             alt1="Escena con Resolución de sombras Bajo"
             alt2="Escena con Resolución de sombras Alto"
           /><br />
@@ -84,8 +95,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Filtrado de sombras Bajo vs Filtrado de sombras Mediano"
-            img1="/img/general/shadows/control-shadow-filtering-001-low.jpg"
-            img2="/img/general/shadows/control-shadow-filtering-001-medium.jpg"
+            img1={shadowFiltLow}
+            img2={shadowFiltMed}
             alt1="Escena con Filtrado de sombras Bajo"
             alt2="Escena con Filtrado de sombras Mediano"
           /><br />
@@ -102,8 +113,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
           </li>
           <ImageDiff
             title="Comparar: Sombras por trazado de rayos OFF vs Sombras por trazado de rayos ON"
-            img1="/img/general/shadows/cp2077-porschedof-rtx-off-badged.jpg"
-            img2="/img/general/shadows/cp2077-porschedof-rtx-on-badged.jpg"
+            img1={rtShadowOff}
+            img2={rtShadowOn}
             alt1="Escena con Sombras por trazado de rayos OFF"
             alt2="Escena con Sombras por trazado de rayos ON"
           />

@@ -4,6 +4,9 @@ import DashboardLayout from "../../layouts/DashboardLayout.astro";
 import ImageDiff from "../../components/ImageDiff.astro";
 import { indiceItems } from "../../data/indiceItems.ts";
 
+import dofOff from "../../assets/img/general/depth-of-field/rise-of-the-tomb-raider-depth-of-field-005-off.png";
+import dofOn from "../../assets/img/general/depth-of-field/rise-of-the-tomb-raider-depth-of-field-005-very-high.png";
+
 const item = indiceItems.find((i) => i.href === Astro.url.pathname);
 const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
 ---
@@ -52,8 +55,8 @@ const title = item ? item.titleEs : "Error al cargar el nombre de la sección";
         <br />
         <ImageDiff
           title="Comparar: OFF vs Muy Alto"
-          img1="/img/general/depth-of-field/rise-of-the-tomb-raider-depth-of-field-005-off.png"
-          img2="/img/general/depth-of-field/rise-of-the-tomb-raider-depth-of-field-005-very-high.png"
+          img1={dofOff}
+          img2={dofOn}
           alt1="Escena OFF"
           alt2="Escena con Muy Alto"
         />
