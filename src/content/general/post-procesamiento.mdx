@@ -4,73 +4,71 @@ vendor: "general"
 description: "El post-procesamiento son efectos visuales que no cambian la geometría del mundo (modelos, texturas, polígonos), sino la imagen final ya renderizada. Sirven para mejorar la atmósfera, la claridad o el estilo visual."
 ---
 <div class="glass rounded-box w-full p-6">
-        <h2>
-          <i class="bi bi-palette-fill text-info"></i> Efectos comunes dentro de Post-procesamiento
-        </h2>
+        <h2 aria-label="Efectos comunes dentro de Post-procesamiento"><i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Efectos comunes dentro de Post-procesamiento</h2>
         <ul>
           <li>
-            <a href="/general/bloom" class="link link-primary"><strong>Resplandor (Bloom):</strong> </a> halos de luz alrededor
+            <a href="/general/bloom/" class="link link-primary"><strong>Resplandor (Bloom):</strong> </a> halos de luz alrededor
             de fuentes brillantes.
           </li>
 
           <li>
-            <a href="/general/motion-blur" class="link link-primary">
+            <a href="/general/motion-blur/" class="link link-primary">
               <strong>Desenfoque de Movimiento (Blur & Motion Blur):</strong>
             </a>
             desenfoque en objetos o cámara en movimiento.
           </li>
 
           <li>
-            <a href="/general/depth-of-field" class="link link-primary">
+            <a href="/general/depth-of-field/" class="link link-primary">
               <strong>Profundidad de Campo (Depth of Field, DoF):</strong>
             </a>
             desenfoque de fondo o primer plano para simular enfoque de cámara.
           </li>
 
           <li>
-            <a href="/general/ambient-occlusion" class="link link-primary">
+            <a href="/general/ambient-occlusion/" class="link link-primary">
               <strong>Oclusión ambiental (Ambient Occlusion) (SSAO, HBAO, etc.):</strong>
             </a>
             sombras suaves en esquinas y uniones de objetos.
           </li>
 
           <li>
-            <a href="/general/reflections" class="link link-primary">
+            <a href="/general/reflections/" class="link link-primary">
               <strong>Reflejos en pantalla (SSR – Screen Space Reflections):</strong>
             </a>
             reflejos rápidos basados en lo que está en pantalla.
           </li>
 
           <li>
-            <a href="/general/hdr-tone-mapping" class="link link-primary">
+            <a href="/general/hdr-tone-mapping/" class="link link-primary">
               <strong>Color Grading / Tone Mapping:</strong>
             </a>
             ajustes de color, contraste, saturación y exposición.
           </li>
 
           <li>
-            <a href="/general/vignette" class="link link-primary">
+            <a href="/general/vignette/" class="link link-primary">
               <strong>Viñeta (Vignette):</strong>
             </a>
             oscurece los bordes de la pantalla para centrar la atención.
           </li>
 
           <li>
-            <a href="/general/film-grain" class="link link-primary">
+            <a href="/general/film-grain/" class="link link-primary">
               <strong>Grano de película (Film Grain):</strong>
             </a>
             grano cinematográfico para dar textura a la imagen.
           </li>
 
           <li>
-            <a href="/general/chromatic-aberration" class="link link-primary">
+            <a href="/general/chromatic-aberration/" class="link link-primary">
               <strong>Aberración Cromática (Chromatic Aberration):</strong>
             </a>
             separación de colores en los bordes, simulando lentes de cámara.
           </li>
 
           <li>
-            <a href="/general/lens-flares" class="link link-primary">
+            <a href="/general/lens-flares/" class="link link-primary">
               <strong>Destellos de lente (Lens Flares):</strong>
             </a>
             destellos de luz al mirar hacia fuentes brillantes.
@@ -82,7 +80,7 @@ description: "El post-procesamiento son efectos visuales que no cambian la geome
           </li>
 
           <li>
-            <a href="/general/anti-aliasing" class="link link-primary">
+            <a href="/general/anti-aliasing/" class="link link-primary">
               <strong>Anti-Aliasing por post-proceso (FXAA, TAA):</strong>
             </a>
             suavizado de bordes aplicado como filtro.
@@ -94,9 +92,7 @@ description: "El post-procesamiento son efectos visuales que no cambian la geome
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Coste en rendimiento */}
         <div class="glass rounded-box w-full p-6">
-          <h2>
-            <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
-          </h2>
+          <h2 aria-label="Coste en rendimiento"><i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento</h2>
           <ul>
             <li>Ligero a medio, depende de cuántos efectos se activen.</li>
             <li><strong>Efectos como Bloom, Vignette, Film Grain →</strong> impacto muy bajo.</li>
@@ -108,9 +104,7 @@ description: "El post-procesamiento son efectos visuales que no cambian la geome
 
         {/* Cuándo conviene activarlo */}
         <div class="glass rounded-box w-full p-6">
-          <h2>
-            <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
-          </h2>
+          <h2 aria-label="Cuándo conviene activarlo"><i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo</h2>
           <ul>
             <li>
               <strong>PC de gama baja:</strong> desactiva o deja en bajo la mayoría de efectos (sobre todo SSAO, SSR, DoF).
