@@ -2,6 +2,7 @@
   "name": "guiarendergaming",
   "type": "module",
   "version": "1.0.8",
+  "packageManager": "pnpm@11.24.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
