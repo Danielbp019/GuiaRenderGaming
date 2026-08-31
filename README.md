@@ -1,48 +1,47 @@
 # Guía de Rénder Gaming
 
-Esta guía proporciona un desglose detallado de todas las opciones gráficas más comunes en los videojuegos, explicando cómo afectan al rendimiento del juego y a la calidad visual. Además, proporciona recomendaciones sobre qué configuraciones usar según las especificaciones del hardware de cada jugador.
+> Analiza opciones gráficas en videojuegos, su impacto real en tu hardware y optimiza tu experiencia gamer sin importar si juegas en PC de gama alta, portátil o equipo integrado.
 
-# Dirección web
+**[Ver la guía en línea](https://guiarendergaming.pages.dev/)**
 
-[Guía de Rénder Gaming](https://guiarendergaming.pages.dev/)
+## Características
+
+- **Imágenes comparativas** — En cada sección encontrarás ejemplos visuales que muestran cómo cambian los gráficos al modificar configuraciones como sombras, texturas, antialiasing o reflejos.
+- **Fácil de entender** — La guía está escrita en un lenguaje sencillo, sin tecnicismos innecesarios. Aprenderás paso a paso qué significa cada parámetro y cómo impacta en la fluidez.
+- **Organizado por tecnología y fabricantes** — El contenido está estructurado por categorías: configuraciones generales, tecnologías gráficas y recomendaciones específicas por fabricante.
+
+## Contenido cubierto
+
+| Categoría         | Temas | Ejemplos                                                                 |
+| ----------------- | ----- | ------------------------------------------------------------------------ |
+| **General**       | 21    | Sombras, texturas, antialiasing, VSync, profundidad de campo, bloom...   |
+| **NVIDIA**        | 8     | DLSS, DLAA, HairWorks, NIS, PhysX, Reflex, FaceWorks, Freestyle          |
+| **AMD**           | 6     | FSR, FidelityFX Suite, RIS, RSR, Anti-Lag, TressFX Hair                  |
+| **Intel**         | 5     | XeSS, Integer Scaling, XeSS FG, Low Latency Mode, Xe Adaptive Sharpening |
+| **APIs gráficas** | 4     | DirectX, Vulkan, OpenGL, Metal                                           |
+| **Extra**         | 4     | Monitores, referencias, cuadro comparativo, guía de ventiladores         |
+
+## Stack tecnológico
+
+- [Astro](https://astro.build/) — Framework estático para sitios web rápidos
+- [Tailwind CSS](https://tailwindcss.com/) — Framework CSS utility-first
+- [DaisyUI](https://daisyui.com/) — Componentes para Tailwind CSS
+- [Bootstrap Icons](https://icons.getbootstrap.com/) — Iconografía
+
+## Ejecutar localmente
+
+```bash
+# Instalar dependencias (requiere pnpm)
+pnpm install
+
+# Iniciar servidor de desarrollo
+pnpm dev
+```
 
 ## Imágenes del proyecto
 
-- **Vista general:**
-  ![general](ImgReadme/portada.png)
+**Vista general:**
+![general](ImgReadme/portada.png)
 
-- **Optimización**
-  ![optimización](ImgReadme/optimizacion.png)
-
-## Estructura del Proyecto
-
-```text
-├── AGENTS.MD              # Guía de prompts e instrucciones para IA
-├── README.md              # Documentación principal del proyecto
-├── package.json           # Dependencias y scripts de npm
-├── astro.config.mjs       # Configuración de Astro
-├── tsconfig.json          # Configuración de TypeScript
-├── LICENSE                # Licencia del proyecto
-│
-├── public/                # Archivos estáticos (se sirven tal cual)
-│   ├── favicon.svg
-│   ├── intel_icon.svg
-│   ├── fonts/             # Tipografías (Roboto, AlexBrush, etc.)
-│   ├── img/               # Imágenes generales y por tecnología
-│   └── video/             # Videos usados en la guía
-│
-├── src/                   # Código fuente principal
-│   ├── assets/            # Recursos como CSS y gráficos base
-│   ├── components/        # Componentes Astro reutilizables
-│   ├── data/              # Datos estáticos (índices, listas, etc.)
-│   ├── layouts/           # Plantillas de diseño (ej. Dashboard)
-│   └── pages/             # Páginas del sitio
-│       ├── general/       # Opciones gráficas comunes
-│       ├── nvidia/        # Tecnologías propietarias NVIDIA
-│       ├── amd/           # Tecnologías propietarias AMD
-│       ├── intel/         # Tecnologías propietarias Intel
-│       ├── apis/          # APIs gráficas (DirectX, Vulkan, etc.)
-│       ├── extra/         # Secciones adicionales (referencias, display)
-│       ├── index.astro    # Página principal
-│       └── temas.astro    # Índice temático
-```
+**Optimización:**
+![optimización](ImgReadme/optimizacion.png)
