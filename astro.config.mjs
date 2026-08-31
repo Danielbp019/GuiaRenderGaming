@@ -3,13 +3,15 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   // Define la URL base de tu sitio para generar URLs absolutas en el sitemap.
   site: "https://guiarendergaming.pages.dev",
   /* Esto controla el error de las rutas terminadas en / de cloudflare */
   trailingSlash: "always",
-  integrations: [sitemap()],
+  integrations: [sitemap(), mdx()],
   vite: {
     plugins: [tailwindcss()],
   },

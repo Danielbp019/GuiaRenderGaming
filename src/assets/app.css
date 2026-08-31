@@ -114,3 +114,15 @@ main {
   grid-auto-columns: minmax(0, 1fr);
   align-items: start;
 }
+
+/* Fix futuro para contenido MDX: evita que <p> dentro de <li> desplace la viñeta */
+.glass ul li > p {
+  display: inline;
+  margin: 0;
+}
+
+.glass ul li > p + ul,
+.glass ul li > ul {
+  display: block;
+  margin-top: 0.5rem;
+}
