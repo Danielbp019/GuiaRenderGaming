@@ -82,3 +82,35 @@ main {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--bc) / 0.4) transparent;
 }
+
+/* Fix menú lateral DaisyUI 5.7: permite que los títulos largos hagan wrap en varias líneas */
+.menu :where(li:not(.menu-title) > a),
+.menu :where(li:not(.menu-title) > details > summary) {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  text-wrap: wrap;
+  align-items: start;
+}
+
+.menu :where(li) {
+  min-width: 0;
+}
+
+.menu :where(li a) {
+  min-width: 0;
+}
+
+/* Anula el grid de una sola fila de DaisyUI que fuerza nowrap; usa fila flexible con wrap */
+.menu :where(li:not(.menu-title) > :not(ul, menu, details, .menu-title, .btn)),
+.menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  text-wrap: wrap;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0, 1fr);
+  align-items: start;
+}

@@ -50,10 +50,10 @@ for (const arr of itemsByVendor.values()) {
             </summary>
             <ul>
               {items.map((item) => (
-                <li class="menu-item">
+                <li class="menu-item min-w-0">
                   <a
                     href={item.href}
-                    class={activeClass(item.href)}
+                    class={`whitespace-normal wrap-break-word text-wrap leading-snug min-w-0 hyphens-auto ${activeClass(item.href)}`}
                     aria-current={ariaCurrent(item.href)}
                     aria-label={item.titleEs}
                   >
