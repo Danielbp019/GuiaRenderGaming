@@ -32,7 +32,9 @@ const { vendorLabel, description, heroBackground } = entry.data;
         <p class="antialiased">{description}</p>
       </div>
 
-      <slot />
+      <div class="prose prose-glass max-w-none">
+        <slot />
+      </div>
     </div>
   </section>
 </DashboardLayout>

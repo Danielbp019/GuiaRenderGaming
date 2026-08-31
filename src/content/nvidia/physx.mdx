@@ -7,42 +7,42 @@ import ImageSolo from "../../components/ImageSolo.astro";
 import physxImg from "../../assets/img/nvidia/physx/PhysX.jpg";
 
 <div class="glass rounded-box w-full p-6">
-  <h2 class="text-2xl font-semibold mb-3" aria-label="Modos de funcionamiento"><i class="bi bi-gear-fill text-info" aria-hidden="true"></i> Modos de funcionamiento</h2>
-  <p class="antialiased">En el menú gráfico o en el Panel de Control de NVIDIA, PhysX suele ofrecer estas opciones:</p>
-  <ul class="list-disc list-inside space-y-2 text-left mt-3">
+  <h2 aria-label="Modos de funcionamiento"><i class="bi bi-gear-fill text-info" aria-hidden="true"></i> Modos de funcionamiento</h2>
+  <p>En el menú gráfico o en el Panel de Control de NVIDIA, PhysX suele ofrecer estas opciones:</p>
+  <ul>
     <li><strong>Automático (recomendado):</strong> El sistema decide si usar CPU o GPU según lo más eficiente.</li>
     <li><strong>CPU:</strong> Los cálculos de físicas se hacen en el procesador central. Puede funcionar en cualquier PC, pero sobrecarga la CPU y baja el rendimiento.</li>
     <li><strong>GPU (NVIDIA):</strong> Los cálculos se hacen en la tarjeta gráfica, aprovechando su potencia paralela. Es la opción más eficiente y la que permite efectos más complejos.</li>
   </ul>
-  <p class="antialiased mt-4">En algunos juegos, la opción aparece simplemente como PhysX activado/desactivado, y al activarlo se usan efectos extra de físicas.</p>
+  <p>En algunos juegos, la opción aparece simplemente como PhysX activado/desactivado, y al activarlo se usan efectos extra de físicas.</p>
   <br />
   <ImageSolo title="Ver NVIDIA PhysX" img={physxImg} alt="NVIDIA PhysX" />
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
   <div class="glass rounded-box w-full p-6">
-    <h2 class="text-2xl font-semibold mb-3" aria-label="Coste en rendimiento"><i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento</h2>
-    <p class="antialiased"><strong>Impacto general:</strong> Activar PhysX añade carga extra, sobre todo a la GPU.</p>
-    <p class="antialiased"><strong>Dependencia:</strong> Principalmente de la GPU (si se configura así), aunque puede caer en la CPU si no tienes tarjeta NVIDIA.</p>
-    <p class="antialiased mt-3">FPS aproximados (según efectos y resolución):</p>
-    <ul class="list-disc list-inside space-y-2 text-left mt-2">
+    <h2 aria-label="Coste en rendimiento"><i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento</h2>
+    <p><strong>Impacto general:</strong> Activar PhysX añade carga extra, sobre todo a la GPU.</p>
+    <p><strong>Dependencia:</strong> Principalmente de la GPU (si se configura así), aunque puede caer en la CPU si no tienes tarjeta NVIDIA.</p>
+    <p>FPS aproximados (según efectos y resolución):</p>
+    <ul>
       <li><strong>1080p:</strong> pérdida de 5–15% de FPS.</li>
       <li><strong>1440p:</strong> pérdida de 10–20%.</li>
       <li><strong>4K:</strong> pérdida de 15–25%.</li>
     </ul>
-    <p class="antialiased mt-3">El impacto depende mucho del juego: títulos con muchos efectos de partículas (ej. Borderlands 2, Batman Arkham) pueden exigir bastante más.</p>
+    <p>El impacto depende mucho del juego: títulos con muchos efectos de partículas (ej. Borderlands 2, Batman Arkham) pueden exigir bastante más.</p>
   </div>
 
   <div class="glass rounded-box w-full p-6">
-    <h2 class="text-2xl font-semibold mb-3" aria-label="Cuándo conviene activarlo"><i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo</h2>
-    <p class="antialiased mb-2">Actívalo si:</p>
-    <ul class="list-disc list-inside space-y-2 text-left">
+    <h2 aria-label="Cuándo conviene activarlo"><i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo</h2>
+    <p>Actívalo si:</p>
+    <ul>
       <li>Tienes una GPU NVIDIA de gama media/alta.</li>
       <li>Quieres la máxima calidad visual y efectos inmersivos.</li>
       <li>Juegas a títulos donde los efectos de físicas son muy visibles (explosiones, humo, destrucción).</li>
     </ul>
-    <p class="antialiased mt-4 mb-2">Mejor desactivarlo si:</p>
-    <ul class="list-disc list-inside space-y-2 text-left">
+    <p>Mejor desactivarlo si:</p>
+    <ul>
       <li>Tu PC ya va justo de FPS.</li>
       <li>Usas una GPU no muy potente o juegas en 4K.</li>
       <li>Prefieres fluidez estable sobre efectos visuales extra.</li>

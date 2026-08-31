@@ -4,11 +4,11 @@ vendor: "general"
 description: "HDR (Alto Rango Dinámico): permite que la imagen muestre negros más profundos y luces más brillantes al mismo tiempo, con colores más vivos y realistas. Mapeo de tonos (Tone Mapping): es el “traductor” que adapta esa señal HDR a lo que tu monitor o televisor realmente puede mostrar, evitando que las zonas brillantes se quemen o que las sombras se vean demasiado oscuras."
 ---
 <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3">
+        <h2>
           <i class="bi bi-palette-fill text-info" aria-hidden="true"></i> Variantes generales
         </h2>
-        <p class="mb-3">Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
-        <ul class="list-disc list-inside space-y-2 text-left">
+        <p>Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
+        <ul>
           <li>
             <strong>HDR10 (estático):</strong> usa un solo conjunto de datos para toda la imagen. Es el más común, pero menos
             preciso.
@@ -33,11 +33,11 @@ description: "HDR (Alto Rango Dinámico): permite que la imagen muestre negros m
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Coste en rendimiento */}
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3">
+          <h2>
             <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
           </h2>
-          <p class="mb-3">El impacto depende de si hablamos de HDR o del mapeo de tonos:</p>
-          <ul class="list-disc list-inside space-y-2 text-left">
+          <p>El impacto depende de si hablamos de HDR o del mapeo de tonos:</p>
+          <ul>
             <li>
               <strong>HDR:</strong> Impacto bajo en FPS (generalmente 0–5%). Depende más de la GPU que de la CPU, ya que
               implica cálculos de color y luminancia.
@@ -52,10 +52,10 @@ description: "HDR (Alto Rango Dinámico): permite que la imagen muestre negros m
 
         {/* Cuándo conviene activarlo */}
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3">
+          <h2>
             <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
           </h2>
-          <ul class="list-disc list-inside space-y-2 text-left">
+          <ul>
             <li>
               <strong>Conviene activarlo si:</strong> tu monitor/TV soporta HDR real (HDR10, HDR10+, Dolby Vision) y quieres
               colores más vivos y contraste más realista.

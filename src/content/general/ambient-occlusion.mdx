@@ -21,9 +21,9 @@ import vxaoOn from "../../assets/img/general/ambient-occlusion/rise-of-the-tomb-
 
       {/* Variantes generales */}
       <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3"><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
-        <p class="mb-3">Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
-        <ul class="list-disc list-inside space-y-2 text-left">
+        <h2><i class="bi bi-palette-fill text-info"></i> Variantes generales</h2>
+        <p>Aquí tienes las implementaciones más comunes y en qué se diferencian:</p>
+        <ul>
           <li>
             <strong>SSAO (Screen-Space Ambient Occlusion):</strong> Se basa en lo que está visible en pantalla. Toma el búfer
             de profundidad, mira píxeles cercanos y calcula cuánta geometría bloquea la luz ambiental. Opción básica y de
@@ -122,14 +122,14 @@ import vxaoOn from "../../assets/img/general/ambient-occlusion/rise-of-the-tomb-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Coste en rendimiento */}
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3">
+          <h2>
             <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
           </h2>
-          <p class="mb-3">
+          <p>
             El impacto depende de la GPU, resolución, calidad (número de muestras) y variante usada. Estos son los
             puntos clave:
           </p>
-          <ul class="list-disc list-inside space-y-2 text-left">
+          <ul>
             <li><strong>SSAO básico:</strong> 5–10 % menos FPS.</li>
             <li><strong>SSAO+ / SSAO mejorado:</strong> 10–20 % menos FPS dependiendo del escenario.</li>
             <li>
@@ -151,13 +151,13 @@ import vxaoOn from "../../assets/img/general/ambient-occlusion/rise-of-the-tomb-
 
         {/* Cuándo conviene activarlo */}
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3">
+          <h2>
             <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
           </h2>
-          <p class="mb-3">
+          <p>
             La decisión depende de tu GPU y de cuánto priorices la calidad visual frente al rendimiento:
           </p>
-          <ul class="list-disc list-inside space-y-2 text-left">
+          <ul>
             <li>Con GPU potente: usar SSAO+ o HBAO en calidad media/alta da buen balance.</li>
             <li>Con GPU modesta o en 1440p/4K: mejor calidad baja o desactivar AO para mantener FPS.</li>
             <li>En interiores con muchos detalles: HBAO+ o HDAO pueden valer la pena.</li>

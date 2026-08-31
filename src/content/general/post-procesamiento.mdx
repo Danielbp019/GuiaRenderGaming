@@ -4,10 +4,10 @@ vendor: "general"
 description: "El post-procesamiento son efectos visuales que no cambian la geometría del mundo (modelos, texturas, polígonos), sino la imagen final ya renderizada. Sirven para mejorar la atmósfera, la claridad o el estilo visual."
 ---
 <div class="glass rounded-box w-full p-6">
-        <h2 class="text-2xl font-semibold mb-3">
+        <h2>
           <i class="bi bi-palette-fill text-info"></i> Efectos comunes dentro de Post-procesamiento
         </h2>
-        <ul class="list-disc list-inside space-y-2 text-left">
+        <ul>
           <li>
             <a href="/general/bloom" class="link link-primary"><strong>Resplandor (Bloom):</strong> </a> halos de luz alrededor
             de fuentes brillantes.
@@ -94,10 +94,10 @@ description: "El post-procesamiento son efectos visuales que no cambian la geome
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Coste en rendimiento */}
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3">
+          <h2>
             <i class="bi bi-speedometer text-warning"></i> Coste en rendimiento
           </h2>
-          <ul class="list-disc list-inside space-y-2 text-left">
+          <ul>
             <li>Ligero a medio, depende de cuántos efectos se activen.</li>
             <li><strong>Efectos como Bloom, Vignette, Film Grain →</strong> impacto muy bajo.</li>
             <li><strong>Motion Blur, DoF, SSAO, SSR →</strong> impacto medio (5–15% de FPS).</li>
@@ -108,10 +108,10 @@ description: "El post-procesamiento son efectos visuales que no cambian la geome
 
         {/* Cuándo conviene activarlo */}
         <div class="glass rounded-box w-full p-6">
-          <h2 class="text-2xl font-semibold mb-3">
+          <h2>
             <i class="bi bi-dpad-fill text-success"></i> Cuándo conviene activarlo
           </h2>
-          <ul class="list-disc list-inside space-y-2 text-left">
+          <ul>
             <li>
               <strong>PC de gama baja:</strong> desactiva o deja en bajo la mayoría de efectos (sobre todo SSAO, SSR, DoF).
               Mantén solo Bloom o FXAA si quieres algo de suavizado.

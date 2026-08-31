@@ -6,8 +6,8 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
 
 {/* Evolución de FSR */}
 <div class="glass rounded-box w-full p-6">
-  <h2 class="text-2xl font-semibold mb-3" aria-label="Evolución de FSR y sus puntos llamativos"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> Evolución de FSR y sus puntos llamativos</h2>
-  <ul class="list-disc list-inside space-y-3 text-left">
+  <h2 aria-label="Evolución de FSR y sus puntos llamativos"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> Evolución de FSR y sus puntos llamativos</h2>
+  <ul>
     <li><strong>FSR 1.0 (2021)</strong><br /> Método de escalado espacial.<br /> No usaba datos de cuadros anteriores, solo algoritmos de nitidez.<br /> Muy ligero y compatible con casi cualquier GPU, incluso NVIDIA e Intel.<br /> <strong>Llamativo:</strong> fue la primera alternativa abierta a DLSS, con gran soporte inicial.</li>
     <li><strong>FSR 2.0 (2022)</strong><br /> Introdujo escalado temporal: usaba información de cuadros previos y vectores de movimiento.<br /> Mucha mejor calidad visual, menos artefactos y ghosting.<br /> <strong>Llamativo:</strong> se acercó bastante a la calidad de DLSS, pero sin requerir hardware especializado.</li>
     <li><strong>FSR 3.0 (2023)</strong><br /> Añadió Frame Generation (generación de cuadros), similar a DLSS 3.<br /> Permitía duplicar FPS insertando cuadros interpolados.<br /> <strong>Llamativo:</strong> grandes mejoras de fluidez, aunque con algo más de latencia.<br /> FSR 3.1 refinó la calidad y mejoró la API para desarrolladores.</li>
@@ -17,9 +17,9 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
 
 {/* Modos de funcionamiento */}
 <div class="glass rounded-box w-full p-6">
-  <h2 class="text-2xl font-semibold mb-3" aria-label="Modos de funcionamiento"><i class="bi bi-gear-fill text-info" aria-hidden="true"></i> Modos de funcionamiento</h2>
-  <p class="antialiased">FSR ofrece varios modos que puedes seleccionar en el menú gráfico del juego:</p>
-  <ul class="list-disc list-inside space-y-2 text-left mt-3">
+  <h2 aria-label="Modos de funcionamiento"><i class="bi bi-gear-fill text-info" aria-hidden="true"></i> Modos de funcionamiento</h2>
+  <p>FSR ofrece varios modos que puedes seleccionar en el menú gráfico del juego:</p>
+  <ul>
     <li><strong>Ultra Calidad:</strong> Prioriza la calidad de imagen, con un aumento de FPS moderado.</li>
     <li><strong>Calidad:</strong> Equilibrio entre nitidez y rendimiento, ideal para 1080p, 1440p y hasta 4K en GPUs medias.</li>
     <li><strong>Equilibrado:</strong> Más FPS, sacrificando algo de detalle.</li>
@@ -31,13 +31,13 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
 {/* Dos columnas */}
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
   <div class="glass rounded-box w-full p-6">
-    <h2 class="text-2xl font-semibold mb-3" aria-label="Coste en rendimiento"><i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento</h2>
-    <ul class="list-disc list-inside space-y-2 text-left">
+    <h2 aria-label="Coste en rendimiento"><i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento</h2>
+    <ul>
       <li><strong>Impacto general:</strong> FSR no “consume” rendimiento extra, sino que lo aumenta al reducir la resolución interna.</li>
       <li><strong>Dependencia:</strong> Solo de la GPU, no de la CPU.</li>
       <li>
         <strong>Ganancia de FPS aproximada (según modo y resolución):</strong>
-        <ul class="list-disc list-inside ml-6 space-y-1">
+        <ul>
           <li><strong>1080p:</strong> +10–25% de FPS.</li>
           <li><strong>1440p:</strong> +20–40%.</li>
           <li><strong>4K:</strong> +30–60%.</li>
@@ -48,15 +48,15 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
   </div>
 
   <div class="glass rounded-box w-full p-6">
-    <h2 class="text-2xl font-semibold mb-3" aria-label="Cuándo conviene activarlo"><i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo</h2>
-    <p class="antialiased mb-2">Actívalo si:</p>
-    <ul class="list-disc list-inside space-y-2 text-left">
+    <h2 aria-label="Cuándo conviene activarlo"><i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo</h2>
+    <p>Actívalo si:</p>
+    <ul>
       <li>Quieres más FPS en juegos exigentes.</li>
       <li>Tienes una GPU de gama media o baja y buscas jugar en resoluciones altas.</li>
       <li>Juegas en 1440p o 4K y necesitas fluidez extra.</li>
     </ul>
-    <p class="antialiased mt-4 mb-2">Mejor desactivarlo si:</p>
-    <ul class="list-disc list-inside space-y-2 text-left">
+    <p>Mejor desactivarlo si:</p>
+    <ul>
       <li>Ya tienes FPS estables y prefieres la máxima calidad nativa.</li>
       <li>Estás en 1080p con una GPU potente, donde la ganancia es menor.</li>
       <li>Eres muy sensible a artefactos visuales (en modos Rendimiento/Equilibrado).</li>
