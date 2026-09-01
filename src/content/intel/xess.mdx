@@ -28,22 +28,18 @@ description: "XeSS es un sistema de reescalado inteligente que utiliza machine l
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-  <div class="glass rounded-box w-full p-6">
-    <h2 aria-label="Coste en rendimiento"><i class="bi bi-speedometer text-warning" aria-hidden="true"></i> Coste en rendimiento</h2>
-    <ul>
-      <li><strong>Impacto general:</strong> XeSS no resta, sino que aumenta FPS al renderizar internamente a menor resolución.</li>
-      <li><strong>Dependencia:</strong> Principalmente de la GPU; en Intel Arc se aprovechan núcleos de IA, en otras GPUs se usa vía shaders.</li>
-      <li>
-        <strong>Ganancia de FPS aproximada (según modo y resolución):</strong>
-        <ul>
-          <li><strong>1080p:</strong> +10–20%.</li>
-          <li><strong>1440p:</strong> +20–35%.</li>
-          <li><strong>4K:</strong> +30–60%.</li>
-        </ul>
-      </li>
-      <li>En Intel Arc, la calidad visual es más cercana a DLSS; en NVIDIA/AMD puede ser un poco menos precisa, pero sigue siendo competitiva.</li>
-    </ul>
-  </div>
+<div class="glass rounded-box w-full p-6">
+  <h2 aria-label="XeSS 2 - Detalles técnicos"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> XeSS 2 - Detalles técnicos</h2>
+  <p>XeSS 2 (lanzado diciembre 2024) divide la tecnología en dos componentes principales:</p>
+  <ul>
+    <li><strong>XeSS Super Resolution (XeSS-SR):</strong> Escalado AI mejorado, compatible con DP4a y hardware XMX. Mejora calidad e imagen nítida con mayores FPS.</li>
+    <li><strong>XeSS Frame Generation (XeSS-FG):</strong> Generación de frames con IA por interpolación. Hasta 3.9x rendimiento en modo Ultra Performance (1440p), 2.8x en modo Quality.</li>
+    <li><strong>Xe Low Latency (XeLL):</strong> Reducción de latencia similar a NVIDIA Reflex / AMD Anti-Lag 2. Predice ruta óptima desde inputs hasta screen frame output. Hasta 45% mejora en responsividad a 1440p Ultra.</li>
+  </ul>
+  <p><strong>GPU soporte:</strong> Intel Arc Battlemage (B580/B570) y Alchemist (A770/A750/A580/A380). Frame Generation requiere hardware XMX.</p>
+  <p><strong>APIs:</strong> DirectX 11, DirectX 12, Vulkan 1.1.</p>
+  <p><strong>Títulos en lanzamiento (10):</strong> Assassin's Creed: Shadows, Harry Potter Quidditch Champions, Robocop: Rogue City, Like A Dragon: Pirate Yakuza in Hawaii, Dying Light 2: Stay Human, F1 24, Ascendant, Marvel Rivals, Killing Floor III, Citadels.</p>
+</div>
 
   <div class="glass rounded-box w-full p-6">
     <h2 aria-label="Cuándo conviene activarlo"><i class="bi bi-dpad-fill text-success" aria-hidden="true"></i> Cuándo conviene activarlo</h2>

@@ -27,6 +27,44 @@ description: "El escalado de imagen es una técnica que permite renderizar el ju
         </ul>
       </div>
 
+      {/* FSR 4 (2025) */}
+      <div class="glass rounded-box w-full p-6">
+        <h2 aria-label="FSR 4 (2025)"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> FSR 4 (2025)</h2>
+        <p>Nueva generación de FidelityFX Super Resolution de AMD con escalado basado en machine learning.</p>
+        <ul>
+          <li><strong>Arquitectura:</strong> Modelo de IA entrenado en hardware AMD Instinct, usa procesamiento FP8 acelerado en RDNA 4.</li>
+          <li><strong>Rendimiento:</strong> Hasta 65% de ganancia de FPS en 4K modo Performance sobre renderizado nativo.</li>
+          <li><strong>Calidad de imagen:</strong> Mejor estabilidad temporal, menos ghosting, mayor detalle en movimiento que FSR 3.1.</li>
+          <li><strong>Compatibilidad:</strong> >30 juegos en lanzamiento, 75+ más en 2025. Upgrade driver-level desde FSR 3.1 en títulos compatibles (>60 juegos).</li>
+          <li><strong>Hardware requerido:</strong> Radeon RX serie 9000 (RDNA 4). Exclusivo de RDNA 4 inicialmente.</li>
+        </ul>
+      </div>
+
+      {/* DLSS 4 (2025) */}
+      <div class="glass rounded-box w-full p-6">
+        <h2 aria-label="DLSS 4 (2025)"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> DLSS 4 (2025)</h2>
+        <p>Versión major de NVIDIA con modelos de transformer AI para Super Resolution, Ray Reconstruction y DLAA.</p>
+        <ul>
+          <li><strong>Transformer AI:</strong> Primera aplicación en tiempo real de arquitectura transformer (como ChatGPT, Gemini) en gráficos. Doble de parámetros que CNN anterior.</li>
+          <li><strong>Multi Frame Generation:</strong> Genera hasta 3 frames adicionales por frame renderizado. Hasta 8x rendimiento en RTX 5090 (4K 240 FPS full ray tracing).</li>
+          <li><strong>Mejora en imagen:</strong> Mejor estabilidad temporal, menos ghosting, mayor detalle en movimiento, bordes más suaves.</li>
+          <li><strong>Frame Generation mejorado:</strong> 40% más rápido, 30% menos VRAM en RTX 40/50 Series.</li>
+          <li><strong>Disponibilidad:</strong> 75+ juegos con Multi Frame Generation en lanzamiento. Override via NVIDIA app para RTX 40/50 Series (Super Resolution, Ray Reconstruction, DLAA con modelo transformer).</li>
+        </ul>
+      </div>
+
+      {/* XeSS 2 (2024) */}
+      <div class="glass rounded-box w-full p-6">
+        <h2 aria-label="XeSS 2 (2024)"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> XeSS 2 (2024)</h2>
+        <p>Segunda generación de XeSS de Intel con Frame Generation y Low Latency Mode (XeLL).</p>
+        <ul>
+          <li><strong>XeSS Frame Generation:</strong> Interpolación con IA. Hasta 3.9x rendimiento en modo Ultra Performance (1440p), 2.8x en modo Quality.</li>
+          <li><strong>Xe Low Latency (XeLL):</strong> Reducción de latencia similar a NVIDIA Reflex / AMD Anti-Lag 2. Hasta 45% mejora en responsividad a 1440p Ultra.</li>
+          <li><strong>GPU soporte:</strong> Intel Arc Battlemage (B580/B570) y Alchemist. Requiere hardware XMX para Frame Generation.</li>
+          <li><strong>Títulos en lanzamiento:</strong> 10 juegos incluyendo Assassin's Creed: Shadows, Marvel Rivals, Dying Light 2, F1 24.</li>
+        </ul>
+      </div>
+
       {/* Notas de tecnologías propietarias */}
       <div class="glass rounded-box w-full p-6">
         <h2 aria-label="Notas de tecnologías propietarias"><i class="bi bi-journal-bookmark-fill text-secondary" aria-hidden="true"></i> Notas de tecnologías propietarias</h2>
@@ -35,12 +73,13 @@ description: "El escalado de imagen es una técnica que permite renderizar el ju
             <strong>NVIDIA:</strong>
             <ul>
               <li>
-                <strong>DLSS (Deep Learning Super Sampling):</strong> escalado por IA usando Tensor Cores, muy eficiente
-                y de alta calidad.
+                <strong>DLSS 4:</strong> Transformer AI models para Super Resolution, Ray Reconstruction y DLAA. Multi Frame Generation (hasta 3 frames extra) en RTX 50 Series. Override disponible via NVIDIA app para RTX 40/50 Series.
               </li>
               <li>
-                <strong>NIS (NVIDIA Image Scaling):</strong> escalado espacial con nitidez, funciona en cualquier GPU NVIDIA,
-                incluso GTX.
+                <strong>DLSS 3.5:</strong> Ray Reconstruction con IA, reemplaza denoisers tradicionales en ray tracing.
+              </li>
+              <li>
+                <strong>NIS (NVIDIA Image Scaling):</strong> escalado espacial con nitidez, funciona en cualquier GPU NVIDIA, incluso GTX.
               </li>
             </ul>
           </li>
@@ -48,8 +87,10 @@ description: "El escalado de imagen es una técnica que permite renderizar el ju
             <strong>AMD:</strong>
             <ul>
               <li>
-                <strong>FSR (FidelityFX Super Resolution):</strong> disponible en varias versiones (1.0 espacial, 2.0 temporal,
-                3.0 con interpolación de frames). Funciona en GPUs AMD y también en NVIDIA.
+                <strong>FSR 4:</strong> Escalado por IA con ML, exclusivo RDNA 4 (RX serie 9000). Upgrade driver-level desde FSR 3.1 en >60 títulos.
+              </li>
+              <li>
+                <strong>FSR 3.1:</strong> Temporal upscaling + Frame Generation, compatible con GPUs AMD y NVIDIA.
               </li>
             </ul>
           </li>
@@ -57,8 +98,10 @@ description: "El escalado de imagen es una técnica que permite renderizar el ju
             <strong>Intel:</strong>
             <ul>
               <li>
-                <strong>XeSS (Xe Super Sampling):</strong> escalado por IA, optimizado para GPUs Intel Arc, pero también
-                compatible con otras marcas.
+                <strong>XeSS 2:</strong> Frame Generation + Xe Low Latency (XeLL). Paridad con DLSS 3 y FSR 3. Para GPUs Arc Battlemage y Alchemist.
+              </li>
+              <li>
+                <strong>XeSS 1.3:</strong> Escalado por IA, optimizado para GPUs Intel Arc, también compatible con otras marcas vía DP4a.
               </li>
             </ul>
           </li>
@@ -97,9 +140,14 @@ description: "El escalado de imagen es una técnica que permite renderizar el ju
               (bordes borrosos, ghosting, parpadeos).
             </li>
             <li>
-              <strong>Recomendación general:</strong>
+              <strong>Recomendación general (2025):</strong>
               <ul>
-                <li><strong>DLSS / FSR 2.0+ / XeSS:</strong> mejor opción si tu juego lo soporta.</li>
+                <li><strong>RTX 50 Series:</strong> DLSS 4 con Multi Frame Generation + Transformer models = máxima calidad y rendimiento.</li>
+                <li><strong>RTX 40 Series:</strong> DLSS 4 Transformer models via NVIDIA app override + Frame Generation.</li>
+                <li><strong>RX serie 9000:</strong> FSR 4 con ML = mejor calidad AMD disponible.</li>
+                <li><strong>RX 6000/7000 Series:</strong> FSR 3.1 + Frame Generation, o upgrade driver a FSR 4 si el juego lo soporta.</li>
+                <li><strong>Intel Arc Battlemage:</strong> XeSS 2 con Frame Generation + XeLL.</li>
+                <li><strong>Intel Arc Alchemist / otras GPUs:</strong> XeSS 1.3 / FSR 3.1 / DLSS (si GPU NVIDIA).</li>
                 <li><strong>NIS / FSR 1.0:</strong> alternativa ligera si no hay soporte de IA.</li>
                 <li><strong>Resolución dinámica:</strong> útil para mantener FPS estables en juegos exigentes.</li>
               </ul>

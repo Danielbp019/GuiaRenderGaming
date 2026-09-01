@@ -58,11 +58,14 @@ import withAa from "../../assets/img/general/anti-aliasing/with-aa.png";
         <h2 aria-label="Notas de tecnologías propietarias"><i class="bi bi-journal-bookmark-fill text-secondary" aria-hidden="true"></i> Notas de tecnologías propietarias</h2>
         <ul>
           <li>
-            <strong>NVIDIA DLSS / DLAA / TXAA:</strong> DLSS y DLAA usan IA para suavizar bordes y/o escalar resolución.
-            TXAA es una técnica propietaria que mezcla MSAA + TAA + filtros de postprocesado para lograr suavidad extra.
+            <strong>NVIDIA DLSS 4 / DLAA / TXAA:</strong> DLSS 4 usa modelos transformer AI (arquitectura tipo ChatGPT/Gemini) para Super Resolution, Ray Reconstruction y DLAA. Mejora estabilidad temporal, reduce ghosting, aumenta detalle en movimiento. Multi Frame Generation genera hasta 3 frames extra en RTX 50 Series. Override disponible via NVIDIA app para RTX 40/50 Series.
           </li>
-          <li><strong>AMD FSR:</strong> alternativa abierta, funciona en más GPUs.</li>
-          <li><strong>Intel XeSS:</strong> otra solución de escalado con suavizado, basada en IA.</li>
+          <li>
+            <strong>AMD FSR 4:</strong> Escalado por IA con ML, exclusivo RDNA 4 (RX serie 9000). Upgrade driver-level desde FSR 3.1. Mejor estabilidad temporal y menos ghosting que FSR 3.1.
+          </li>
+          <li>
+            <strong>Intel XeSS 2:</strong> Frame Generation + Xe Low Latency (XeLL). Paridad con DLSS 3 y FSR 3. Para GPUs Arc Battlemage y Alchemist con hardware XMX.
+          </li>
         </ul>
       </div>
 
@@ -101,12 +104,24 @@ import withAa from "../../assets/img/general/anti-aliasing/with-aa.png";
               <strong>Con GPU moderna (RTX, RX 7000, Arc):</strong> activa DLSS / FSR / XeSS para suavizado + más FPS.
             </li>
             <li>
+              <strong>RTX 50 Series:</strong> DLSS 4 con Transformer models + Multi Frame Generation = máxima calidad y rendimiento.
+            </li>
+            <li>
+              <strong>RTX 40 Series:</strong> DLSS 4 Transformer models via NVIDIA app override para Super Resolution, Ray Reconstruction, DLAA.
+            </li>
+            <li>
+              <strong>RX serie 9000:</strong> FSR 4 con ML para mejor calidad AMD disponible.
+            </li>
+            <li>
+              <strong>Intel Arc Battlemage:</strong> XeSS 2 con Frame Generation + XeLL.
+            </li>
+            <li>
               <strong>Competitivo / eSports:</strong> muchos jugadores desactivan AA o usan FXAA para priorizar FPS y nitidez
               en movimiento.
             </li>
             <li>
               <strong>Experiencia inmersiva / campañas:</strong> TAA o TXAA ofrecen la mejor estabilidad visual en movimiento,
-              mientras que DLSS combina suavizado con más rendimiento.
+              mientras que DLSS 4 combina suavizado con más rendimiento y mejor calidad de imagen.
             </li>
           </ul>
         </div>

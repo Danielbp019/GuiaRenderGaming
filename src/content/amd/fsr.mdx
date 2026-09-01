@@ -11,7 +11,19 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
     <li><strong>FSR 1.0 (2021)</strong><br /> Método de escalado espacial.<br /> No usaba datos de cuadros anteriores, solo algoritmos de nitidez.<br /> Muy ligero y compatible con casi cualquier GPU, incluso NVIDIA e Intel.<br /> <strong>Llamativo:</strong> fue la primera alternativa abierta a DLSS, con gran soporte inicial.</li>
     <li><strong>FSR 2.0 (2022)</strong><br /> Introdujo escalado temporal: usaba información de cuadros previos y vectores de movimiento.<br /> Mucha mejor calidad visual, menos artefactos y ghosting.<br /> <strong>Llamativo:</strong> se acercó bastante a la calidad de DLSS, pero sin requerir hardware especializado.</li>
     <li><strong>FSR 3.0 (2023)</strong><br /> Añadió Frame Generation (generación de cuadros), similar a DLSS 3.<br /> Permitía duplicar FPS insertando cuadros interpolados.<br /> <strong>Llamativo:</strong> grandes mejoras de fluidez, aunque con algo más de latencia.<br /> FSR 3.1 refinó la calidad y mejoró la API para desarrolladores.</li>
-    <li><strong>FSR 4.0 (2025)</strong><br /> Evoluciona hacia un sistema de reescalado y generación de cuadros con IA.<br /> Usa machine learning y está optimizado para hardware RDNA 4, incluyendo técnicas de trazado de rayos asistidas por ML.<br /> <strong>Llamativo:</strong> introduce conceptos como caché de radiancia neuronal y regeneración de rayos con ML, lo que mejora la iluminación global y el ray tracing en tiempo real con menor coste.<br /> Exclusivo de las nuevas Radeon RX serie 9000, aunque la comunidad ha intentado adaptarlo a GPUs anteriores.</li>
+<li><strong>FSR 4.0 (2025)</strong><br /> Evoluciona hacia un sistema de reescalado y generación de cuadros con IA.<br /> Usa machine learning y está optimizado para hardware RDNA 4, incluyendo técnicas de trazado de rayos asistidas por ML.<br /> <strong>Llamativo:</strong> introduce conceptos como caché de radiancia neuronal y regeneración de rayos con ML, lo que mejora la iluminación global y el ray tracing en tiempo real con menor coste.<br /> Exclusivo de las nuevas Radeon RX serie 9000 (RDNA 4), aunque mediante driver swap FSR 3.1 puede upgradearse a FSR 4 en >60 títulos.</li>
+</ul>
+</div>
+
+{/* FSR 4 - Detalles técnicos */}
+<div class="glass rounded-box w-full p-6">
+  <h2 aria-label="FSR 4 - Detalles técnicos"><i class="bi bi-layers-fill text-info" aria-hidden="true"></i> FSR 4 - Detalles técnicos</h2>
+  <ul>
+    <li><strong>Arquitectura:</strong> Modelo de IA entrenado en hardware AMD Instinct, usa procesamiento FP8 acelerado en RDNA 4.</li>
+    <li><strong>Rendimiento:</strong> Hasta 65% de ganancia de FPS en 4K modo Performance sobre renderizado nativo (7 juegos testeados).</li>
+    <li><strong>Calidad de imagen:</strong> Mejor estabilidad temporal, menos ghosting, mayor detalle en movimiento que FSR 3.1. El modo Performance en 4K puede superar a "Native AA" de FSR 3.1.</li>
+    <li><strong>Compatibilidad:</strong> >30 juegos en lanzamiento (CoD Black Ops 6, Spider-Man 2, Space Marine 2, etc.), 75+ más en 2025. Upgrade driver-level desde FSR 3.1 en juegos compatibles.</li>
+    <li><strong>Hardware requerido:</strong> Radeon RX 9070 / 9070 XT (RDNA 4) con 779 TOPS de rendimiento IA. No disponible en RDNA 3 inicialmente.</li>
   </ul>
 </div>
 
@@ -25,6 +37,7 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
     <li><strong>Equilibrado:</strong> Más FPS, sacrificando algo de detalle.</li>
     <li><strong>Rendimiento:</strong> Máxima ganancia de FPS, pero con pérdida visible de calidad.</li>
     <li><strong>FSR 3 y 4 (últimas versiones):</strong> Añaden frame generation (generación de cuadros) usando IA, lo que puede duplicar los FPS en juegos compatibles.</li>
+    <li><strong>FSR 4 (modos IA):</strong> Quality, Balanced y Performance con modelo ML. En 4K, el modo Performance ofrece mejor calidad que "Native AA" de FSR 3.1.</li>
   </ul>
 </div>
 
@@ -54,12 +67,14 @@ description: "FSR es una tecnología de reescalado espacial y temporal desarroll
       <li>Quieres más FPS en juegos exigentes.</li>
       <li>Tienes una GPU de gama media o baja y buscas jugar en resoluciones altas.</li>
       <li>Juegas en 1440p o 4K y necesitas fluidez extra.</li>
+      <li><strong>Tienes Radeon RX 9070/9070 XT:</strong> FSR 4 con IA ofrece la mejor calidad y rendimiento.</li>
     </ul>
     <p>Mejor desactivarlo si:</p>
     <ul>
       <li>Ya tienes FPS estables y prefieres la máxima calidad nativa.</li>
       <li>Estás en 1080p con una GPU potente, donde la ganancia es menor.</li>
       <li>Eres muy sensible a artefactos visuales (en modos Rendimiento/Equilibrado).</li>
+      <li>No tienes hardware RDNA 4 y el juego solo tiene FSR 1.x/2.x sin upgrade path.</li>
     </ul>
   </div>
 </div>
