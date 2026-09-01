@@ -14,6 +14,7 @@ Esta guía proporciona un desglose detallado de todas las opciones gráficas má
 
 - Toma tiempo para pensar.
 - Usar el mcp context7 para buscar documentación.
+- La IA siempre debe escribir en español.
 - Los párrafos `p` se estilan automáticamente con `antialiased` vía el plugin `@tailwindcss/typography` y la clase `prose-glass`. No añadir `class="antialiased"` manualmente en MDX.
 - Todas las etiquetas `h1` a `h6` deben contener un `aria-label` o `aria-labelledby` según corresponda.
 - Agrega accesibilidad al código si se puede.

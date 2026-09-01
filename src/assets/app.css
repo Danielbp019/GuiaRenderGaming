@@ -133,7 +133,7 @@ main {
   word-break: break-word;
   hyphens: auto;
   text-wrap: wrap;
-  align-items: start;
+  align-items: center;
 }
 
 .menu :where(li) {
@@ -144,7 +144,7 @@ main {
   min-width: 0;
 }
 
-/* Anula el grid de una sola fila de DaisyUI que fuerza nowrap; usa fila flexible con wrap */
+/* Fix menú: permite wrap de títulos largos manteniendo grid en columna */
 .menu :where(li:not(.menu-title) > :not(ul, menu, details, .menu-title, .btn)),
 .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
   white-space: normal;
@@ -152,9 +152,19 @@ main {
   word-break: break-word;
   hyphens: auto;
   text-wrap: wrap;
-  grid-auto-flow: row;
-  grid-auto-columns: minmax(0, 1fr);
-  align-items: start;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(auto, max-content) auto max-content;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Chevron nativo DaisyUI centrado — anula desplazamiento -1px y mantiene alineación derecha */
+.menu :where(li > details > summary)::after {
+  align-self: center;
+  translate: 0 0;
+}
+.menu :where(li > details[open] > summary)::after {
+  translate: 0 0;
 }
 
 /* Fix futuro para contenido MDX: evita que <p> dentro de <li> desplace la viñeta */

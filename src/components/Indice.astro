@@ -35,7 +35,7 @@ for (const arr of itemsByVendor.values()) {
       return (
         <li class="menu-category border border-base-300 mb-2 rounded-box">
           <details class="group" open={path.startsWith(`/${section.key}`)}>
-            <summary class="font-semibold flex items-center">
+            <summary class="font-semibold">
               {section.key === "general" && <i class="bi bi-gear text-primary" aria-hidden="true" />}
               {section.key === "nvidia" && <i class="bi bi-nvidia text-success" aria-hidden="true" />}
               {section.key === "amd" && <i class="bi bi-amd text-error" aria-hidden="true" />}
@@ -46,7 +46,6 @@ for (const arr of itemsByVendor.values()) {
               {section.key === "extra" && <i class="bi bi-display text-accent" aria-hidden="true" />}
 
               <span class="ms-2">{section.label}</span>
-              <i class="ms-auto transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
             </summary>
             <ul>
               {items.map((item) => (
